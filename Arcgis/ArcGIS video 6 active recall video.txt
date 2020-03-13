@@ -1,0 +1,38 @@
+Video 6
+0-create and html document
+0.1-add the div with the map style
+1-Add the esri js
+2-add the ersi css
+3-create a script tag inside the body and declare 
+this variables:
+
+let topoMap;
+let streetsMap;
+let satelliteMap;
+let mapview;
+let sceneview;
+
+4-use the require function to get the:
+esri/map, esri/views/MapView, esri/views/SceneView and pass them as arguments
+
+5-create the topoMap and the satellite map
+
+6-set the SceneView options, container, map, zoom, center
+
+7-Create the 2 buttons with ids topo and satellite.
+8-create two event listener to swap from one scenview to the other:
+
+  document.getElementById("topo").addEventListener("click", () => {
+        let lastLat = mapview.center.latitude;
+        let lastLng = mapview.center.longitude;
+        let lastZoom = mapview.zoom;
+        let p = new Promise(function(resolve, reject) {
+          mapview.map = topoMap;
+          resolve();
+        });
+
+  p.then(function() {
+          mapview.center = [lastLng, lastLat];
+          mapview.zoom = lastZoom;
+        });
+      });
