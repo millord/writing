@@ -1,0 +1,31 @@
+Video 4 accessing Context part 1
+
+1-Use the contextType to share the data in a class based component
+hooking this
+
+-Import the ThemeContext in the Navbar component
+
+-add this in above the render method:
+
+static contextType = ThemeContext
+
+2-inside the render method add (destructure):
+
+const {isLightTheme, light, dark} = this.context
+
+4-use the terniary expression and create the theme const
+
+3-add inside the nav tag style
+
+style={{background: theme.ui, color: theme.syntax}}
+
+4-go to the BookList component and do the same as in the Nav component to 
+share the data
+
+-them add this style to the div style
+
+style={{color: theme.syntax, background: theme.bg}}
+
+and for all the li tags
+
+style={{background: theme.ui}}
