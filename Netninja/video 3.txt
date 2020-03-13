@@ -1,0 +1,24 @@
+Video 3 adding a Context
+
+1-create the context folder inside the componets folder
+2-create a file called ThemeContext.js insede that folder
+3-in that file import React ...
+4-import createContext
+5-export const ThemeContext = createContext()
+6-Create a class based component called:
+ThemeContextProvider
+7-add a state like this:
+state = {
+	isLightThem: true,
+	light:{syntax: "#555", ui: "#ddd", bg: "#eee"}
+	dark: {syntax: "#ddd", ui: "#333", bg: "#555"}
+}
+8-return the <ThemContext.Provider value={{...this.state}}>
+and close the tag.
+
+9-import the ThemeContextProvider to the add component in the App component and wrap the Nav and the BookList component.
+
+10-go back to ThemeContextProvider and add inside the return  
+<ThemContext.Provider value={{...this.state}}>
+{this.props.children}
+</ThemContext.Provider>
