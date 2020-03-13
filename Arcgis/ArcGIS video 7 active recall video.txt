@@ -1,0 +1,37 @@
+Video 7 active recall
+
+With the basemaps the swap from map to map happens faster than changing the mapview.
+
+-----
+
+0-NORMAL SETUP
+1-add the map as a global variable
+let map
+2-test the basemaps that we have available
+map.basemap = "topo"
+3-at the top of the script file create and array called:
+let basemaps = []
+then push string to it.
+basemaps.push("osm")
+basemaps.push("satellite")
+4-create a div with the id of buttons (here is where you are going to insert the buttons)
+5-create a for loop.
+
+     let setBasemap = function(e) {
+        map.basemap = e.target.id;
+      };
+      for (let i = 0; i < basemaps.length; i++) {
+        // get the buttons
+        let buttons = document.getElementById("buttons");
+        // create a button on memory
+        let button = document.createElement("button");
+        // get the id
+        button.id = basemap[i];
+        //get the text content
+        button.textContent = basemaps[i];
+        // add event listener
+        button.addEventListener("click", setBasemap);
+        // insert the button inside the div
+        buttons.appendChild(button);
+      }
+
