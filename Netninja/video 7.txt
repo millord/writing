@@ -1,0 +1,26 @@
+Video 7 creating multiple contexts
+
+
+1-create the AuthContext.js into the context folder
+2-create a class component
+3-import react  component, createContext
+and export const AuthContext = createContext
+
+4-create the Provider class
+with the name AuthContextProvider
+
+5-use the state and initialize it with the boolean isAuthenticated: false
+
+6-create a function inside the class with the name toggleAuth
+-use setState to change to change the value from false to true
+and viceverza
+
+7-in the body of the return add the:
+<AuthContext.Provider value={{...this.state, toggleAuth: this.toggleAuth}}
+{this.props.children}
+</AuthContext.Provider>
+
+8-got to App.js and inside the <ThemeContextProvider> place the <AuthContexProvider>
+
+
+

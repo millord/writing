@@ -2,7 +2,7 @@ Steps JWT
 
 1-create a project with npm init
 2-install express, nodemon (setup nodemon), dotenv, morgan (go to npm to see how to require it)
-3-initialize a server with express
+3-initialize a server with express (first require the dotenv)(add the port from process.env (add DB, PORT, AND TOKEN_SECRET), nodemon script)
 4-create the routes folder
 5-create a new file inside it called auth.js
 6-create the router ( const router = require("express").Router()
@@ -20,8 +20,8 @@ app.use("/api/user", authRoute)
 
 11-make a post request in postman to /api/user/register to test.
 
-12- connect to mongodb from atlas
-
+12- connect to mongodb from atlas (get mongoose)
+15
 13-create a .env file and add the mongo atlas connection
 install mongoose
 
@@ -35,7 +35,7 @@ export it with module.exports = mongoose.model("User", userSchema)
 
 15-Import the model in the auth.js routes
 
-CREATE A USER and save it
+CREATE A USER (Add the User model)and save it (ADD THE BODYPARSER app.use(express.json())
 16-create a new User  in the register route using the data comming from the
 req.body, and save the user (use async await). return it at the end
 
@@ -53,13 +53,13 @@ VALIDATION
 name: string, min 6, required
 email: string,email,  min 6, required
 password: string, min 6, required
--valitate the data before you create a user to the db.
 
-using schema.validate(req.body)
+-create a function and put the Joi validation logic inside and export it
 
-destructure the error object and check if you find some with:
+-check for validation before you save the user
 
 
+-destructure the error object and check if you find some with:
 
 const { error } = schema.validate(req.body);
 if (error) return res.status(400).send(error.details[0].message);
@@ -109,6 +109,7 @@ Create the login route
 
 1-validate the user
 2-check if the email does not exist in the database (copy)
+ELIMITATE THE NAME FIELD
 
 const { error } = loginValidation(req.body);
 if (error) return res.status(400).send(error.details[0].message);
@@ -123,57 +124,44 @@ if(!validPass) return res.status(400).send('Invalid password')
 
 4- AT THE END YOU send the user!
 
-
+ TEST THE ROUTE
 -------
 
-ADD THE JWT
-what is the reason you use a JWT
+//3-import jwt
+// add the token_secret into the .env file
+//CREATE AND ASIGN THE TOKEN
+//  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+// SEND THE TOKEN IN THE HEADER
+//  res.header("auth-token", token).send(token);
+// create the private route middleware
 
-
-1-install jsonwebtoken
-2-add jwt to the auth.js file
-3-add the token_secret into the .env file
 
 below the part when you check the password create and asign the token
 
-// CREATE AND ASIGN THE TOKEN
-
-const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
-
-// SEND THE TOKEN IN THE HEADER
-res.header("auth-token", token).send(token);
+TEST THE ROUTE
 
 
 4-MAKE A ROUTE PRIVATE
-create a new file inside the routes folder and add this function:
+create a new file inside the routes folder and add called verify.js this function:
 
 const jwt = require("jsonwebtoken");
 
+//0- create a function named auth, that takes req, res, and next as arguments
 function auth(req, res, next) {
+  // 1- grab the token if there is not token accesss denied
   const token = req.header("auth-token");
   if (!token) return res.status(401).send("Access denied");
   try {
+    //2- if there is token you need to verify
     const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+    // 3- asign the token to req.user
     req.user = verified;
+    // 4-if there is an error send Invalid token
   } catch (err) {
     res.status(400).send("Invalid token");
   }
+  //5- allow the next middleware
   next();
-}
-
-module.exports = auth;
-
-5- private route
-
-const router = require("express").Router();
-
-router.get("/", (req, res) => {
-  res.send("private");
-});
-
-module.exports = router;
-
-REMEMBER TO SEND THE HEADERS
 
 
 
