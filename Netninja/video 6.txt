@@ -1,0 +1,17 @@
+Video 6 updating data
+
+
+1-create another component called ThemeToggle.js
+2-in the ThemeToggle component create a class based component with the same name
+3-return a button and give a onClick property without the function
+4-go to the ThemeContext component and create a function inside the classe
+like:
+ toggleTheme = () => {
+    this.setState({ isLightTheme: change isLightTheme from true to false and vs });
+  }
+
+
+5-pass the name of the function as a value after ...state, 
+
+6-go to the ThemeToggle component and using the context get the function to be place 
+in the onClick property.

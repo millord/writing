@@ -1,0 +1,26 @@
+Video 4 accessing Context part 2
+
+Diferent way to access the context
+
+in the Nav component
+
+1-eliminate static contextType line
+
+and add the Consumer
+
+<ThemeContext.Consumer>
+        {context => {
+          const { isLightTheme, light, dark } = context;
+          const theme = isLightTheme ? light : dark;
+          return (
+            <nav style={{ background: theme.ui, color: theme.syntax }}>
+              <h1>Context App</h1>
+              <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+              </ul>
+            </nav>
+          );
+        }}
+      </ThemeContext.Consumer>
