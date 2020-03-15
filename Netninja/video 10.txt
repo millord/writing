@@ -1,0 +1,46 @@
+Video 10 - useState Hook
+
+
+objective: use a dynamic list of songs comming from the state
+
+
+
+1-import useState
+2-place the useState hook inside the SongList component and initialize it with
+the values (array):
+
+
+[
+    { title: "Me fui en segueta", id: 1 },
+    { title: "Seguidilla", id: 2 },
+    { title: "Mera wow", id: 3 }
+]
+
+3-set the array and the setter:
+
+const [songs, setSongs] = useState([])
+
+
+4-map throught the songs array:
+
+<ul>
+  {songs.map(song => {
+   return <li key={song.id}>{song.title}</li>;
+   })}
+</ul>
+
+5-use the setter to add a new song:
+
+add a button and give it a onClick property with the addSong function inside.
+
+
+
+6-create the function at the top:
+
+
+ const addSongs = () => {
+    setSongs([...songs, { title: "new song", id: uuid() }]);
+  };
+
+--- since you are working with an array pass an array to the setSongs setter.
+ 

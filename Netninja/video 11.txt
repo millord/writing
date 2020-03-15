@@ -1,0 +1,70 @@
+Video 11 - useState with forms
+
+Its betten to do, that to listen or watch, in the learning process.
+
+1-create a new component called NewSongForm.js
+2-import React and useState
+3-create a functional component
+4-inside the return create a form:
+label Song name:
+5-create two input the first, type text required,
+the second type submit with the value ="add song" required
+6-remove the button inside the SongList component and replace with
+with the NewSongForm component
+
+--TEST IT IN THE BROWSER--- 
+
+
+7-test and event listener to the form:
+onSubmit={}, we will define the funcion later on.
+
+8-and the inline function on the onChange property like this:
+
+onChange={(e) => {}}
+
+9-add the useState inside the NewSongForm and initialize it with and empty string:
+
+const [title, setTitle] = useState('')
+
+10-update the onChange property of the firts input field.
+
+onChange={(e) => setTitle(e.target.value)}
+
+--- add a value property to the first input field:
+
+value={title}
+
+11- create a function to handle the submit:
+
+const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(title)
+
+}
+
+---TEST IN THE BROWSER ---
+
+
+12- in the SongList component replace the hard code song title by just title.
+(using distructuring)
+
+ 13-pass the addSongs function in the SongList component to the NewSongForm component below:
+
+<NewSongForm addSongs={addSong}/>
+
+14-now in the NewSongForm accept it as a property:
+
+const NewSongForm = ({addSongs}) => { 
+
+15-update the handleSubmit function adding the:
+
+addSongs(title)
+
+16-use setTitle('') to clear after submiting the button.
+
+
+
+
+
+
+ 

@@ -1,0 +1,24 @@
+Video 8 creating multiple contexts
+
+Consuming multiple Context
+
+
+
+IN THE NAV 
+
+1-we are going to use two consumer tags
+2-sorround all the inside the return in the Nav component with the AuthContext consumer.
+3-pass a function to the <AuthContext.Consumer like this:
+
+<AuthContext.Consumer>{(authContext) => (
+        
+      )}
+
+
+4-Now place the <ThemeContext> and all inside the parenthesis
+
+5-Under the h1 create a div and output whether the user is log in or log out
+
+{ isAuthenticated ? "Log in" : "Log out" }
+
+6-use the toggleAuth from the AuthContext to display Log in or Log out with a click event.
