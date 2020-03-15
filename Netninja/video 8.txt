@@ -7,7 +7,7 @@ Consuming multiple Context
 IN THE NAV 
 
 1-we are going to use two consumer tags
-2-sorround all the inside the return in the Nav component with the AuthContext consumer.
+2-sorround all  inside the return in the Nav component with the AuthContext consumer.
 3-pass a function to the <AuthContext.Consumer like this:
 
 <AuthContext.Consumer>{(authContext) => (

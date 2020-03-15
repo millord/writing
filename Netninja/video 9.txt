@@ -4,12 +4,13 @@ Video 9 intro to hooks
 
 By using a hook you can have state in a functional component
 
+what is useState use for?
 useState === use state within a functional component
 
-
+what is useEffect use for?
 useEffect === run code when a compoent renders (or renders)
 
-
+what is useContext use for?
 useContext === consume context in a functional component
 
 

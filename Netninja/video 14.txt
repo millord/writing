@@ -1,0 +1,6 @@
+14 - Multiple Contexts using Hooks
+
+1-inside the Navbar component do some clean up and
+add the useContext with the two context AuthContext and the ThemeContext
+
+

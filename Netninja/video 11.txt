@@ -15,10 +15,10 @@ with the NewSongForm component
 --TEST IT IN THE BROWSER--- 
 
 
-7-test and event listener to the form:
+7-add an event listener to the form:
 onSubmit={}, we will define the funcion later on.
 
-8-and the inline function on the onChange property like this:
+8-add a function on the first into to the onChange property like this:
 
 onChange={(e) => {}}
 
@@ -47,6 +47,8 @@ const handleSubmit = (e) => {
 
 12- in the SongList component replace the hard code song title by just title.
 (using distructuring)
+
+AND PASS THE TITLE AS AN ARGUMENT to the addSong function
 
  13-pass the addSongs function in the SongList component to the NewSongForm component below:
 

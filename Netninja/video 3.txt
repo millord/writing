@@ -10,13 +10,13 @@ ThemeContextProvider
 7-add a state like this:
 state = {
 	isLightThem: true,
-	light:{syntax: "#555", ui: "#ddd", bg: "#eee"}
+	light:{syntax: "#555", ui: "#ddd", bg: "#eee"},
 	dark: {syntax: "#ddd", ui: "#333", bg: "#555"}
 }
-8-return the <ThemContext.Provider value={{...this.state}}>
+8-in the return place <ThemContext.Provider value={{...this.state}}>
 and close the tag.
 
-9-import the ThemeContextProvider to the add component in the App component and wrap the Nav and the BookList component.
+9-import the ThemeContextProvider  in the App component and wrap the Nav and the BookList component.
 
 10-go back to ThemeContextProvider and add inside the return  
 <ThemContext.Provider value={{...this.state}}>

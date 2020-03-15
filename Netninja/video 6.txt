@@ -7,7 +7,7 @@ Video 6 updating data
 4-go to the ThemeContext component and create a function inside the classe
 like:
  toggleTheme = () => {
-    this.setState({ isLightTheme: change isLightTheme from true to false and vs });
+    this.setState({ isLightTheme: change isLightTheme from true to false and viceversa });
   }
 
 
@@ -15,3 +15,5 @@ like:
 
 6-go to the ThemeToggle component and using the context get the function to be place 
 in the onClick property.
+
+7-add the ThemeToggle component into the

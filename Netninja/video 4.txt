@@ -13,11 +13,16 @@ static contextType = ThemeContext
 
 const {isLightTheme, light, dark} = this.context
 
+--TEST IN THE CONSOLE/BROWSWER
+
+
 4-use the terniary expression and create the theme const
 
 3-add inside the nav tag style
 
 style={{background: theme.ui, color: theme.syntax}}
+
+--TEST IN THE CONSOLE/BROWSWER
 
 4-go to the BookList component and do the same as in the Nav component to 
 share the data

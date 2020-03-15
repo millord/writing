@@ -1,0 +1,9 @@
+Video 13 useEffect Hook
+
+1-Go inside the BookList component
+2-add the useContext component
+3-convert the class based component into a functional component
+4-return the same jsx inside the return and copy inside the return
+of the BookList functional component.
+5-add useContext(ThemeContext) above the return of the BookList component
+6-Desctructure and get the values from the context 

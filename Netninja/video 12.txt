@@ -1,0 +1,42 @@
+Video 12 useEffect Hook
+
+
+1-In the SongList Component import the useEffect hook
+
+2-Place the useEffect hook above the render
+
+3-It takes a callback function (and that function its going to run
+everytime the component render or re-renders,everytime the data changes and also
+the initial render)
+
+-use it to comunicate with a database or api endpoing
+
+
+4-to start with console.log('useEffect hook ran')
+
+ useEffect(() => {
+    console.log("useEffect hook ran", songs);
+  });
+
+5-initialize another useState with the values:
+
+const [age, setAge] = useState(20)
+
+6-create a button which will increase the age by one (starting with the 20)
+
+-Below the NewSongForm create a button
+
+<button onClick={() => setAge(age + 1)}>Add 1 to age: {age}</button>
+
+
+7-make useEffect only run when the songs array change:
+-passing a second parameter to the useEffect hook.
+
+ useEffect(() => {
+    console.log("useEffect hook ran", songs);
+  }, [songs]);
+
+8-use again useEffect to watch when the age array change.
+
+
+ON INTITIAL RENDER ALL useEffect hooks run.
