@@ -1,0 +1,51 @@
+15 -  Creating Context with Functional Components
+
+
+1-create a new context inside the context folder called BookContext
+
+2-create a functional component importing createContext, useState hooks
+
+3-export const bookContext = createContext()
+
+3-Called the component inside the BookContextProvider
+
+
+4-inside the BookContextProvider use useState and initialize with 
+this array:
+
+[
+    { title: "You are a badass", id: 1 },
+    { title: "Rejection Proof", id: 2 },
+    { title: "Dating Essentials", id: 3 },
+    { title: "The Mindset", id: 4 },
+    { title: "You are a badass at Making Money", id: 5 }
+  ]
+
+
+5- and set the array and the array setter
+const [books, setBooks] = useState()
+
+
+6-in the return part place the :
+
+ <BookContext.Provider value={{ books }}>
+      {props.children}
+    </BookContext.Provider>
+
+
+7-import the BookContext in App.js
+
+-- Wrap it only on the BookList Component.
+
+8-import the useContext inside the BookList component
+
+9-desctructure the books from the useContext(BookContext):
+
+
+ <ul>
+       {books.map(book => {
+          return <li style={{ background: theme.ui }}>{book.title}</li>;
+        })}
+</ul>
+
+
