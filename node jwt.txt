@@ -148,7 +148,7 @@ const jwt = require("jsonwebtoken");
 
 //0- create a function named auth, that takes req, res, and next as arguments
 function auth(req, res, next) {
-  // 1- grab the token if there is not token accesss denied
+  // 1- grab the token from the header if there is not token accesss denied
   const token = req.header("auth-token");
   if (!token) return res.status(401).send("Access denied");
   try {
