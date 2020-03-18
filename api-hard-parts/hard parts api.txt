@@ -1,0 +1,25 @@
+Api hard parst:
+
+
+//delete a post
+router.delete("/:id", async (req, res) => {
+  try {
+    const removePost = await Post.remove({ _id: req.params.id });
+    res.status(200).send(removePost);
+  } catch (err) {
+    res.status(400).send({ message: err });
+  }
+});
+
+//update a post
+router.patch("/:id", async (req, res) => {
+  try {
+    const updatedPost = await Post.updateOne(
+      { _id: req.params.id },
+      { $set: { title: req.body.title, description: req.body.description } }
+    );
+    res.status(200).send(updatedPost);
+  } catch (err) {
+    res.status(400).send({ message: err });
+  }
+});
