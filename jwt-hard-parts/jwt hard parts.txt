@@ -1,0 +1,7 @@
+Hard part jwt
+
+Validation with Joi
+
+Hash the password
+
+JWT
