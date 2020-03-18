@@ -1,6 +1,6 @@
 Video 3 adding a Context
 
-1-create the context folder inside the componets folder
+1-create the contexts folder inside the componets folder
 2-create a file called ThemeContext.js insede that folder
 3-in that file import React ...
 4-import createContext
@@ -9,7 +9,7 @@ Video 3 adding a Context
 ThemeContextProvider
 7-add a state like this:
 state = {
-	isLightThem: true,
+	isLightTheme: true,
 	light:{syntax: "#555", ui: "#ddd", bg: "#eee"},
 	dark: {syntax: "#ddd", ui: "#333", bg: "#555"}
 }

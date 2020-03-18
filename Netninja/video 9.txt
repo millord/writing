@@ -8,7 +8,7 @@ what is useState use for?
 useState === use state within a functional component
 
 what is useEffect use for?
-useEffect === run code when a compoent renders (or renders)
+useEffect === run code when a component renders (or renders)
 
 what is useContext use for?
 useContext === consume context in a functional component
@@ -23,6 +23,6 @@ create a new app called hooksapp
 1-do some clean up and leave App.js, index.js and index.css
 
 2-create a component folder and inside the file create the SongList.jsj component.
-3-Make the SongList.js component to be a functional one.
+3-Make the SongList.js component to be a functional one, take props.
 4-insise render a list of songs and import the component into the App.js component.
 

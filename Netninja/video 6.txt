@@ -16,4 +16,4 @@ like:
 6-go to the ThemeToggle component and using the context get the function to be place 
 in the onClick property.
 
-7-add the ThemeToggle component into the
+7-add the ThemeToggle component into the App component

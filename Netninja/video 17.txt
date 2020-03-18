@@ -1,0 +1,41 @@
+17-Reading List part 2
+
+1-Go to the BookList
+-impor React and useContext
+-create a functional component called BookList
+-inside place the useContext connected to the BookContext desctruturing books.
+2-Check the length of the books array, and use a ternary expression to return  the BookDetails componet if there are items, if not return No books to read :)
+
+return books.length ? (
+    <div className="book-list">
+      <ul>
+        {books.map(book => {
+          return <BookDetail book={book} key={book.id} />;
+        })}
+      </ul>
+    </div>
+  ) : (
+    <div className="empty">No books to read :)</div>
+  );
+
+
+3-Go to the BookDetails
+-impor React
+-useContext
+
+take a prop books
+
+-consume the context to get removeBook.
+
+4-create an li tag inside the render
+,create a div for the title and a div for the author.
+
+5-Import BookDetails into the BookList component
+
+6-Place BookList inside the App component
+
+7-Go into BookDetails and place an onClick event in the li tag:
+ <li onClick={() => removeBook(book.id)}>
+
+8-Add the css from the :
+https://github.com/iamshaunjp/react-context-hooks/blob/lesson-17/booklist/src/index.css
