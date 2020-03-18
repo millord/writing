@@ -1,2 +1,6 @@
 What is a data structure?
 
+
+1-how to build one
+
+2-how to use it
