@@ -1,3 +1,5 @@
+
+1-what happens when javascript runs?
 When JavaScript code runs, it:
 
 Goes through the code line-by-line and runs each line
@@ -16,3 +18,7 @@ function multiplyBy2(inputNumber) {
 const output = multiplyBy2(num);
 const newOutput = multiplyBy2(10);
 
+
+-- Call Stack
+
+JavaScript keeps track of what function

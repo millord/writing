@@ -1,0 +1,41 @@
+18-Reading List part 3
+
+
+1-create the NewFormBook.js funcional component
+-add useState, useContext
+
+2-above the return of the destructure from BookContext the addBook function.
+3-Initialize useState with an empty string having [title, setTitle] and [author, setAuthor]
+
+4-create a form inside the return with three input fields
+
+input 1 = type=text, placeholder="book title" value={title} onChange={(e) => setTitle(e.target.value)} required
+
+input 2 = type=text, placeholder="book author" value={author} required onChange={(e) => setAuthor(e.target.value)}
+
+input 3 = type=submit, value="add book"
+
+5-add the component into the app component
+
+--TEST--
+
+6-add and event listener to the form to get the data from the inputs
+on the form tag add onSubmit={handleSudmit}
+
+7-define the function above the return, which is coming from the BookContext
+
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    addBook(title, author);
+    setTitle("");
+    setAuthor("");
+  };
+
+
+
+
+
+
+
+
