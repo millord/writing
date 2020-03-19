@@ -31,7 +31,22 @@ const registerValidation = data => {
 const emailExist = await User.find({ email: req.body.email });
 if (emailExist) return res.status(400).send("Email already in the db...");
 
+// check same email/user
+
+const user = await User.find({ email: req.body.email });
+if (!user) return res.status(400).send("Email already in the db...");
+
 
 2-Hash the password
+
+
+// check for same password
+-Check if you have the same password
+const validPass = await bcrypt.compare(req.body.password, user.password)
+if(!validPass) return res.status(400).send('Invalid pass
+
 -add it to a function name auth that takes req, res, next
 3-JWT
+
+
+

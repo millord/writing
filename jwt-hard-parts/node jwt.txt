@@ -1,7 +1,7 @@
 Steps JWT
 
 1-create a project with npm init
-2-install express, nodemon (setup nodemon), dotenv, morgan (go to npm to see how to require it)
+2-install express, nodemon (setup nodemon), dotenv, morgan, mongoose (go to npm to see how to require it)
 3-initialize a server with express (first require the dotenv)(add the port from process.env (add DB, PORT, AND TOKEN_SECRET), nodemon script)
 4-create the routes folder
 5-create a new file inside it called auth.js
@@ -16,7 +16,7 @@ sending some string
 9-create a route middlewares using:
 app.use("/api/user", authRoute)
 
-10-create a start script in the package.json using nodemon
+
 
 11-make a post request in postman to /api/user/register to test.
 
@@ -26,7 +26,7 @@ app.use("/api/user", authRoute)
 install mongoose
 
 14-create the user  model with name, email, password, and date. 
-name: min 6 max 255
+name: min 6 max 30
 email: min 6 max 255
 password: max:1024 min 6
 all required
@@ -113,12 +113,12 @@ ELIMITATE THE NAME FIELD
 
 const { error } = loginValidation(req.body);
 if (error) return res.status(400).send(error.details[0].message);
+
+3-check if  you have the same email 
 const user = await User.findOne({ email: req.body.email });
 if (!user) return res.status(400).send("Wrong user or password...");
 
-3-check if the password is correct 
-
-
+-Check if you have the same password
 const validPass = await bcrypt.compare(req.body.password, user.password)
 if(!validPass) return res.status(400).send('Invalid password')
 
@@ -142,7 +142,7 @@ TEST THE ROUTE
 
 
 4-MAKE A ROUTE PRIVATE
-create a new file inside the routes folder and add called verify.js this function:
+create a new file inside the routes folder and add called protectedRoute.js this function:
 
 const jwt = require("jsonwebtoken");
 
