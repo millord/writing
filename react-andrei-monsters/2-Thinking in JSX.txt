@@ -1,1 +1,24 @@
-2- 
+2-go into the state and add the monsters
+
+Three ways to map
+
+with return:
+
+<div className="App">
+        {this.state.monsters.map(monster => {
+          return <h1>{monster.name}</h1>;
+        })}
+</div>
+
+with only parenthesis:
+  {this.state.monsters.map(monster => (
+          <h1>{monster.name}</h1>
+  ))}
+
+with none of that:
+
+ <div className="App">
+        {this.state.monsters.map(monster => (
+          <h1>{monster.name}</h1>
+        ))}
+      </div>
