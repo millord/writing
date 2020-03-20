@@ -36,7 +36,7 @@ export const bookReducer = (state, action) => {
 
 
 
-2- in the BookContext and the useReducer and remove the useState hook.
+2- in the BookContext remove the useState hook and use useReducer instead.
 - There inside instead of useState you will use useReducer, and it will take as a first parameter the bookReducer and a empty array as a second (erase object with the books inside).
 
 
@@ -54,6 +54,7 @@ dispatch({
     });
 
 4-got ot the BookDetail component and instead of removeBook use dispatch and in the onClick property:
+get dispatch from the context.
 
 dispatch({
           type: "REMOVE_BOOK",

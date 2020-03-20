@@ -1,7 +1,10 @@
 The way of the warrior
 
-1-Today I started from lesson 16 of context api, will come back later.
+1-Today I started from lesson 16 of context api, will come back later
+-check the localStorage only.
 
 2-Started the traversy node and stop and nodemon video
+-the video after nodemon -- the code is in github with the name: backend-full
 
-3-React, create the app monster rodalex and push it to github.
+3-React, create the app monster  and push it to github.
+-next video is about jsx
