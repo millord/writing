@@ -1,0 +1,26 @@
+What is HTTP?
+
+what is http:
+
+-hyper text Transfer Protocol
+-communication between web servers & clients
+-Includes header and body 
+
+
+-------------------
+
+Using Node.js pelao
+const http = require('http')
+
+/// creating a serer only with node.js
+
+const http = require("http");
+
+// creating a server
+const server = http.createServer(() => (req, res) => {
+  console.log(req);
+});
+
+const PORT = 8000;
+
+server.listen(PORT, () => console.log(`server running on port ${PORT}`));
