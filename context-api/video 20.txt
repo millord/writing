@@ -1,0 +1,63 @@
+29- Reducers
+
+
+1-create a new folder called recuders inside the src and there a file called bookRecuder.js
+
+inside it:
+
+--always takes the state and an action using switch/case conditionals
+--in the ADD_BOOK type, it returns an array since the data is in a array, also an object with the fields
+we want to change title and author.
+
+--you want to take the current value of books which is represented by the state, so the state represent the data
+and action what to do with that data.
+
+note: so, if you are going to dispatch an action and its type "ADD_BOOK" it will look and return the new state plus the data.
+
+
+export const bookReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_BOOK":
+      return [
+        ...state,
+        {
+          title: action.book.title,
+          author: action.book.author,
+          id: uuidv4()
+        }
+      ];
+    case "REMOVE_BOOK":
+      return state.filter(book => book.id !== action.id);
+    default:
+      return state;
+  }
+};
+
+
+
+
+2- in the BookContext and the useReducer and remove the useState hook.
+- There inside instead of useState you will use useReducer, and it will take as a first parameter the bookReducer and a empty array as a second (erase object with the books inside).
+
+
+3- instead of the setBooks function place dispatch in the array. Erase addBook and removeBook. 
+- erase the addBook and removeBook function from the BookContext Provider add dispatch.
+
+Go to the NewBookForm and instead of getting the addBook function from useContext
+get the dispatch function. 
+
+- in the handleSubmit function replace addBook with dispatch and add:
+
+dispatch({
+      type: "ADD_BOOK",
+      book: { title, author }
+    });
+
+4-got ot the BookDetail component and instead of removeBook use dispatch and in the onClick property:
+
+dispatch({
+          type: "REMOVE_BOOK",
+          id: book.id
+        })
+
+
