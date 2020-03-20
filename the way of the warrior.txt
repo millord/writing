@@ -7,4 +7,4 @@ The way of the warrior
 -the video after nodemon -- the code is in github with the name: backend-full
 
 3-React, create the app monster  and push it to github.
--next video is about jsx
+-next video is thinking in jsx
