@@ -1,0 +1,7 @@
+The way of the warrior
+
+1-Today I started from lesson 16 of context api, will come back later.
+
+2-Started the traversy node and stop and nodemon video
+
+3-React, create the app monster rodalex and push it to github.

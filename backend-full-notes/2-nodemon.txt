@@ -1,12 +1,9 @@
-2-nodemon
+2-starting nodemon
 
-const http = require("http");
+npm init --y
 
-// creating a server
-const server = http.createServer(() => (req, res) => {
-  res.send();
-});
+npm i nodemon
 
-const PORT = 8000;
+go to the package.json and create the start script.
 
-server.listen(PORT, () => console.log(`server running on port ${PORT}`));pt.
+
