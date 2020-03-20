@@ -3,8 +3,8 @@
 1-Go to the BookList
 -impor React and useContext
 -create a functional component called BookList
--inside place the useContext connected to the BookContext desctruturing books.
-2-Check the length of the books array, and use a ternary expression to return  the BookDetails componet if there are items, if not return No books to read :)
+-get the books from the BookContext.
+2-Check the length of the books array, and use a ternary expression to return  the BookDetails component if there are items, if not return No books to read :)
 
 return books.length ? (
     <div className="book-list">

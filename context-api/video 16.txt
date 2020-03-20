@@ -5,7 +5,7 @@ create the app
 -create the BookContext.js
 -import useState, useContext
 2-export a const called BookContext and with createContext
-3-Create a functional component called BookContextProvider.
+3-Create a functional component called BookContextProvider (add props).
 -add the useState with the list of books.
 -Create two functions addBook and removeBook
 --NOTE FILTER FUNCTION
