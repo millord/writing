@@ -1,0 +1,53 @@
+1-create 10 paragraphs with lorem10
+
+and on each add the class of:
+Common color
+
+red-text
+blue-text
+orange-text
+green-text
+yellow-text
+purple-text
+pink-text
+grey-text
+brown-text
+white-text
+
+uncommon color
+
+deep-purple-text
+indigo-text
+cyan-text
+teal-text
+lme-text
+amber-text
+light-green-text
+deep-orange-text
+blue-grey-text
+
+2-Backgrounds
+For the background you just have to remove the text part of the class.
+
+if you have a darkm background and want to color the text e.g to white.
+
+deep-purple white-text
+
+
+3-Darken
+
+create 5 paragraphs with lorem10 and add a class of:
+
+red darken-1
+red darken-2
+red darken-3
+red darken-4
+red darken-5
+
+4-Lighten
+
+red lighten-1
+red lighten-2
+red lighten-3
+red lighten-4
+red lighten-5
