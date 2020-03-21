@@ -1,0 +1,50 @@
+21 - local storage
+1- go to inspect the browser.
+2-click on application
+3-now in the console
+4-type localStorage
+--practice
+
+localStorage.setItem("name", "juan")
+
+localStorage.getItem("name")
+
+Saving an object:
+
+You cannot save object directly to localStorage, they have to be some kind
+of string.
+
+to save data in localStorage:
+
+JSON.stringify()
+
+to get it out:
+
+JSON.parse()
+
+So you can convert it back to an object.
+
+
+
+4-Go inside the book context:
+
+add the useEffect
+
+-place it above the return and in the callback function.
+
+ useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
+
+
+add the books array to the localStorage
+
+5-let it begin with the data of the localStorage
+
+add a third argument to the useReducer function, which is a callback function.
+Inside the body of that function:
+
+const [books, dispatch] = useReducer(bookReducer, [], () => {
+    const localData = localStorage.getItem("books");
+    return localData ? JSON.parse(localData) : [];
+  });
