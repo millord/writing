@@ -29,10 +29,27 @@ router.patch("/:id", async (req, res) => {
 
 // FETCHING DATA
 
-fetch('http://localhost:8000/posts')
-.then(result =>{
-  return result.json()
-}).then(data => {
-  console.log(data)
-})
+// FETCH
+
+ fetch("http://localhost:8000/api/post")
+    .then(result => {
+      return result.json();
+    })
+    .then(result => {
+      setPosts(result);
+    });
+
+// AXIOS
+
+ useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/post")
+      .then(res => {
+        setPosts(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
 

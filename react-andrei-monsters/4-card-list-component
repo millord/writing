@@ -1,0 +1,31 @@
+4-Card list component
+
+1-create a components folder
+-inside a card-list folder
+-inside create the card-list-component.jsx
+
+create a functional component
+-add the props
+-create a div returning the {props.children} 
+
+import React from 'react'
+
+export const CardList  = (props) => {
+	
+}
+
+2-add the CardList component on top of monster map
+
+-Create the CardList so that you can move the map function inside it.
+
+3-create next to the card-list-component.jsx a card-list-style.css and add:
+
+.card-list {
+  width: 85vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+import this css into the card-list-component and give the class of card-list to the div there.

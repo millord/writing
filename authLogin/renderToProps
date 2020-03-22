@@ -1,0 +1,8 @@
+Este component toma otro component como argumento y dependiendo si esta autorizado o no lo renderiza ese componente que esta como argumento.
+
+Necesita ese nuevo component que se va a renderizar:
+
+dos cosas:
+
+-el esto de los argumentos {...rest}
+-pasar los props: render={(props)}

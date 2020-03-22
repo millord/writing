@@ -1,8 +1,3 @@
-2-go into the state and add the monsters
-
--create an array with monsters object and map through them:
-
-
 Three ways to map
 
 with return:
@@ -25,3 +20,29 @@ with none of that:
           <h1>{monster.name}</h1>
         ))}
       </div>
+
+
+// FETCHING DATA
+
+
+ fetch("http://localhost:8000/api/post")
+    .then(result => {
+      return result.json();
+    })
+    .then(result => {
+      setPosts(result);
+    });
+
+// AXIOS
+
+ useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/post")
+      .then(res => {
+        setPosts(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+

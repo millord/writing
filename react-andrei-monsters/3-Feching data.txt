@@ -1,0 +1,15 @@
+3-remove the monsters array
+
+-add a componentDidMount fetching data from:
+
+https://jsonplaceholder.typicode.com/users
+
+and render them to the page:
+
+//feching data:
+
+ componentDidMount = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(reponse => this.setState({ monsters: reponse }));
+  };

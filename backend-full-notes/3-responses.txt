@@ -1,0 +1,46 @@
+3-responses
+
+1-inside the const server add:
+   res.write('Hello')
+
+-test it in postman
+
+2-return a Content-Type in the header:
+so beforet the res.write
+
+res.setHeader("Content-Type", "text/plain")
+
+
+-TEST IN POSTMAN AND LOOK AT THE HEADERS
+
+3-return some html
+
+in the res.setHeader change from "text/plain" to "text/html"
+
+-inside the res.write("<h1>Hello!</h1>")
+
+
+4-send some JSON
+
+change the Content-Type to application/json
+
+-create an array of objects:
+
+const todos  = [
+    {id: 1, text: "Todo One"},
+    {id: 2, text: "Todo Two"},
+    {id: 3, text: "Todo Three"},
+]
+
+remove the res.write and send the JSON in the res.end()
+
+Note: The browser reads JSON no Objects or anythings
+You have to send that data as an string with JSON.stringify. 
+
+5-res.end(JSON.stringify({
+    succes: true,
+    data: todos 
+
+}))
+
+

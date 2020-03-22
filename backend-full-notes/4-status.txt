@@ -1,0 +1,53 @@
+3-status
+
+ranges of HTTP status
+
+100 === informational
+
+200 Range
+
+200 === Success
+
+201 === Created
+
+204 === Not content
+
+300 Range 
+Redirection
+
+304 === Not Modified
+
+400 Range Client error
+
+400 == Bad Request
+
+401 === Unauthorized
+
+404 === Not Found
+
+500 Range Server Error
+
+500 === Internal Server Error
+
+2- Go inside the server code and remove:
+res.setHeader
+
+replace it with an object like this: 
+
+const server = http.createServer((req, res) => {
+  res.writeHead(400, {
+    "Content-Type": "application/json"
+  });
+
+  res.end(
+    JSON.stringify({
+      success: false,
+      error: "Please add email",
+      data: null
+    })
+  );
+})
+
+Test it in postman
+
+
