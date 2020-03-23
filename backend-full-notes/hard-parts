@@ -1,0 +1,33 @@
+3-status
+
+ranges of HTTP status
+
+100 === informational
+
+200 Range
+
+200 === Success
+
+201 === Created
+
+204 === Not content
+
+300 Range 
+Redirection
+
+304 === Not Modified
+
+400 Range Client error
+
+400 == Bad Request
+
+401 === Unauthorized
+
+404 === Not Found
+
+500 Range Server Error
+
+500 === Internal Server Error
+
+ASK YOURSELF A QUESTION WITH ANY OF THEM:
+
