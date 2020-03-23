@@ -1,6 +1,9 @@
 Api hard parst:
 // DELETE ROUTE
 
+1-CREATE THE ROUTER
+2-export it at the bottom
+
 //delete a post
 router.delete("/:id", async (req, res) => {
   try {
@@ -25,31 +28,5 @@ router.patch("/:id", async (req, res) => {
     res.status(400).send({ message: err });
   }
 });
-
-
-// FETCHING DATA
-
-// FETCH
-
- fetch("http://localhost:8000/api/post")
-    .then(result => {
-      return result.json();
-    })
-    .then(result => {
-      setPosts(result);
-    });
-
-// AXIOS
-
- useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/post")
-      .then(res => {
-        setPosts(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, []);
 
 
