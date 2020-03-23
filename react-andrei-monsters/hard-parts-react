@@ -46,3 +46,11 @@ with none of that:
       });
   }, []);
 
+
+
+/// GOOD REACT DEVELOPER
+
+1-DECIDE ON COMPONENTS
+2-DECIDE the State and where is lives
+3-what changes when the State change.
+

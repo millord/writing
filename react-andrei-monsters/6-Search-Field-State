@@ -1,0 +1,16 @@
+
+
+1-go inside the div with the class App and add an input field:
+
+<input type="search" />
+
+-add searchField into the state and add an onChange property to update the state using setState.
+
+  <input
+          type="search"
+          placeholder="search monsters"
+          onChange={e => this.setState({ searchField: e.target.value })}
+ />
+
+
+

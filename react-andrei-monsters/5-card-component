@@ -1,0 +1,57 @@
+5-Card component
+
+
+App specific funtionality to each component
+
+1-in the App component pass this.state.monster as a prop
+to the CarList component, and move the mapping capability into
+the CardList component as well.
+
+-in the CardList component map through the monsters array getting t
+the data from the props.monster...
+
+2-create the Card component, create a folder inside the componentes folder
+and a file inside it called Card.jsx
+
+-- add the key in the CardList component:
+
+<div className="card-list">
+      {props.monsters.map(monster => (
+        <Card key={monster.id} monster={monster} />
+      ))}
+    </div>
+
+
+-card-style.css:
+
+-create a card-style.css and add:
+
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #95dada;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+3-add an img and an email tag inside the Card component:
+
+<div className="card-container">
+    <img
+      src={`https://robohash.org/${props.monster.id}?set=set3&size180x180`}
+    />
+    <h1>{props.monster.name}</h1>
+    <p>{props.monster.email}</p>
+  </div>
+
