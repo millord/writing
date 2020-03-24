@@ -28,4 +28,4 @@ export const CardList  = (props) => {
   grid-gap: 20px;
 }
 
-import this css into the card-list-component and give the class of card-list to the div there.
+import this css into the card-list-component and give the class of card-list to the div there (THE STYLE SHOULD BE APPLY TO THE MAPPING COMPONENT)

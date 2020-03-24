@@ -10,7 +10,8 @@ the CardList component as well.
 -in the CardList component map through the monsters array getting t
 the data from the props.monster...
 
-2-create the Card component, create a folder inside the componentes folder
+2-create the Card component
+create a folder inside the componentes folder
 and a file inside it called Card.jsx
 
 -- add the key in the CardList component:
