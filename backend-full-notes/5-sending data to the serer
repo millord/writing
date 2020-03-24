@@ -1,0 +1,37 @@
+Sending Data to the server
+--STILL USING ONLY NODE.JS
+
+
+-Send costum headers
+
+1-go into the headers section in postman and add:
+key: Authorization and value: lakfjdak
+
+2-go into your server code and:
+console.log(req.headers.authorization)
+
+-do a post request and see it in the console.
+
+3-sending data in the body with the http module:
+
+-put this above the res.send with the json:
+
+  let body = []
+  req.on('data', chunk => {
+    body.push(chunk)
+
+  }).on('end', () => {
+    body - Buffer.concat(body)
+    console.log(body)
+  })
+
+
+-Now go into postman on the body section and click on raw:
+
+-add the header of Content-Type application/json and eliminate the Authorization.
+
+-see the console
+
+Now go into the code and add to the body (body).toString()
+
+and now see the console 

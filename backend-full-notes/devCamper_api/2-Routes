@@ -1,0 +1,30 @@
+1-Creating Routes & Responses in Express
+
+
+
+Create a testing route sending ("Hello from express")
+-send an object:
+
+{name: "Brad"}
+
+--now using res.json({name: 'brad'})
+ 
+2-Route Structure
+
+/api/v1/bootcamps
+
+/api/v1/courses
+
+/api/v1/reviews
+
+/api/v2/auth
+
+/api/v1/users
+
+
+Test with this route:
+
+app.get("/api/v1/bootcamps", (req, res) => {
+  res.status(200).json({ success: true, msg: "Show all Bootcamps" });
+});
+

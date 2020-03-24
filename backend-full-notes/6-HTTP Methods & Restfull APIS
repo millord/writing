@@ -1,0 +1,127 @@
+6-HTTP Methods & Restfull APIS
+
+GET === Retrieve Resourse
+POST === Submit Resource
+PUT/PATCH === Update Resource
+DELETE === Delete/Destroy Resource
+
+-Formatting the URL
+
+GET /todos  Get todos
+GET /todos/1 Get todo with ID of 1
+POST /todos Add a todo
+PUT /todos/1 Update todo with ID 1
+DELETE /todos/1 Delete todo with ID 1
+
+
+1-Move this code inside the .on scope:
+
+res.writeHead(400, {
+    "Content-Type": "application/json"
+  });
+
+
+   res.end(
+        JSON.stringify({
+          succes: false,
+          data: null,
+          error: "Please add email"
+        })
+      );
+
+
+2-put above the let body =  [], this code to desctrutoring method and url from req
+const :
+
+ const {method, url} = req
+
+
+3-Right below where you get the body from  the Buffer write, initialize this:
+
+let status = 404
+  const response = {
+        succes: falase,
+        data: null
+      }
+
+4-now go inside the res.writeHead below and add:
+
+status instead of hard coding 404.
+
+5-Send reponse object just created in the res.end: 
+
+ res.end(JSON.stringify(response));
+
+6-ADD a GET request
+below the status const add this route:
+
+ if (method === "GET" && url === "/todos") {
+        status = 200;
+        response.succes = true;
+        response.data = todos;
+      }
+
+7-add a POST request
+
+-- TEST IT --
+
+below the if statement:
+
+else if (method === "POST" && url === "/todos") {
+        const { id, text } = JSON.parse(body);
+        todos.push({ id, text });
+        status = 201;
+        response.succes = true;
+        response.data = todos;
+ }
+--TEST IT --
+
+8- Do some valiation:
+
+if (!id || !text) {
+          status = 400;
+        } else {
+          const { id, text } = JSON.parse(body);
+          todos.push({ id, text });
+          status = 201;
+          response.succes = true;
+          response.data = todos;
+        }
+
+
+ALL TOGETHER:
+
+ if (method === "GET" && url === "/todos") {
+        status = 200;
+        response.succes = true;
+        response.data = todos;
+      } else if (method === "POST" && url === "/todos") {
+        if (!id || !text) {
+          status = 400;
+        } else {
+          const { id, text } = JSON.parse(body);
+          todos.push({ id, text });
+          status = 201;
+          response.succes = true;
+          response.data = todos;
+        }
+      }
+
+
+9-Add an error key in the reponse object and later if you get an 
+error set the response.error = "something"
+
+ let status = 404;
+      const response = {
+        succes: false,
+        data: null,
+        error: null
+      };
+
+
+ status = 400;
+          response.error = "Please add ID and Text";
+
+
+
+
