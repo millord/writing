@@ -1,0 +1,14 @@
+Filtering State
+
+1-go into the render:
+
+destructure:
+
+const {monsters, searchField} = this.state
+
+const filteredMonsters = monsters.filter(monster => 
+  monster.name.toLowerCase().includes(searchField.toLowerCase())
+)
+
+2-pass the filteredMonsters to the monsters CardList list
+

@@ -1,0 +1,22 @@
+9-Arrow functions
+
+
+extract the inline handleChange and put below the componentDidMount
+
+--MAKE SURE THIS IS BIND TO THE RIGHT SCOPE--
+
+
+handleChange = (e) => {
+  this.setState({searchField: e.target.value})
+}
+
+
+10-add an h1 with the title of monsters and add google fonts
+
+ <link
+      href="https://fonts.googleapis.com/css?family=Bigelow+Rules&display=swap"
+      rel="stylesheet"
+    />
+
+
+<h1 style={{ fontFamily: "Bigelow Rules", fontSize: "72px" }}>

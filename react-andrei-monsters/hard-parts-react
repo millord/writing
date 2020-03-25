@@ -54,3 +54,14 @@ with none of that:
 2-DECIDE the State and where is lives
 3-what changes when the State change.
 
+
+//// FILTERING 
+
+
+ const { presidents, searchField } = this.state;
+    const filteredPresidents = presidents.filter(president =>
+      president.name.toLowerCase().includes(searchField.toLowerCase())
+    );
+
+
+

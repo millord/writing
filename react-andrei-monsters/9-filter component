@@ -1,0 +1,31 @@
+9-Filter component
+
+1-create a new folder called search-box
+-create a file search-box-component.jsx
+
+js vs jsx
+
+-create the inside the same folder
+search-box.css
+
+copy this into that file:
+
+
+.search{
+-webkit-appearence: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 150px;
+  line-height: 30px;
+  margin-bottom: 30px
+}
+
+in the search-box-component
+import the css style
+create a functional component
+
+2-cut the input in the app component and place it inside the search-box component.
+add the styles in the className.
+
+add a placeholder and the handleChange function comming from the props.

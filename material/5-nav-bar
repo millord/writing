@@ -1,0 +1,31 @@
+1-crear este navbar e incluirla en un proyecto de React.
+
+Agregar en el head del html :
+
+<!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+
+   <nav>
+      <div className="nav-wrapper">
+        <div className="container">
+          <a href="#" className="brand-logo">
+            Logo
+          </a>
+          <ul id="nav-mobile" className="right hide-on-small-and-down">
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#">Acerca</a>
+            </li>
+            <li>
+              <a href="#">Contactos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
