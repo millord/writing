@@ -21,9 +21,10 @@ copy this into that file:
   margin-bottom: 30px
 }
 
+create a functional component
 in the search-box-component
 import the css style
-create a functional component
+
 
 2-cut the input in the app component and place it inside the search-box component.
 add the styles in the className.

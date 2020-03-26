@@ -22,16 +22,19 @@ with none of that:
       </div>
 
 
-// FETCHING DATA
+// FETCHING DATA (repeat 3 times each)
 
 
- fetch("http://localhost:8000/api/post")
-    .then(result => {
-      return result.json();
-    })
-    .then(result => {
-      setPosts(result);
-    });
+fetch("http://localhost:8000/api/post")
+  .then(reponse => reponse.json())
+  .then(result => setPosts(result));
+
+// with setState
+
+fetch("http://localhost:8000/api/post")
+  .then(reponse => reponse.json())
+  .then(result => this.setState({ value: result }));
+
 
 // AXIOS
 
@@ -45,7 +48,6 @@ with none of that:
         console.log(err);
       });
   }, []);
-
 
 
 /// GOOD REACT DEVELOPER
@@ -64,4 +66,16 @@ with none of that:
     );
 
 
+
+// FILTERING
+
+
+
+
+const { monsters, searchField } = this.state;
+    const filteredMonsters = monsters.filter(
+      monster =>
+        monster.email.toLowerCase().includes(searchField.toLowerCase()) |
+        monster.name.toLowerCase().includes(searchField.toLowerCase())
+    );
 

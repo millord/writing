@@ -1,0 +1,36 @@
+
+1-create a folder called routes
+-create  new file called bootcamp.js
+
+-import router from express and starting building the routes
+change app for router
+
+
+// routes
+app.get("/api/v1/bootcamps", (req, res) => {
+  res.status(200).json({ succes: true, msg: "Show all bootcamps" });
+});
+
+app.get("/api/v1/bootcamps/:id", (req, res) => {
+  res
+    .status(200)
+    .json({ succes: true, msg: `Get a bootcamp ${req.params.id}` });
+});
+
+app.post("/api/v1/bootcamps", (req, res) => {
+  res.status(200).json({ succes: true, msg: "Create new bootcamps" });
+});
+
+app.put("/api/v1/bootcamps/:id", (req, res) => {
+  res
+    .status(200)
+    .json({ succes: true, msg: `Update a bootcamp ${req.params.id}` });
+});
+
+app.delete("/api/v1/bootcamps/:id", (req, res) => {
+  res
+    .status(200)
+    .json({ succes: true, msg: `Delete a bootcamp ${req.params.id}` });
+});
+
+-export the routes

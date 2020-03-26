@@ -1,2 +1,103 @@
 
-1- 
+1- Collection
+
+create 5 li tags
+First Item
+Second Item...etc
+
+ul give a class of collection
+li class collection-item
+
+
+2-Collection as Links
+
+create a div give it a class of collection with 4 links with class of collection-item.
+
+--BADGES--
+
+Badges are inside a span
+
+Inside the same div create two a tags and give them a class of collection-item
+and inside the a tag create and span with one: class badge, value of a tag equal to 44 and inside the other a tag a span with class badge new and value of 3 for the span and Six item for the a tag.
+
+<a href="#" class="collection-item">
+    <span class="badge">44</span>Fith Item</a>
+<a href="#" class-"collection-item">
+    <span class="badge new">3</span>Sixth item</a>
+
+3-Collection with header
+
+-create an ul with fourth items having as childrem Item One, Item Two...
+
+-ul give it a class of collection with-header
+
+-put a h4 after the first item of the list
+
+4-Secondary content
+
+-create this structure:
+
+Copy all and start with the firt item giving this classes:
+
+ul collection with-header
+first li collection-header and inside this li an h4 tag witht the header you want
+the next li give the class of collection-item and the a tag inside the class of
+secondary-content, and use the icon from material-icons of type close.
+
+ <!-- SECONDARY CONTENT -->
+    <ul>
+      <li>
+        <h4>Items</h4>
+      </li>
+      <li>
+        <div>First Item
+          <a href="#">
+            <i>/i>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+
+5-Avatar Content:
+
+-for having an icon of image that the side:
+
+Simulating an address book
+
+ul class collection
+first li collection-item avatar
+icon underneath class material-icons blue circle
+span class title
+the a tag a class of secondary-content
+the next icon class material-icons and inside grade 
+
+<ul>
+      <li>
+        <i></i>
+        <span>John Doe</span>
+        <p>jdoe@gmail.com
+          <br> 555-555-5555
+        </p>
+        <a href="#">
+          <i></i>
+        </a>
+      </li>
+      <li>
+        <i></i>
+        <span>Brian Smith</span>
+        <p>bsmith@yahoo.com
+          <br> 444-444-4444
+        </p>
+        <a href="#">
+          <i></i>
+        </a>
+      </li>
+</ul>
+
+
+
+
+
+
+

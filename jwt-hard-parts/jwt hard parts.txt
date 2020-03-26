@@ -27,18 +27,31 @@ const registerValidation = data => {
   return schema.validate(data);
 };
 
+--REGISTERING THE USER--
 // avoid the same email
+// to block registering the same user
 const emailExist = await User.find({ email: req.body.email });
 if (emailExist) return res.status(400).send("Email already in the db...");
 
-// check same email/user
-
+// check same email/user --LOGIN THE USER IN --- 
 const user = await User.find({ email: req.body.email });
-if (!user) return res.status(400).send("Email already in the db...");
+if (!user) return res.status(400).send("Wrong password or email..");
 
 
 2-Hash the password
 
+// import bcryptjs
+
+// HASH THE PASSWORD
+// const salt = await bcrypt.genSalt(10);
+// const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
+// CREATE THE USER WITH THE HASHED PASS
+// const newUser = new User({
+//   name: req.body.name,
+//   email: req.body.email,
+//   password: hashedPassword
+// });
 
 // check for same password
 -Check if you have the same password
@@ -48,5 +61,24 @@ if(!validPass) return res.status(400).send('Invalid pass
 -add it to a function name auth that takes req, res, next
 3-JWT
 
+//CREATE AND ASIGN THE TOKEN
+// import jwt
+//  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+// SEND THE TOKEN IN THE HEADER
+//  res.header("auth-token", token).send(token);
+// create the private route middlewar
 
+const auth = (req, res, next) => {
+  const token = req.header("auth-token");
+  if (!token) return res.status(401).send("Access Denied");
+  try {
+    const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+    req.user = verified;
+  } catch (err) {
+    res.status(400).send("Invalid Token");
+  }
+  next();
+};
+
+module.exports = auth;
 

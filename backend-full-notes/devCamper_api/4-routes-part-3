@@ -1,0 +1,11 @@
+3-Routes part 3
+
+
+import the bootcamp route files into the server
+
+
+// create the middleware for that route
+
+app.use('/api/v1/bootcamps', bootcamps)
+
+TEST THE ROUTES WITH POSTMAN

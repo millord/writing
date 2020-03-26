@@ -1,0 +1,45 @@
+5-controllers
+
+
+1-create a folder called controllers
+
+-create the bootcamp.js
+
+-YOU NEED TO EXPORT EACH FILE
+
+
+crete the controllers, get all, get one, create, update and delete bootcamp 
+with this model below, getting the body of each controller from the routes file.
+
+
+// @desc Get all bootcamps
+// @route GET /api/v1/bootcamps
+// @access Public
+exports.getBootcamps = (req, res, next) => {
+  res.status(200).json({ succes: true, msg: "Show all bootcamps" });
+}
+
+
+2-Import the controller file inside the routes, using name convention.
+
+const {
+  getBootcamps,
+  getBootcamps,
+  createBootcamps,
+  updateBootcamps,
+  deleteBootcamps
+} = require("../controllers/bootcamps");
+
+
+
+router
+  .route("/")
+  .get(getBootcamps)
+  .post(createBootcamp);
+
+router
+  .route("/:id")
+  .get(getBootcamp)
+  .put(updateBootcamp)
+  .delete(deleteBootcamp)
+

@@ -29,10 +29,11 @@ blue-grey-text
 2-Backgrounds
 For the background you just have to remove the text part of the class.
 
+-- CREATE BACKGROUNDS
 if you have a darkm background and want to color the text e.g to white.
 
 deep-purple white-text
-
+ 
 
 3-Darken
 

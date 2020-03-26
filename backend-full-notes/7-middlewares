@@ -1,0 +1,42 @@
+Intro to middleware
+
+-In the server.js create the logger function
+
+go under where you declare the app variable
+
+and create the logger funct
+
+const logger = (req, res, next) => {
+  req.hello = "Hello World";
+  console.log("middleware ran");
+};
+
+
+app.use(logger())
+
+--TEST IT IN POSTMAN FROM ANY TYPE OF REQUEST:
+
+// Modify the the logger and add:
+
+const logger = (req, res, next) => {
+  console.log(
+    `${req.method} ${req.protocal}://${req.get("host")}${req.originalUrl}`
+  );
+  next();
+};
+
+-Create the in the root the folder middleware
+-create the logger.js
+-and require it into the server.js
+
+and put the logger function there and export it with module.exports = logger
+
+-install morgan and use
+require it
+
+and use it:
+
+
+if (process.env.NODE_ENV === 'development'){
+  app.use(morgan('dev'))
+}
