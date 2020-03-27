@@ -1,7 +1,7 @@
 Steps JWT
 
 1-create a project with npm init
-2-install express, nodemon (setup nodemon), dotenv, morgan, mongoose (go to npm to see how to require it)
+2-install express, nodemon (setup nodemon), dotenv, morgan, mongoose.
 3-initialize a server with express (first require the dotenv)(add the port from process.env (add DB, PORT, AND TOKEN_SECRET), nodemon script)
 4-create the routes folder
 5-create a new file inside it called auth.js

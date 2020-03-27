@@ -38,6 +38,16 @@ fetch("http://localhost:8000/api/post")
 
 // AXIOS
 
+with setState:
+
+ componentDidMount() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(response => this.setState({ monsters: response.data }));
+  }
+
+with hooks:
+
  useEffect(() => {
     axios
       .get("http://localhost:8000/api/post")
@@ -79,3 +89,5 @@ const { monsters, searchField } = this.state;
         monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
+
+/// WHEN DOING THE MONSTERS PROJECT DO IT FIRST IN CLASS LATER FUNCTION

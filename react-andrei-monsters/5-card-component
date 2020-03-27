@@ -8,19 +8,13 @@ App specific funtionality to each component
 create a folder inside the componentes folder
 and a file inside it called Card.jsx
 
-In the component acepts props to daysplay the information. The mapping should
-be done only in the CardList component
+In the component acepts props to display the information (name: h1, email: p and image). The mapping should
+be done only in the CardList component.
 
-<div className="card-container">
-    <img
-      src={`https://robohash.org/${props.monster.id}?set=set3&size180x180`}
-    />
-    <h1>{props.monster.name}</h1>
-    <p>{props.monster.email}</p>
-</div>
+-TAKE THE MAPPING FUNCTIONALITYIN THE APP COMPONENT AND PLACE IT IN THE CARD COMPONENT
+-IN THE APP COMPONENT REPLACE THE PROPS BY ONLY THIS.STATE.MONTERS
 
-
-
+use this to get the images: https://robohash.org/${props.monster.id}?set=set3&size180x180
 
 -card-style.css:
 

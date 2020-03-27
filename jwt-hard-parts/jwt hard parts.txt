@@ -30,7 +30,7 @@ const registerValidation = data => {
 --REGISTERING THE USER--
 // avoid the same email
 // to block registering the same user
-const emailExist = await User.find({ email: req.body.email });
+const emailExist = await User.findOne({ email: req.body.email });
 if (emailExist) return res.status(400).send("Email already in the db...");
 
 // check same email/user --LOGIN THE USER IN --- 
@@ -56,17 +56,30 @@ if (!user) return res.status(400).send("Wrong password or email..");
 // check for same password
 -Check if you have the same password
 const validPass = await bcrypt.compare(req.body.password, user.password)
-if(!validPass) return res.status(400).send('Invalid pass
+if(!validPass) return res.status(400).send('Invalid user
+
 
 -add it to a function name auth that takes req, res, next
 3-JWT
 
-//CREATE AND ASIGN THE TOKEN
+//CREATE THE TOKEN
 // import jwt
 //  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
 // SEND THE TOKEN IN THE HEADER
 //  res.header("auth-token", token).send(token);
 // create the private route middlewar
+
+
+//0- create a function named auth, that takes req, res, and next as arguments
+
+// 1- grab the token if there is not token accesss denied
+
+//2- if there is token you need to verify
+
+// 3- asign the token to req.user
+
+//5- allow the next middleware
+next();
 
 const auth = (req, res, next) => {
   const token = req.header("auth-token");

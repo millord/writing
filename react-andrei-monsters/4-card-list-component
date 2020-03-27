@@ -16,9 +16,12 @@ export const CardList  = (props) => {
 	
 }
 
+import CarList into the App component
+Place the mapping capability into this component.
 2-add the CardList component on top of monster map
 
 -Create the CardList so that you can move the map function inside it.
+PUT THE MAPPING INSIDE THE CardList component
 
 3-create next to the card-list-component.jsx a card-list-style.css and add:
 

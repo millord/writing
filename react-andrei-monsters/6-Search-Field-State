@@ -2,9 +2,11 @@
 
 1-go inside the div with the class App and add an input field:
 
-<input type="search" />
+<input type="search" placeholder="search robots" />
 
--add searchField into the state and add an onChange property to the input element to update the state using setState.
+-add searchField into the state and add an onChange property to the input element to update the state using setState from the event.
+
+
 
 
 

@@ -1,6 +1,6 @@
 2-go into the state and add the monsters
 
--create an array with monsters object and map through them:
+-create a array with monsters object and map through them:
 
 
 Three ways to map
