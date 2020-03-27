@@ -1,0 +1,36 @@
+2-routing pages
+
+---create  two pages one for Signup and Signin---
+
+1-in the src create a new folder called user and there create the Signup.js
+
+-make a functional component
+
+with a div that says Signup
+
+2-create the Signin.js with the same approach of the Signup.js
+
+-create the react-router-dom
+
+3-create the Routes.js inside the src
+
+-import BrowserRouter, Switch and Route from react-router-dom
+-import Signup and Signin into this component (Routes).
+
+make it a funcitonal component name Routes.
+
+in the return place a Switch (inside the Switch you can add the Routes)
+
+<Route path="/signin" exact component={Signin} />
+
+create other  Route for signup
+
+
+
+
+
+
+
+
+
+

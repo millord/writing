@@ -1,0 +1,22 @@
+2 - routing part 2
+
+
+
+1-- replace the div for the BrowserRouter component.
+
+go into the index.js and replace App for Routes.js
+
+-restart the server and you will see nothing.
+
+2-go to the /signin and /signup and test.
+
+3-create a folder called core inside the src directory and there create the
+a new called Home.js
+
+Home is a funcional component only diplaying Home for now.
+
+-import the Home.js into the Routes.js
+
+and add the route with / above the all routes.
+
+

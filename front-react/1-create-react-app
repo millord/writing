@@ -1,0 +1,11 @@
+1-create the app
+
+-npx create-react-app ecommerce-front
+
+-Eliminate the src folder and create a new src with App.js and index.js indise
+
+2-initialize index and App.js
+
+-Make App a functional component with a div that says hello from react.
+
+
