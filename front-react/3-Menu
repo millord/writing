@@ -1,0 +1,42 @@
+Menu and active links
+
+1-go to the boostrap site and add the css on the index.html
+
+
+-import from react-router-dom the Link and withRouter components
+withRouter === to access history
+
+-Go to the core folder and add a file calle Menu.js
+-Make it a functional component.
+
+2-return a div with a ul inside with className="nav nav-tabs bg-primary"
+
+Inside the ul create 3 li for home, signin, signup.
+-give each li the class of nav-item 
+-inside the li create links using Link (from router) and give them a class of nav-link.
+
+NOTE: export this component using export default a the button using withRouter:
+
+export default withRouter(Menu)
+
+3-go to the Routes component and import Menu
+-place it on top of Switch.
+
+4-create a helper method for the active links and styling
+
+--Put this just below the import statements and above the Menu component.
+
+const isActive = (history, path) => {
+  if(history.location.pathname === path){
+    return {color: "#ff9900"}
+ } else {
+     return {color: "#fffff"} 
+   }
+}
+
+
+5-go to the home link and add a style tag with the value style={isActive(history, '/')}
+-do the same with the other links.
+-add history to the props using distructoring.
+
+
