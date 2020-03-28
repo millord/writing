@@ -1,0 +1,84 @@
+GRID SYSTEM PART 2
+
+12 1 Columns
+
+Change the s1 to m1:
+
+ <div class="col m1">
+     <div class="box">
+         1
+   </div>
+</div>
+
+and add also the class of s12
+
+ <div class="col m1 s12">
+     <div class="box">
+        1
+   </div>
+</div>
+
+
+This will stack all the columns when they get to small size
+
+You give the m4 so it will be 4 3 columns big sizes medium but at small scream it will stack adding the s12 class:
+
+ <div class="row">
+        <div class="col m4 s12">
+          <div class="box">1</div>
+        </div>
+        <div class="col m4 s12">
+          <div class="box">2</div>
+        </div>
+        <div class="col m4 s12">
+          <div class="box">3</div>
+        </div>
+      </div>
+
+ALL CLASSES
+
+
+
+     <div class="row">
+        <div class="col xl9 l8 m6 s12">
+          <div class="box">1</div>
+        </div>
+        <div class="col xl3 l4 m6 s12">
+          <div class="box">2</div>
+        </div>
+      </div>
+
+
+On xl 9 and 3, on l 8 and 4, on m 6 and 6.
+
+
+PULL AND PUSH
+
+This is normal
+
+
+  <div class="row">
+        <div class="col s7">
+          <div class="box">1</div>
+        </div>
+        <div class="col s5">
+          <div class="box">2</div>
+        </div>
+      </div>
+
+This is applying push and pull
+
+  <div class="row">
+        <div class="col s7 push-s5">
+          <div class="box">1</div>
+        </div>
+        <div class="col s5 pull-s7">
+          <div class="box">2</div>
+        </div>
+      </div>
+
+They look reverse.
+
+
+
+

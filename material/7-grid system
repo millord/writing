@@ -1,0 +1,62 @@
+GRID SYSTEM
+
+1-add a style tag a the top and add this to see the columns better:
+
+<style>
+    .box{
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center
+ }
+
+</style>
+
+2-NON REPONSIVE GRID
+ALL GRID SHOULD BE WRAP IN THE CLASS OF ROW
+
+12 1 Columns
+
+-create a div with the class of row
+-create 2 more divs, one with the class of box (from the style tag)
+-and the other class col s1.
+-add numbers inside the box class starting with 1 until 12
+
+  <div class="col 1">
+   <div class="box">
+     1
+   </div>
+</div>
+
+Do it 12 times all inside a div with class row
+
+3- 3 4 colomns divs
+
+<div class="col s4">
+   <div class="box">1</div>
+ </div>
+
+4- 2 6 columns div
+
+ <div class="col s6">
+    <div class="box">1</div>
+ </div>
+
+5- 8 & 4
+
+  <div class="row">
+        <div class="col s8">
+         <div class="box">1</div>
+       </div>
+       <div class="col s4">
+     <div class="box">2</div>
+   </div>
+ </div>
+
+
+RESPONSIVE GRID
+
+
+
+
+
+
