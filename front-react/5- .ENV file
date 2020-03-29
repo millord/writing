@@ -1,0 +1,23 @@
+5- .env
+
+
+create and .env file in the src of the project.
+
+and add inside:
+
+REACT_APP_API_URL=http://localhost:8000/api
+
+2-go to signup and test it
+
+inside the Layout body add:
+
+{process.env.REACT_APP_API_URL}
+
+
+3-inside the src create a file called config.js
+
+and inside add:
+
+export const API = process.env.REACT_APP_API_URL
+
+replace this: {process.env.REACT_APP_API_URL} with {API} 

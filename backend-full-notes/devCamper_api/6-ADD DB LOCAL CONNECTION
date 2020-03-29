@@ -1,0 +1,46 @@
+
+0-go to the config.env file and add:
+
+DB=mongodb://localhost/devcamper
+
+1-after than install mongoose
+npm i mongoose
+
+create a new file in the config folder called db.js
+
+there add this function to activate the database:
+
+
+const mongoose = require("mongoose");
+
+const connectDB = async () => {
+  const conn = await mongoose.connect(process.env.DB, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+  });
+  console.log(`MongoDB connected: ${conn.connection.host}`.cyan.underline.bold);
+};
+
+module.exports = connectDB;
+
+
+;
+
+2-go into server.js, require connectDB from db.js
+
+right under loading the config add the connectDB function:
+
+// Connect to db
+connectDB()
+
+// Handle unhandle promise rejections (add this below listening to the server in the server.js)
+
+-create a const server from app.listen
+
+process.on("unhandledRejection", (err, promise) => {
+  console.log(`Error: ${err.message}`);
+  // Close server and exit process
+  server.close(() => process.exit(1));
+});
+

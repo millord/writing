@@ -1,0 +1,12 @@
+
+
+1-Add node-sass
+
+npm i node-sass
+
+
+2-create a new file in the src called homepage.styles.scss 
+
+
+
+ 

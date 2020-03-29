@@ -1,0 +1,33 @@
+User signup success and error
+
+go to the signup for and controlled the input values
+
+-go into input for the name and add: 
+value={name}
+email={email}
+password={password}
+
+-go to the clickSubmit and since is a promise you can catch the error.
+-add this after:
+signup({name, email, password})
+.then(data => {
+   if(data.error){
+    setValues({...values, error: data.error, success: false })
+ } else {
+    setValues({
+     ...values,
+     name: '',
+     email: '',
+     password: ''
+     error: ''
+     success: error
+ })
+}
+})
+
+
+REMEMBER THIS HAPPENS AFTER CREATING THE USER.
+
+
+
+if we get an error we will update the error in the state

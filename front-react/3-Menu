@@ -2,20 +2,19 @@ Menu and active links
 
 1-go to the boostrap site and add the css on the index.html
 
+-Create inside the core folder the Menu.js componet
 
 -import from react-router-dom the Link and withRouter components
 withRouter === to access history
 
--Go to the core folder and add a file calle Menu.js
--Make it a functional component.
 
-2-return a div with a ul inside with className="nav nav-tabs bg-primary"
+2-return a div with a ul class of className="nav nav-tabs bg-primary"
 
-Inside the ul create 3 li for home, signin, signup.
+The create a ul with  3 li for home, signin, signup.
 -give each li the class of nav-item 
 -inside the li create links using Link (from router) and give them a class of nav-link.
 
-NOTE: export this component using export default a the button using withRouter:
+NOTE: export this component using export default a the bottom using withRouter:
 
 export default withRouter(Menu)
 

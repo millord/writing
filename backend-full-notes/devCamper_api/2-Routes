@@ -2,7 +2,7 @@
 
 
 
-Create a testing route sending ("Hello from express")
+Create a testing route in the server.js file sending ("Hello from express")
 -send an object:
 
 {name: "Brad"}

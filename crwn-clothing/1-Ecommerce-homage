@@ -1,0 +1,34 @@
+
+
+1-Do some clean up in the project, delete serviceWorkers and return a hello world into the app component.
+
+2-in the src create the homepage-component.jsx
+-make it a functional component
+
+returning a div with className="homapge"
+
+<div className="homepage">
+      
+</div>
+
+and inside two components:
+
+-The container for the menu
+-Menu items
+
+<div className="directory-menu">
+        
+ </div>
+
+and the:
+
+<div className="content">
+   <h1 className="title">HATS</h1>
+   <span className="subtitle">SHOP NOW</span>
+</div>
+
+3-Copy the menu items five times.
+
+
+4-import he HomePage component into the App component
+ 

@@ -31,3 +31,9 @@ Redirection
 
 ASK YOURSELF A QUESTION WITH ANY OF THEM:
 
+// CATCHING THE ERRORS
+
+WHEN YOU USE .then the errors get handle with .catch
+
+When using async you have to handle the erros with a try catch.
+

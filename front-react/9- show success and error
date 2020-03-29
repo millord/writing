@@ -1,0 +1,33 @@
+User signup success and error part 2
+
+-right below the signUpForm create the methods:
+
+const showError = () => (
+  <div className="alert alert-danger" style={{ diplay: error ? "" : "none" }}>
+    {error}
+  </div>;
+);
+
+-for success:
+
+const showSuccess = () => (
+  <div className="alert alert-info" style={{ diplay: success ? "" : "none" }}>
+    New account is created. Please signin.
+  </div>;
+);
+
+call the two methods on top of the signUpForm inside the Layout.
+
+
+1-Disctructure error and success at the top  along with the other values.
+
+--TEST IT AND PUT ***return before the fetch method***
+
+1-After the evet.preventDefault add:
+setValues({...values, error: false})
+
+
+2-Add the Link to go to signin
+
+on the show success replace signin for:
+ <Link to="/signin">signin</Link> 

@@ -5,6 +5,7 @@
 -import router from express and starting building the routes
 change app for router
 
+--TEST THEM!!!!! --
 
 // routes
 app.get("/api/v1/bootcamps", (req, res) => {
@@ -34,3 +35,5 @@ app.delete("/api/v1/bootcamps/:id", (req, res) => {
 });
 
 -export the routes
+
+--- TEST THEM!!

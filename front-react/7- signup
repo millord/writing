@@ -1,0 +1,29 @@
+User Signup
+
+
+1- in the button add an onClick method with clickSubmit (also add it to the button) inside.
+
+2-createt the function below handleChange.
+
+
+const clickSubmit = (event) => {
+    event.preventDefault()
+    signup(name, email, password)
+  }
+
+
+-First after the useState destructure all the values:
+
+const { name, email, password } = values;
+
+- to create  new user create a new method called signup and place it
+inside the clickSubmit handler.
+
+const signup = () => {
+   console.log(name, email, password);
+}
+
+Test it
+
+
+

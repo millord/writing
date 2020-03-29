@@ -13,7 +13,7 @@
 -set up nodemon => start
 
 3-create a config folder and inside config.env file
-add PORT 5000
+add PORT 5000, NODE_ENV=development
 
 -Load the config file
 

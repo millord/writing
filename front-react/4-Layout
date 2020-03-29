@@ -1,0 +1,43 @@
+Shared Layout
+
+
+
+1-go inside the core folder and create the Layout.js component
+
+-there create a functional component accepting props.
+
+in props destructure title, description,  children, and className.
+each of them but children with a default value of:
+title= 'Title'
+description: 'description'
+
+-in the div inside the body of Layout add a class of jumbotron.
+
+-create a h2 with {title}
+and a p tag with class lead with {description} inside.
+
+put all inside another div. as: 
+
+--PUT CODE INSIDE---
+
+ <div>
+    <div className="jumbotrom">
+      <h2>{title}</h2>
+      <p className="lead">{description}</p>
+    </div>
+<div className={className}>{children}</div>
+  </div>;
+
+2-go to the Home component and import Layout and instead of having a div there
+add the Layout component passing the title, description:
+
+<Layout title="Home Page" description="Node React E-commerce App">
+...
+</Layout>
+
+3-add this same code in signin and signup.
+
+4-go to the Layout component again and import Menu and add it on top of the div
+with the class of jumbotron. And remove the Menu component from the Routes component.
+
+

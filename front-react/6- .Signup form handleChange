@@ -1,0 +1,28 @@
+5- Signup form handleChange
+
+change to curly braces to add a return inside the Signup component.
+Inside the return, return the Layout component.
+
+1-Above the return start creating the signUpForm function like this:
+
+
+const SignUpForm = () => (
+    <form>
+      <div className="form-group">
+        <label className="text-muted">Name</label>
+        <input type="text" className="form-control" />
+      </div>
+    ...
+    </form>
+  );
+
+With two more fields, email and password, in the email change the type to email
+and in the password type to password. 
+
+-call the SignUpForm() inside the Layout.
+
+
+-Add a button with class btn btn-primary below the last div in the form:
+
+-Add the className of container col-md-8 offset-md-2 in the Layout.
+
