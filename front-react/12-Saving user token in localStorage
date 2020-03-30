@@ -1,0 +1,34 @@
+Saving user token in localStorage
+
+
+1-Go to the state of the Signin component and hard-core the values:
+
+email: "juanmillord@gmail.com"
+password: "1234567"
+
+2-clear the data from the localStorage going in the developer tools to application
+and clear storage.
+
+3-go to the auth/index.js and add at the bottom:
+
+export const authenticate  = (data, next) => {
+    if(typeof window !== "undefined") {
+      localStorage.setItem('jwt", JSON.stringify(data))
+       next();
+  } 
+}
+
+4-go into the Signin component and in the else block, remove
+the values including the redirect and add instead:
+
+authenticate(
+   data,
+   () => {
+   setValues({
+   ...values,
+   redirectToReferrer:true
+  })  
+  }
+ )
+
+

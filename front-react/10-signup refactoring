@@ -1,0 +1,13 @@
+User signup refactoring
+
+
+Go to the src forder and create a new folder called auth
+-there create a file called index.js
+-paste the code of the signup function.
+-import it back in the Signup.js
+import {signup} from '../auth'
+
+TEST IT
+
+
+

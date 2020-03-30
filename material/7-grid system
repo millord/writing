@@ -17,8 +17,8 @@ ALL GRID SHOULD BE WRAP IN THE CLASS OF ROW
 12 1 Columns
 
 -create a div with the class of row
--create 2 more divs, one with the class of box (from the style tag)
--and the other class col s1.
+-create 2 more divs, 
+-one with the  class col s1 and other with the class of box (from the style tag)
 -add numbers inside the box class starting with 1 until 12
 
   <div class="col 1">

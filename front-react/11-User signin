@@ -1,0 +1,58 @@
+User signin 
+
+-Go into the index.js inside auth
+
+-Copy the signup method and rename it signin:
+-change the route of fetch.
+
+== THATS IT, Test it.
+
+
+1-Now go to the Signin.js and copy all from the Signup.js
+
+*Make some changes:
+
+-name of the component
+-import signin from auth
+-in the clickSubmit use signin instead of signup
+-send only email and password, get rid of the name in the signin function parameters
+-in the form delete the name.
+-remove the name of the state
+-change success for loading: false
+-add a redirectToReferrer into the state with value of false.
+
+2-Change the destructure, add loading and remove, name, success, redirectToReferrer.
+
+-handleChange wills stay the same
+-in the clickSubmit in seating the values, add loading to true.
+
+-but if you get any error set loading to false
+
+-Eliminate all the values just leave ...values and add:
+redirectToReferrer: true
+
+--YOU DONT NEED TO WORRY ABOUT EMPTYING THE VALUES
+
+
+3-Below change showSucces for showLoading.
+
+-in the body of the function add:
+
+loading && (<div className="alert alert-info"><h2>Loading...</h2><div>)
+
+4-Below the showLoading create the function redirectUser:
+
+const redirectUser = () => {
+  if(redirectToReferrer){
+    return <Redirect to="/" />
+ }
+}
+
+import from Redirect at the top.
+
+5-Go to the botton instead of showSucces put showLoading and below signUpForm add
+{redirectUser()}
+
+
+
+

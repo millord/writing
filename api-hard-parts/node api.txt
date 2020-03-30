@@ -1,19 +1,17 @@
 NODE.js Rest API
 
 1-npm init a project.
-2-npm i express nodemon dotenv morganmongoose
+2-npm i express nodemon dotenv morgan mongoose
 3-add nodemon to the package.json
-4-create the app.js
+4-create the app.j	s
 5-start listening in a basic express server
 import dotenv
 run the server
+-create a routes folder in the route directory
 6-create a route to '/', sending the message "Hello world"
 7-npm start
 ---
 1-Connect to the database
--npm i mongoose
--create the .env
--save the mongoAtlas string there
 -import mongoose into the app.js file
 -connect to the database in the app.js file.
 
@@ -26,7 +24,7 @@ import the route into app.js (postRoutes).
 Create the middleware.
 // MIDDLEWARE
 
-app.use('post', postsRoutes)
+app.use('/api/posts', postsRoutes)
 
 ---
 CREATE THE MODEL
@@ -34,30 +32,33 @@ CREATE THE MODEL
 1-create a model folder
 -create the Post file
 2-create the postSchema with these fields:
--title
--description
+-title min 6 max 30 required
+-description min 6 max 254 required
 -date (add a default date)
+default: Date().now
 3-export the model
 module.exports = mongoose.model("Post", postSchema)
 
 ----
 CREATE A POST
 -add the app.use(express.json()) middleware.
+-and morgan
 1-Import in the model in the posts route file.
 2-using router.post create the route.
 
- router.post('/',  async (req, res) => {
-	const post =  new Post({
-	title: req.body.title,
-	description: req.body.description
-  })
-try {
-   const savedPost = await post.save()
-   res.json(savedPost)		
-}catch(err)  {
-  res.json({message: err})
-}
-})
+
+router.post("/", async (req, res) => {
+  try {
+    const post = new Post({
+      title: req.body.title,
+      description: req.body.description
+    });
+    const savedPost = await post.save();
+    res.status(201).send(savedPost);
+  } catch (err) {
+    res.status(400).send({ message: err });
+  }
+});
 
 
 TEST IITT
@@ -65,26 +66,26 @@ TEST IITT
 
 //GETTING ALL THE POST
 
-router.get('/', async(req, res) => {
-    try{
-      const posts  = await Post.find()
-  }catch(err){
-      res.json({message.err})
-    }
-  })
+router.get("/", async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.status(200).send(posts);
+  } catch (err) {
+    res.status(400).send({ message: err });
+  }
+});
   
 
 -----
 // GET A SPECIFIC POST
-router.get("/:postId", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const post = await Post.findById(req.params.postId);
-    res.json(post);
+    const post = await Post.findById(req.params.id);
+    res.status(200).send(post);
   } catch (err) {
-    res.json({ message: err });
+    res.status(400).send({ message: err });
   }
 });
-
 
 
 /// DELETE A POST

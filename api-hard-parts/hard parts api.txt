@@ -1,5 +1,4 @@
 Api hard parst:
-// DELETE ROUTE
 
 1-CREATE THE ROUTER
 2-export it at the bottom

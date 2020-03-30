@@ -1,0 +1,36 @@
+ User logout
+
+go to the index.js in the auth folder
+
+-create a new function:
+
+a) remove the token from localStorage.
+b) request to backend that we are logout
+c) redirect the user.
+
+export const signout = next => {
+  if(typeof window !== "undefined"){
+    localStorage.removeItem('jwt')
+    next()
+    return fetch(`${API}/signout`, {
+      method: "GET"
+    })
+    .then(response => {
+      console.log('signout', response)
+    }).catch(err => console.log(err))
+  }
+}
+
+1-import the signout into the Menu component.
+-Copy one li and change it to Signout
+-remove the style and add: 
+   style={{cursor: "pointer", color: "white"}}
+-instead to="/signup" change it to:
+
+onClick={() =>  signout(() => {
+  history.push("/")
+})}
+
+
+-change the li to a span
+

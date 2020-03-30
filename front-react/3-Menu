@@ -10,7 +10,7 @@ withRouter === to access history
 
 2-return a div with a ul class of className="nav nav-tabs bg-primary"
 
-The create a ul with  3 li for home, signin, signup.
+Then create a ul with  3 li for home, signin, signup.
 -give each li the class of nav-item 
 -inside the li create links using Link (from router) and give them a class of nav-link.
 

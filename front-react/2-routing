@@ -1,12 +1,14 @@
 2-routing pages
 
----create  two pages one for Signup and Signin---
+-npm i react-router-dom
+
+---create  two components one for Signup and Signin---
 
 1-in the src create a new folder called user and there create the Signup.js
 
--make a functional component
+-make a functional component.
 
-with a div that says Signup
+with a div that says Signup.
 
 2-create the Signin.js with the same approach of the Signup.js
 
