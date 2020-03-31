@@ -1,0 +1,39 @@
+Cards part 2
+
+
+1-Card reveal
+
+COPY THE SKELETON FROM THE CARDS FILe
+
+-first div: class card
+-div wrapping the image: class: card-image waves-effect waves-light waves-block
+-add the image with class of activator
+-below add a div with the class of: card-content (nesting a span and a i tag)
+-the span with a class : card-title
+-the i tag with class: material-icons (inside more_vert)
+-the a tag with have a class : activator
+-the div inside the reveal a class of: card-reveal
+-the span a class of card-title
+-the next icon will have a have a class of close 
+-add the activator class next to the card-title
+
+
+2-Tabbed card
+
+COPY THE SKELETON
+
+-first div class card
+-second class of card-content
+-span card-title
+-the next div a class of card-tabs 
+-to the nested ul a class of tabs tabs-width-fixed
+-and each li a class of tab
+-each a tag with href from #tab1 to three
+-the last div with class: card-content
+-each div will match the #tab number from above.
+
+
+
+ 
+
+

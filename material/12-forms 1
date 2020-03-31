@@ -1,0 +1,43 @@
+forms 1
+
+
+copy the skeleton
+
+1-Text field
+
+add to the div wrapping the input and label a class of input-field
+
+2-text area
+add a class to the div wrapping the text area of: input-field
+add a class of to the textarea tag: materialize-textarea
+
+3-inline field
+add a class of inline next to the input-field class. 
+
+4-icon prefix
+first div class input-field
+i tag class material-icons prefix inside phone (to ge the phone icon)
+
+5-Validation
+
+-first div input-field
+input tag a class of validate
+and add a message of:
+add on the label tag: data-error="Invalid" data-success="Valid"
+
+6-Select
+
+wrapping div class input-field 
+-inside the select create 4 options
+-the first one option will have attributes of: disabled selected.
+Populate them with text Option 1 to 4.
+-go to the jquery down and initialize the select list:
+using jquery
+$('select).material_select();
+
+
+
+
+ 
+
+

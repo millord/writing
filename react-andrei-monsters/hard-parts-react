@@ -1,4 +1,4 @@
-Three ways to map
+Two ways to map
 
 with return:
 
@@ -13,13 +13,7 @@ with only parenthesis:
           <h1>{monster.name}</h1>
   ))}
 
-with none of that:
 
- <div className="App">
-        {this.state.monsters.map(monster => (
-          <h1>{monster.name}</h1>
-        ))}
-      </div>
 
 
 // FETCHING DATA (repeat 3 times each)

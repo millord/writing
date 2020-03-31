@@ -1,0 +1,21 @@
+forms 2
+
+
+copy the skeleton from forms 1
+
+
+Options groups
+
+
+-Eliminate the first option tag (The one with the disabled and seleted)
+
+-create a optgroud tag:
+<optgroup label="Option Group 1">
+ <option value="1">Option 1</option>
+ <option value="2">Option 2</option>
+</optgroup>
+
+
+ 
+
+

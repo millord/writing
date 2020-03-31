@@ -1,0 +1,38 @@
+Cards 
+
+A nice way to display content
+
+1-Simple card without a title
+
+-create two divs, first with class of row and second with class col m6 s12 (2 coloumns of 6) 
+
+-for creating the cards create two divs
+
+-first class: card
+-second class: card-content
+
+2-Card with color
+
+first div class: card red darken-2
+second: card-content white-text
+
+3-With Title
+
+first div: class card
+second class: card-content
+to the span  (with the title) class of: card-title
+below the content add to links in a div :
+div class: card-action
+that will work
+
+4-With Image:
+
+first div class: card
+second: card-image (wrap and image in a img there)
+below the image tag a span with class card-title
+and in the content div class: class-content
+-in the div below with the a link saying read more add a class of:
+card-action
+ 
+
+

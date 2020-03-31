@@ -1,0 +1,35 @@
+Conditionally show 
+
+
+1-Create a helper method in the auth/index
+
+called the function:
+
+export const isAuthenticated = () => {
+  if (typeof window == "undefined") {
+    return false;
+  }
+  if (localStorage.getItem("jwt")) {
+    return JSON.parse(localStorage.getItem("jwt"));
+  } else {
+    return false;
+  }
+};
+
+2-import this method into the Menu component.
+
+3-If no authenticated we will show the signin and signup 
+
+-cut the signup and signin links and put them into a block
+
+{!isAutenticated && ( --<div>put the links here-- </div>)}
+
+4- signup
+
+cut it and put it into a block checking if isAuthenticated show the link:
+{isAuthenticated() && (--put link here --)}
+
+5-Fixing the style:
+
+Wrap all the links into a Fragment.
+

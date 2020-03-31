@@ -1,0 +1,35 @@
+1-create a new folder called models
+
+-create a file called Bootcamp
+
+- require mongoose
+
+-create the BootCampSchema:
+
+Add this fields:
+
+
+name: String, required: [true, "Please add name"],
+unique:true, trim:true, maxlength: [50, "Name can not be more than 50 characters"]
+
+slug: String,
+description: String, required:[true, "Please add a description"],
+unique:true, maxlength: [500, "Description can not be more than 500 characters"]
+
+Copy the other fields:
+
+-website
+-phone
+-email
+-address 
+-location
+-careers
+-averageRating
+-averageCost
+-photo
+
+
+at the end:
+
+module.exports = mongoose.model("Bootcamp", BootcampSchema)
+

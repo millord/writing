@@ -1,0 +1,41 @@
+breadcrumb
+
+
+COPY THE SKELETON FROM THE CARD FILE
+
+
+1-Breadcrumbs
+
+-nav with class gray
+-next div class: nav-wrapper
+-div below class: container
+-next class: col s12
+-all the a tags class: breadcrumb
+
+
+
+
+2-Footer
+-give a class of: page-footer grey darken-3 to the footer tag
+firts div class: container
+third class row
+fourth div class col s12 m6
+h5 class: grey-text text-lighten-3 About Us
+the p tag lorem20
+a div below with class: col s12 m4 offset-m2
+h5 class: grey-text text-lighten-3 Links
+-create a ul with 4 li , each having an a tag with class: white-text Link 1
+
+ADD a copy write area:
+after the last div  (container) add:
+
+div class: footer-copyright and inside that that a div with class
+container having as body Copyright &copy; 2020 
+inside that div add too an a tag with class:
+grey-text text-lighten-3 right having inside Terms & Conditions 
+lastly add a class of grey darken-2 to the div with the class
+footer-copyright. 
+
+ 
+
+
