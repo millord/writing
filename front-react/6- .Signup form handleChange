@@ -26,3 +26,57 @@ and in the password type to password.
 
 -Add the className of container col-md-8 offset-md-2 in the Layout.
 
+
+Signup
+
+Grabing the values
+
+
+1-Add useState in the Signup component:
+
+  const [value, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+    error: "",
+    success: false
+  });
+
+
+This is to avoid:
+
+const [name, setName] = useState('')
+const [email, setEmail] = useState('')
+
+So you create an object.
+
+2-above the signUpForm create handleChage method which is going
+to be a high order function (function returning another function)
+
+ const handleChange = name => event => {
+    
+  }
+
+-go to the input of name and add an onChange method with the function
+handleChange inside having 'name' as argument.
+
+onChange={handleChange('name')}
+
+email:
+
+onChange={handleChange('email')}
+
+password:
+
+onChange={handleChange('password')}
+
+-setting the state:
+
+ const handleChange = name => event => {
+    setValues({ ...values, error: false, [name]: event.target.value });
+  };
+
+using [name]: will make this dynamic and depending what is type will get right value.
+
+-below the signUpForm in the return add:
+{JSON.strigigy(valu

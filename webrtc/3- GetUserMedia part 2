@@ -1,0 +1,9 @@
+2-GetUserMedia
+
+Allow only audio
+
+let constraints = { audio: false, video: true };
+
+
+
+

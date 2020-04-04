@@ -1,0 +1,41 @@
+2-GetUserMedia
+
+1-Go into the views/index
+-inside the body add:
+
+<video autoplay></video>
+
+1-Get a reference for user media:
+-if one of those methods work getUserMedia will get a reference, using
+a script tag add:
+
+  <script>
+      navigator.getUserMedia =
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia;
+    </script>
+// turn on the audio and video:
+
+ let constraints  ={audio: true, video: true}
+
+Get a reference to the video area:
+let videoArea = document.querySelector('video')
+
+// create the onSuccess function to get the video:
+
+  function onSuccess(stream) {
+        console.log("Success We have a stream");
+        videoArea.srcObject = stream;
+        videoArea.play();
+      }
+
+// create the onError function:
+
+  const onError = error => {
+        console.log("Error with the getUserMedia: ", error);
+      };
+
+// call the navigator:
+
+ navigator.getUserMedia(constraints, onSuccess, onError);

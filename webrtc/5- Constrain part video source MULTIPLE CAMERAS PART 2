@@ -1,0 +1,18 @@
+2-Above our video tag add a select tag to select the 
+camara we will use:
+at the top in the script tag:
+
+Video: <select id="camera"></select>
+
+3-get a reference to the video selector.
+-populate with the list of cameras source
+
+var videoSelect = document.querySelector('#camera')
+
+4-We use the MediaStreamTrack to get a list of sources:
+
+MediaStreamTrack.getSources(getCamera);
+
+
+
+

@@ -1,0 +1,7 @@
+1-import the PrivateRoute into the Routes component
+
+2-import the Dashboard from UserDashboard
+
+3-below the Signup route add the PrivateRoute with Dashboard as component.
+
+

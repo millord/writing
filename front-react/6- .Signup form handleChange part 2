@@ -8,7 +8,7 @@ Grabing the values
     email: "",
     password: "",
     error: "",
-    succes: false
+    success: false
   });
 
 

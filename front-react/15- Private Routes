@@ -1,0 +1,69 @@
+1-go to the user folder and create the UserDashboard.js
+
+-import the Layout component
+-create a functional component
+
+2-return the Layout passing:
+title=User Dashboard
+description="User Dashboard"
+add ... inside
+
+
+3-Go to the menu and create  link right after Home.
+how do you add a link into the Menu component with Dashboard title.
+
+
+--- IMPORTANT ---
+
+create a new file inside auth called PrivateRoutes.js:
+
+
+-We will create a functional component that will as a prop a component
+and the rest of the props.
+
+-before we return the route with apply the auth method if is authenticated
+we send the component.
+
+
+4-So go into the PrivateRoutes component and make a functinal component:
+
+-import Route, Redirect from react-router-dom
+
+-import the isAuthenticated user from auth index
+if is authencated we grab the user from the localStorage.
+
+const PrivateRoute = ({component: Component, ...rest}) =>(
+  <Route {...rest} render={props => isAuthenticated() ? () : ()}/>
+)
+
+--take in the props the component, import it at the top:
+Import React, {Component} from 'react'
+
+then after acceting props you return a Route with the rest of th props,
+after that use the render.
+
+FINALLY:
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) =>
+      isAuthenticated() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{ pathname: "/signin", state: { from: props.location } }}
+        />
+      )
+    }
+  />
+);
+
+
+Note: If is authenticated you return the Component with the props if not you redirect.
+
+
+4-export the PrivateRoutes.js
+
+
+

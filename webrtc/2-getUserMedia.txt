@@ -1,0 +1,18 @@
+2-GetUserMedia
+
+1-Go into the views/index
+-inside the body add:
+
+<video autoplay></video>
+
+1-Get a reference for user media:
+-if one of those methods work getUserMedia will get a reference, using
+a script tag add:
+
+  <script>
+      navigator.getUserMedia =
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia;
+    </script>
+

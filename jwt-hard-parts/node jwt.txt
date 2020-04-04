@@ -85,7 +85,7 @@ module.exports.loginValidation = loginValidation
 
 
 -------
-AVOID SAME EMAIL
+// avoid the same user to signup
 after the line of validation we should:
 Check if the user is already in the database
 

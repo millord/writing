@@ -1,0 +1,31 @@
+2-constrair
+
+
+-Change the video size:
+
+let constraints = { audio: false, video:{
+        minWidth: 640,
+        maxWidth: 640,
+        minHeight: 360,
+        maxHeight: 480
+}};
+
+2-Add style  a grey scale filter
+-create a styles.css into the public folter
+-add this inside:
+
+ .grayscale_filter {
+  -webkit-filter: saturate(0.03);
+  filter: saturate(0.03);
+}
+
+-add this into the server:
+app.use(express.static(__dirname + "/public"))
+
+-import the style into the index.ejs
+
+-add this into the onSuccess function (before the videoArea.play()):
+
+videoArea.className = "grayscale_filter";
+
+

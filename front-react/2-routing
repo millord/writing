@@ -12,7 +12,6 @@ with a div that says Signup.
 
 2-create the Signin.js with the same approach of the Signup.js
 
--create the react-router-dom
 
 3-create the Routes.js inside the src
 
@@ -26,6 +25,8 @@ in the return place a Switch (inside the Switch you can add the Routes)
 <Route path="/signin" exact component={Signin} />
 
 create other  Route for signup
+
+PLACE THE Routes.js in the index.js instead of App.js
 
 
 
