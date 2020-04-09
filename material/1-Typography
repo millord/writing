@@ -3,19 +3,22 @@ Basic Typography
 1-Create an index.html
 -add the material css css and js in the head
 -add a container class in the body and start.
-2-create a h1, h2, h3, h4, h5 and h6 with some text.
+
+2-How you create a h1, h2, h3, h4, h5 and h6 with some text?.
 
 Note: Look how you dont need to give classes and they work.
 
-3-create a blockquote with a lorem of 30 words
+3-How do you create a blockquote with a lorem of 30 words?
 
-4-create a lorem paragraph with 40 words with the class flow-text (makes its really responsive)
+4-How do you create a lorem paragraph with 40 words with the class flow-text (makes its really responsive)?
 
-5-create a header and use left-align, right-align, center-align, and create a div
+Alignment
+
+5-How do you create a header and use left-align, right-align, center-align, and create a div?
 with the class of valign-wrapper having a h5 inside and a height of 500 px.
 
 
-6-create two paragraphs of 20 words and give them class of right, left, put them inside a div with the class of clear-fix.    
+6-how do you create two paragraphs of 20 words and give them class of right, left, put them inside a div with the class of clear-fix?
 
 
  

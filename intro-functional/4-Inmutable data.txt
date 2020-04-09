@@ -1,0 +1,10 @@
+1-Inmutable data
+
+
+
+
+What is simpler?
+
+Something that never change or data you can change?
+
+

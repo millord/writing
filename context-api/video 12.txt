@@ -1,9 +1,9 @@
 Video 12 useEffect Hook
 
 
-1-In the SongList Component import the useEffect hook
+1-how do you In the SongList Component import the useEffect hook
 
-2-Place the useEffect hook above the render
+2-Place the useEffect hook above the return
 
 3-It takes a callback function (and that function its going to run
 everytime the component render or re-renders,everytime the data changes and also
@@ -22,7 +22,7 @@ the initial render)
 
 const [age, setAge] = useState(20)
 
-6-create a button which will increase the age by one (starting with the 20)
+6-how do you create a button which will increase the age by one (starting with the 20)
 
 -Below the NewSongForm create a button
 

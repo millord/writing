@@ -3,7 +3,7 @@ NODE.js Rest API
 1-npm init a project.
 2-npm i express nodemon dotenv morgan mongoose
 3-add nodemon to the package.json
-4-create the app.j	s
+4-create the server.js	
 5-start listening in a basic express server
 import dotenv
 run the server

@@ -79,4 +79,4 @@ onChange={handleChange('password')}
 using [name]: will make this dynamic and depending what is type will get right value.
 
 -below the signUpForm in the return add:
-{JSON.strigigy(valu
+{JSON.strigigy(values)}

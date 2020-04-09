@@ -28,4 +28,12 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
+},
+
+// photo data type
+  photo: {
+    data: Buffer,
+    contentType: String,
+  }
+
 

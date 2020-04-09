@@ -1,0 +1,7 @@
+Setting a song to a list:
+
+ const addSong = () => {
+    setSongs([...songs, { title: "new song", id: 5 }]);
+  };
+
+

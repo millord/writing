@@ -1,4 +1,4 @@
-1-create a new folder called models
+1-How do you create a new folder called models
 
 -create a file called Bootcamp
 
@@ -28,8 +28,27 @@ Copy the other fields:
 -averageCost
 -photo
 
+2-what are the steps for adding this fields:
+
+
+    name: {
+      type: String,
+      required: [true, 'Please add a name'],
+      unique: true,
+      trim: true,
+      maxlength: [50, 'Name can not be more than 50 characters']
+    },
+    slug: String,
+    description: {
+      type: String,
+      required: [true, 'Please add a description'],
+      maxlength: [500, 'Description can not be more than 500 characters']
+    },
+
 
 at the end:
+
+3-How do you add all the others fieals from the file?
 
 module.exports = mongoose.model("Bootcamp", BootcampSchema)
 

@@ -2,39 +2,39 @@ Video 11 - useState with forms
 
 Its betten to do, that to listen or watch, in the learning process.
 
-1-create a new component called NewSongForm.js
-2-import React and useState
-3-create a functional component
-4-inside the return create a form:
+1-how do you create a new component called NewSongForm.js
+2-how to you import React and useState
+3-how do you create a functional component
+4-how do you create inside the return create a form:
 label Song name:
-5-create two input the first, type text required,
+5- how do you create two input the first, type text required,
 the second type submit with the value ="add song" required
-6-remove the button inside the SongList component and replace with
+6-how do you  remove the button inside the SongList component and replace with
 with the NewSongForm component
 
 --TEST IT IN THE BROWSER--- 
 
 
-7-add an event listener to the form:
+7-how do you add an event listener to the form:
 onSubmit={}, we will define the funcion later on.
 
-8-add a function on the first into to the onChange property like this:
+8-how do you add a function on the first into to the onChange property like this:
 
 onChange={(e) => {}}
 
-9-add the useState inside the NewSongForm and initialize it with and empty string:
+9-how do you add the useState inside the NewSongForm and initialize it with and empty string:
 
 const [title, setTitle] = useState('')
 
-10-update the onChange property of the firts input field.
+10-how do you update the onChange property of the firts input field.
 
 onChange={(e) => setTitle(e.target.value)}
 
---- add a value property to the first input field:
+--- how do you add a value property to the first input field:
 
 value={title}
 
-11- create a function to handle the submit:
+11-how do you create a function to handle the submit:
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -50,7 +50,7 @@ const handleSubmit = (e) => {
 
 AND PASS THE TITLE AS AN ARGUMENT to the addSong function
 
- 13-pass the addSongs function in the SongList component to the NewSongForm component below:
+ 13- how do you pass the addSongs function in the SongList component to the NewSongForm component below:
 
 <NewSongForm addSongs={addSong}/>
 
@@ -58,11 +58,11 @@ AND PASS THE TITLE AS AN ARGUMENT to the addSong function
 
 const NewSongForm = ({addSongs}) => { 
 
-15-update the handleSubmit function adding the:
+15- how do you update the handleSubmit function adding the:
 
 addSongs(title)
 
-16-use setTitle('') to clear after submiting the button.
+16- how do you use setTitle('') to clear after submiting the button.
 
 
 

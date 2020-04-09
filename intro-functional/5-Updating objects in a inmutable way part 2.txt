@@ -1,0 +1,35 @@
+1-Updating Objects part 2
+
+now change it to:
+
+const updatedMeal = {
+   ...meal,
+   description: "Brunch",
+   calories: 600
+}
+
+
+console.log it.
+
+ 
+We can add a new property and update a property.
+
+
+2-Deleting a property
+
+Combine distructuring and the ... operator
+
+
+const {description, calories} = updatedMeal
+
+
+removing the id
+
+
+const {id, ...mealWithoutId} = updatedMeal;
+
+pulling the id out (every property ecept the id)
+
+console.log(mealWithoutId)
+
+go to knowthen.com/fp4

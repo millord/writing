@@ -5,8 +5,8 @@ objective: use a dynamic list of songs comming from the state
 
 
 
-1-import useState
-2-place the useState hook inside the SongList component and initialize it with
+1-how to import useState
+2-how to place the useState hook inside the SongList component and initialize it with
 the values (array):
 
 
@@ -16,7 +16,7 @@ the values (array):
     { title: "Mera wow", id: 3 }
 ]
 
-3-set the array and the setter:
+3-how to set the array and the setter:
 
 const [songs, setSongs] = useState([])
 
@@ -34,8 +34,7 @@ const [songs, setSongs] = useState([])
 add a button and give it a onClick property with the addSong function inside.
 
 
-
-6-create the function at the top:
+6-how to create the function at the top:
 
 
  const addSongs = () => {

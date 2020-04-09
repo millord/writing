@@ -105,6 +105,9 @@ const hashPassword = await bcrypt.hash(req.body.password, salt)
 
 remember save the hashPassword instead of req.body.password
 ----
+
+JWT WORKS IN THE LOGIN ROUTE
+
 Create the login route
 
 1-validate the user

@@ -1,0 +1,25 @@
+1-Functions/eliminating the duplicate code
+
+
+getting a random grade
+
+const grade = 50 + Math.random() * 50.0
+
+how do you create a function which will
+display a letter from A to F depending
+of the grade value. Starting with
+
+if(grade >= 90) {
+  return 'A'
+}
+
+and so on.. until F...
+
+
+Note:
+
+Transform values from one thing to another.
+
+go to knownthen.com/fp3
+
+

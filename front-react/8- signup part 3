@@ -20,12 +20,12 @@ signup({name, email, password})
      email: '',
      password: ''
      error: ''
-     success: error
+     success: true
  })
 }
 })
 
-
+--return fetch
 REMEMBER THIS HAPPENS AFTER CREATING THE USER.
 
 

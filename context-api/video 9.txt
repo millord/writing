@@ -22,7 +22,7 @@ create a new app called hooksapp
 
 1-do some clean up and leave App.js, index.js and index.css
 
-2-create a component folder and inside the file create the SongList.jsj component.
-3-Make the SongList.js component to be a functional one, take props.
-4-insise render a list of songs and import the component into the App.js component.
+2-how do you create a component folder and inside the file create the SongList.jsj component.
+3-How do you Make the SongList.js component to be a functional one, take props.
+4-how to you place insise render a list of songs and import the component into the App.js component.
 

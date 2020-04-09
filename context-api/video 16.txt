@@ -1,13 +1,13 @@
 16-Reading List
 
 create the app
-1-create a folder called contexts inside the src folder
--create the BookContext.js
--import useState, useContext
-2-export a const called BookContext and with createContext
-3-Create a functional component called BookContextProvider (add props).
--add the useState with the list of books.
--Create two functions addBook and removeBook
+1-how do you create a folder called contexts inside the src folder
+-how do you create a functional the BookContext.js
+- how do you import useState, useContext, uuid
+2- how do you export a const called BookContext and with createContext
+3- how do you Create a functional component called BookContextProvider (add props).
+-how do you add the useState with the list of books.
+-how do you Create two functions addBook and removeBook
 --NOTE FILTER FUNCTION
 
 filter ===  it goes through the books array,(using a callback function on each item) then if that item matches certain condition it will keep that item in the array if it doesnt it will remove the item and returns a new array.
@@ -27,14 +27,14 @@ filter ===  it goes through the books array,(using a callback function on each i
   );
 
 
-5-Add the BookContextProvider in the App component
+5-how do you Add the BookContextProvider in the App component
+-Wrap the Navbar inside
 
-6-Create a folder in src called components with: 
+6-how do you Create a folder in src called components with: 
 
 touch Navbar.js BookForm.js BookList.js BookDetails.js
 
 7-First go to the Navbar component
--create a functional component , add useContext and consume the BookContext
 -Destructure getting only books for now and display in return the length of the books array
 
 8-FINALLY ADD THE Navbar component into App

@@ -3,7 +3,8 @@ Cards
 A nice way to display content
 
 1-Simple card without a title
-
+-which is the class you need to give the the outer div when creating a card?:
+col m6 s12
 -create two divs, first with class of row and second with class col m6 s12 (2 coloumns of 6) 
 
 -for creating the cards create two divs

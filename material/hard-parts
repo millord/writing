@@ -1,5 +1,6 @@
 Nav bar
 
+1-How do you create a navbar in material-ui
 
 <nav>
       <div className="nav-wrapper">
@@ -21,3 +22,8 @@ Nav bar
         </div>
       </div>
     </nav>
+
+
+2-responsive navbar
+
+

@@ -1,38 +1,41 @@
 3-Buttons
 
 -add the font awesome icons and materialize button to the top of the file and also the normal css and js links
+
 STANDAR BUTTONS
-1-create two standard buttons, one with a button tag and the other with a link tag (<a>) adding just he btn class.
+1-how do you create two standard buttons, one with a button tag and the other with a link tag (<a>) adding just he btn class?.
+
 WAVE EFFECT
-2-create one with a button tag and the other with a link tag (<a>) and use the wave affect:
+2-how do you create one with a button tag and the other with a link tag (<a>) and use the wave affect?:
 btn waves-effect waves-light.
+
 WAVE COLORS -- COLOR FOR BUTTONS AND WAVES -- USE LIGHTER COLORS FOR WAVES
-3-create five buttons.
+3-how do you create five buttons.
 Give them different waves color using the class:
 btn white red-text waves-effect waves-red
 ICONS
-MATERIAL ICON
 
-4-Create two icons using material icons:
+MATERIAL ICON
+4-How do you Create two icons using material icons:
 
 <i class="material-icons">shopping_cart</i>
 <i class="material-icons">start</i>
 
-change the color (they behave like text), and change the size adding red-text and large, medium....
+how do you change the color (they behave like text), and change the size adding red-text and large, medium....
 
-5-Create two icons using font awasome icons:
+5-How do you Create two icons using font awasome icons:
 
 
 <i class="fa fa-shopping-cart"></i>
 
 5-Color buttons
 
--create five buttons and add colors to them using the class:
+-How do you create five buttons and add colors to them using the class:
 btn red, btn blue...
 
 6-LARGE AND DISABLE
 
--create a large button with the classe:
+-How do you create a large button with the classe:
 btn-large
 
 - and disable 

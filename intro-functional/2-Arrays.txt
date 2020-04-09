@@ -1,0 +1,11 @@
+1-Arrays
+
+To store many data types
+
+How would you create an array called meals with two objects:
+1 with description 'Breakfast', calories: 460 and the other Snack 220?
+
+2-how would you get the first item of this array?
+using brakets notation
+
+

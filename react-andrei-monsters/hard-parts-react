@@ -2,6 +2,8 @@ Two ways to map
 
 with return:
 
+
+
 <div className="App">
         {this.state.monsters.map(monster => {
           return <h1>{monster.name}</h1>;
@@ -32,14 +34,6 @@ fetch("http://localhost:8000/api/post")
 
 // AXIOS
 
-with setState:
-
- componentDidMount() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then(response => this.setState({ monsters: response.data }));
-  }
-
 with hooks:
 
  useEffect(() => {
@@ -52,6 +46,16 @@ with hooks:
         console.log(err);
       });
   }, []);
+
+with setState:
+
+ componentDidMount() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(response => this.setState({ monsters: response.data }));
+  }
+
+
 
 
 /// GOOD REACT DEVELOPER

@@ -1,0 +1,39 @@
+1-Updating Objects
+
+
+State: is the thing that your program remember.
+
+
+
+Update without mutate
+
+const meal = {
+    id: i,
+    description: "Breakfast"
+
+}
+
+how to add a calorie to it?
+
+const updatedMeal = {
+    id: meal.id,
+    description: meail.description,
+    calories: 600
+}
+
+console.log(meal, updatedMeal)
+
+--test it--
+
+But a pretty dirty way of doing it
+
+Better way using the spread operator ...
+
+The properties of the old object are injected in the new.
+
+const updatedMeal = {
+    ...meal,
+    calories:600
+}
+
+console.log(meal, updatedMeal)

@@ -1,0 +1,22 @@
+1-Object Type
+
+
+1-How do you create an object?
+with name meal and properties:
+description: 'Breakfast'
+calories: 180
+
+2-how to access an object?
+
+How do you console.log get Breakfast?
+
+3-how do you add a new property called date?
+
+-new Date (2020, 0,1)
+
+4- how do you call the toString to convert the date into a string:
+hint:  meai.date.toString()
+
+got o knowthen.com/fp2 and do the exercises. :)
+
+
