@@ -1,0 +1,42 @@
+1-update and delete
+
+/// update a shop
+router.put("/:id", async (req, res) => {
+  try {
+    const shop = await Shop.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    if (!shop) {
+      return res.status(400).json({ success: false });
+    }
+    res.status(200).json({ success: true });
+  } catch (err) {
+    res.status(400).json({ success: false });
+  }
+});
+
+
+NOTE: USING 
+new === want the data be the new data
+runValidators === mongoose validators
+
+--IN THAT WAY YOU CAN UPDATE JUST WANT FIELD AT THE TIME.
+
+2-Delete a bootcamp
+
+// delete a shop
+router.delete("/:id", async (req, res) => {
+  try {
+    const shop = await Shop.findByIdAndDelete(req.params.id);
+    if (!shop) {
+      return res.status(400).json({ success: false });
+    }
+    res.status(200).json({ success: true, data: {} });
+  } catch (err) {
+    res.status(400).json({ success: false });
+  }
+});
+
+
+--- GO TO THE GET ALL BOOTCAMPS ROUTE AND ADD IN THE res.status(200) in the json count: shops.length

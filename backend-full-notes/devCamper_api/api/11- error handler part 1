@@ -1,0 +1,27 @@
+1-Error Handler
+
+
+-In the middleware folder add:
+
+errorHandler.js
+
+const errorHandler = (err, req, res, next) => {
+  // Log to the console for dev
+  console.log(err.stack);
+
+  res.status(500).json({
+    success: false,
+    error: err.message,
+  });
+};
+
+module.exports = errorHandler;
+
+
+2-Go into the GET ON BOOTCAMP AND IN THE CATCH PART COMMENT OUT res.status(...
+
+and place instead next(err)
+
+3-go into the server.js and after the app.use() route for bootcamps add this:
+
+app.use(errorHandler);

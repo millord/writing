@@ -1,0 +1,16 @@
+1-grid-template-columns
+
+divide by columns
+
+use pixels if you want to static size
+
+
+200px 12px 30px
+
+
+== BETTER USE FRACTIONAL PARTS
+
+How to form a grid same sizes:
+
+1fr 1fr 1fr  tree columns
+

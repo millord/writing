@@ -4,4 +4,42 @@
 
 -CREATE A BOOTCAMP
 
+-Go into the controller bootcamps.js
+
+1-import the Bootcamp model
+
+data:
+
+[
+	{
+	
+		"name": "Devworks Bootcamp",
+		"description": "Devworks is a full stack JavaScript Bootcamp located in the heart of Boston that focuses on the technologies you need to get a high paying job as a web developer",
+		"website": "https://devworks.com",
+		"phone": "(111) 111-1111",
+		"email": "enroll@devworks.com",
+		"address": "233 Bay State Rd Boston MA 02215",
+		"careers": ["Web Development", "UI/UX", "Business"],
+		"housing": true,
+		"jobAssistance": true,
+		"jobGuarantee": false,
+		"acceptGi": true
+	},
+
+]
+
+--CREATING THE BOOTCAMPS
+
+router.post("/", async (req, res) => {
+  const bootcamp = await Shops.create(req.body);
+  res.status(201).json({
+    success: true,
+    data: bootcamp,
+  });
+});
+how to use async await to solve it
+
+--IF THERE IS A FIELD THAT IS NOT IN THE MODEL WONT PASS
+
+
 
