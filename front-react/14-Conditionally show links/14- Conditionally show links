@@ -24,7 +24,7 @@ export const isAuthenticated = () => {
 
 {!isAutenticated && ( --<div>put the links here-- </div>)}
 
-4- signup
+4- signout
 
 cut it and put it into a block checking if isAuthenticated show the link:
 {isAuthenticated() && (--put link here --)}

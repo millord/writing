@@ -8,7 +8,7 @@ State: is the thing that your program remember.
 Update without mutate
 
 const meal = {
-    id: i,
+    id: 1,
     description: "Breakfast"
 
 }

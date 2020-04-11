@@ -1,0 +1,44 @@
+
+
+// using the map function to update
+
+const updatedMealsDescription= updatedMeals.map(updateDescription)
+
+// Create the function that will map each element searching
+// for id 2
+
+function updateDescription(meal){
+  if(meal.id ===2){
+    return{
+      ...meal,
+      description:'Early Lunch'
+    }
+  }
+   return meal
+}
+
+
+2-HOW TO REMOVE AND ITEM FROM AN ARRAY IN AN INMUTABLE WAY WITH FILTER?
+
+--function that determines what items to keep and what items to remove--
+
+
+The return value of the filter function should be a boolean it will return 
+true if you wish to include the item and false if you wish to excluded.
+
+
+SO IF ITS NOT NUMBER WANT, WE WANT TO KEEP IT,
+BUT IF IS NUMBER WANT, WE WILL REMOVE IT
+
+NOTE:SO whatever evalutes to true you will keep it.
+
+const filteredMeal = updatedMeal.filter((meal) =>{
+  return meal.id !== 1;
+})
+console.log("THIS IS FILTERED MEALS: ",filteredMeal)
+
+
+
+
+
+

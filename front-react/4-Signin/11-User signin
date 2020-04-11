@@ -48,7 +48,7 @@ const redirectUser = () => {
  }
 }
 
-import from Redirect at the top.
+import from Redirect at the top from router-dom
 
 5-Go to the botton instead of showSucces put showLoading and below signUpForm add
 {redirectUser()}

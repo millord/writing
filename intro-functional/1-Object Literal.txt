@@ -15,7 +15,7 @@ How do you console.log get Breakfast?
 -new Date (2020, 0,1)
 
 4- how do you call the toString to convert the date into a string:
-hint:  meai.date.toString()
+hint:  meal.date.toString()
 
 got o knowthen.com/fp2 and do the exercises. :)
 

@@ -1,0 +1,44 @@
+
+
+1-How would you change the meal with id to 2 to have a description of 'Early Lunch'
+
+const meals = [
+  {id: 1, description: 'Breakfast', calories: 420},
+  {id: 2, description: 'Lunch', calories: 520}
+]
+
+
+const meal = {
+  id:3,
+  description: 'Snack',
+  calories:188
+}
+
+// updating an array
+const updatedMeal = [...meals, meal]
+
+console.log(meals, updatedMeal)
+
+// using the map function to update
+
+const updatedMealsDescription= updatedMeals.map(updateDescription)
+
+// Create the function that will map each element searching
+// for id 2
+
+function updateDescription(meal){
+  if(meal.id ===2){
+    return{
+      ...meal,
+      description:'Early Lunch'
+    }
+  }
+   return meal
+}
+
+
+
+
+
+
+

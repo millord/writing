@@ -1,7 +1,7 @@
 Saving user token in localStorage
 
 
-1-Go to the state of the Signin component and hard-core the values:
+1-how would you Go to the state of the Signin component and hard-core the values:
 
 email: "juanmillord@gmail.com"
 password: "1234567"
@@ -11,6 +11,8 @@ and clear storage.
 
 3-go to the auth/index.js and add at the bottom:
 
+how would you create the authenticate function
+
 export const authenticate  = (data, next) => {
     if(typeof window !== "undefined") {
       localStorage.setItem('jwt", JSON.stringify(data))
@@ -18,7 +20,7 @@ export const authenticate  = (data, next) => {
   } 
 }
 
-4-go into the Signin component and in the else block, remove
+4-How do you go into the Signin component and in the else block, remove
 the values including the redirect and add instead:
 
 authenticate(

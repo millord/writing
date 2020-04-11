@@ -1,0 +1,27 @@
+// HARD PARTS
+
+
+export const Signup = () => {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+    error: "",
+    success: false,
+  });
+
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, error: false, [name]: event.target.value });
+  };
+
+
+/// 
+
+2-createt the function below handleChange.
+
+
+const clickSubmit = (event) => {
+    event.preventDefault()
+    signup(name, email, password)
+  }
+
