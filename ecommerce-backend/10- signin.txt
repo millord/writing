@@ -1,0 +1,46 @@
+-user signin
+
+npm i jsonwebtoken express-jwt
+
+1-go to the routes and 
+
+add a new route to:
+
+signin, and remove the userSignupValidator from that route.
+
+import the signin from the user controller 
+
+and go and create it in the controller
+
+import jwt // TO GENERATE SIGNED TOKEN
+and express-jwt // FOR AUTHORIZATION CHECK
+
+1-go to the .env file and add
+JWT_SECRET=;lafjda#kadfkljjk
+
+  // 1 - Generatea signed token with the id and secret
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+
+    // 2 Persist the token as 't' in cookie with expiry data
+    res.cookie("t", token, { expire: new Date() + 9999 });
+    // 3 - Return with the user and token to the frontend
+    const { _id, name, email, role } = user;
+    return res.json({ token, user: { _id, name, email, role } });
+    // 4 - If user is found make sure the email and password match (THIS IN THE MODEL)
+    //  5- Create authenticate method in the user model (THIS IN THE MODEL)
+
+Go to the User model file and add.
+
+Inside the userSchema.methods
+
+  authenticate: function (plainText) {
+    return this.encryptPassword(plainText) === this.hashed_password;
+  }
+
+2-Now go into the user controller inside the  signin add this code before generating the token
+
+
+
+
+
+

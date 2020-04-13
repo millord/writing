@@ -4,20 +4,50 @@
 Its like Joi with but using express
 
 
-npm i express-validator
+npm i express-validator@5.3.1
 
 go to app.js and import it.
 
 -use it as a middleware
 
-2-CREATEA HELPER METHOD TO VALIDATE
+2-CREATEA HELPER FOLDER TO VALIDATE
 
 -in the root directory create a folder called validator
 
 -inside create:
 index.js
 
-there create a method.
+There create a method for validation using express-validator:
+
+
+exports.userSignupValidator = (req, res) => {
+  req.check("name", "Name is required").notEmpty();
+  req
+    .check("email", "Email must be between 4 to 32 characters")
+    .matches(/.+\@.+\..+/)
+    .withMessage("Email must contain @")
+    .isLength({
+      min: 4,
+      max: 32,
+    });
+  req.check("password", "Password is required").notEmpty();
+  req
+    .check("password")
+    .isLength({ min: 6 })
+    .withMessage("Password must contain at least 6 characters")
+    .matches(/\d/)
+    .withMessage("Password must contain a number");
+};
+
+import it in the user routes
+and place bofere the signup function:
+
+router.post("/signup", userSignupValidator, signup);
+
+
+--TEST IT-- 
+
+
 
 
 
