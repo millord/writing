@@ -27,7 +27,7 @@ The return value of the filter function should be a boolean it will return
 true if you wish to include the item and false if you wish to excluded.
 
 
-SO IF ITS NOT NUMBER WANT, WE WANT TO KEEP IT,
+SO IF ITS NOT NUMBER WE WANT, WE WANT TO KEEP IT,
 BUT IF IS NUMBER WANT, WE WILL REMOVE IT
 
 NOTE:SO whatever evalutes to true you will keep it.

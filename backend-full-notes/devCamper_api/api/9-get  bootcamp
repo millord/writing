@@ -4,7 +4,7 @@
 router.get("/", async (req, res) => {
   try {
     const shops = await Bootcamp.find();
-    res.status(200).json({ success: true, data: shops });
+    res.status(200).json({ success: true,count: shops.length, data: shops });
   } catch (err) {
     res.status(400).json({ success: false });
   }

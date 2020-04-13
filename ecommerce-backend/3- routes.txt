@@ -1,0 +1,17 @@
+Routes
+
+create a new directory in the root called 
+routes.
+
+anside it create a file called user.js
+
+
+-import router and export it at the bottom
+
+2-cut the route that is in the server and put it here.
+
+3-go to the app.js and import the route as userRoutes and use it as  middleware.
+
+- in the middleware use the convention
+
+/api/v1/auth

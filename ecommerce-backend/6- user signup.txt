@@ -1,0 +1,41 @@
+User signup
+
+--INITIAL SETUP--
+npm i morgan cookie-parser
+
+0-import morgan cookie-parser
+
+1-add the middlewares to the app.js express.json morgan  with the dev flag and cookie-parser
+
+
+--go to routes and require signup (we will create it later) from the user controller and add to the route signup.
+-change the method to post in the signup
+
+
+-- GO TO THE CONTROLLER FILE
+-- import the user Model
+-create the signup controller
+
+CREATE A NEW USER
+
+
+const User = require("../models/User");
+
+exports.signup = (req, res) => {
+  const user = new User(req.body);
+  user.save((err, user) => {
+    if (err) {
+      return res.status(400).json({
+        error,
+      });
+    }
+    res.json({
+      user,
+    });
+  });
+};
+
+
+
+
+

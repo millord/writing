@@ -1,0 +1,17 @@
+Controllers
+
+
+ -in the root create a folder called controllers
+-inside a file called user.js
+
+in that file create a exports.sayHay with the logic
+of sending a json with key message and value "Hello there"
+
+and import it in route using name import.
+
+-in the routes:
+
+router.get('/', sayHay)
+
+
+

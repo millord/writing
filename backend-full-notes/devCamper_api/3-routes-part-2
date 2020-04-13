@@ -1,6 +1,7 @@
 
 1-create a folder called routes
 -create  new file called bootcamp.js
+-HOW DO YOU CREATE A FOLDER CALLED CONTROLLERS//
 
 -import router from express and starting building the routes
 change app for router

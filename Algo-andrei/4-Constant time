@@ -1,0 +1,27 @@
+
+
+2-Contant time
+
+constant time
+
+function logFirstTwoBoxes(boxes){
+    console.log(boxes[0])
+    console.log(boxes[1])
+}
+
+The time of operations is fixed, so is content time. It does not matter how many imputs.
+
+How would you calculate the Big O this?
+// CALCULATING THE BIG OG
+
+function funChallenge(input){
+  let a = 10 // O(1)
+  a = 50 + 3 // O(1)
+  for(let i = 0; i < input.length; i++){ //O(n)
+    anotherFunction() //O(n)
+    let stranger = true //O(n)
+  }
+  return a // O(1)
+}
+
+// Big O (3 + 4n)

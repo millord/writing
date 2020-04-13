@@ -1,0 +1,25 @@
+SHips and pagination
+
+
+How would you Add to a div a class of?
+
+1-How would you create 4 divs with class ship
+with elements inside?
+
+
+2-ship with close?
+
+copy the same divs with class chip
+-inside place an icon close material-icons
+<i class="close materials-icons"></i>
+
+3-chips with images
+
+-how would you create a div with class chip
+-put inside it a img
+<div class="chip">
+ <img src="afro.png" /> John Doe
+</div>
+
+
+

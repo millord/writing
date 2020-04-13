@@ -1,0 +1,16 @@
+ Good code:
+
+1-Readable
+2-Scalable
+
+const nemo = ['nemo']
+
+function findMemo(array){
+  for(i = 0; i < array.length; i++){
+    if(array[i] === 'nemo'){
+      console.log('Found Memo')
+    }
+  }
+}
+
+findMemo(nemo)

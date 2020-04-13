@@ -1,0 +1,23 @@
+-express validator
+
+
+Its like Joi with but using express
+
+
+npm i express-validator
+
+go to app.js and import it.
+
+-use it as a middleware
+
+2-CREATEA HELPER METHOD TO VALIDATE
+
+-in the root directory create a folder called validator
+
+-inside create:
+index.js
+
+there create a method.
+
+
+

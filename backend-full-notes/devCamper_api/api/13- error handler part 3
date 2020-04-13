@@ -1,40 +1,12 @@
-Error handler part 2
+Error handler part 3
 
 
-1-how to create a folder called utils in the root folder and inside
-a file called errorResponse.
+Catch specific errors
+
+If its a bad id or not formatted correctly
+
+They are not gonna get the bootcamp
 
 
--which are the steps to create a class called errorResponse which extends
-Error
--Has a contructuror method with message, and statusCode as parameters
--super takes a message as parameter too.
 
--initilize a property with:
-
-this.statusCode = statusCode
-
-
-how would you module.exports this file?
-
-2-Go to the middleware error.js
-
-
-how would you replace the res.status to have a parameter of err.statusCode || 500
-and in the error: error.message || 'Server Error'
-
-
-3-Go to the controllers folder ands import ErrorResponse = require('../utils/')
-
-
--Go into the get one bootcamp in the next function past
-
-next(new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404))
-
-
-How would you replace (in the same function the 400 response above for):
-
-return new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
-
----TEST IT---
 

@@ -1,0 +1,28 @@
+ Good code:
+
+1-Readable
+2-Scalable
+
+const nemo = ['nemo']
+
+function findMemo(array){
+  let t0 = performance.now()
+  for(i = 0; i < array.length; i++){
+    if(array[i] === 'nemo'){
+      console.log('Found Memo')
+    }
+  }
+  let t1= performance.now()
+  console.log('Call to find Nemo took '+ (t1-t0) + ' millisecons')
+}
+
+findMemo(nemo)
+
+findMemo(nemo)
+
+As the numbers of elements in increase how many operations the program has 
+to make?
+
+--NOTE
+when we talk about bigO and scalability of code when simply mean that when we
+grow bigger and bigger with out input, how much the alogithm slow down?

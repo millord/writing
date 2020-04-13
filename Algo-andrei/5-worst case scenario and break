@@ -1,0 +1,21 @@
+
+// 
+Always think about the worst case scenario
+
+const everyone =  ['dory','bruce, marlin',
+'nemo', 'gill', 'bloat', 'nigel', 'squirt'
+]
+
+function findNemo(array){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === 'nemo'){
+      console.log('Found Nemo')
+      break; //ADDING A BREAK
+    }
+  }
+}
+
+
+findNemo(everyone)
+
+The break will stop the execution when nemo is found, no having a break will 

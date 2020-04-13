@@ -1,0 +1,46 @@
+
+User model
+
+
+1-create a new folder called models and inside a file
+called user.js
+
+
+require mongoose
+require crypto
+const uuidv1 = require("uuid/v1");
+
+
+2-What are the steps to create an schema called userSchema with fields:
+
+name:,String, trim:true, required:true, maxlength:32
+copy the fields for email
+but give it unique: true
+
+3-copy the same fields for password too BUT--
+
+you are not going to save the password but the hashed version of it and for that is use a virtual field:
+
+hashed_pasword:{
+    type:String,
+    required: true
+
+}  
+
+-add a about field with the values of name but remove the trim, required and unique.
+
+-add the salt field:
+
+salt: String (only that)
+
+- role:
+
+type:Number, default: 0
+
+-history field with:
+
+type:Array
+default:[]
+
+and:
+date: { type: Date, default: Date.now },

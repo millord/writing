@@ -1,0 +1,35 @@
+Tables and media
+
+Copy the skeleton
+
+By default looks oK
+
+1-Striped
+
+give it a class of striped
+
+2-Second table
+-give a class of bordered highlight responsive-table to the table tag
+
+3- Reponsive images
+
+-create a image tag
+-import and image
+-how do you create a div class row
+inner div class col s6 and inside put the
+image tag
+
+<div class="row">
+    <div class="col s12">
+     <img src="afro.png" />
+   </div>
+</div>
+
+4-circle image
+How would you create an image in a cicle:
+
+ <img src="afro.png" class="circle" />
+
+
+
+

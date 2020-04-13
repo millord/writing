@@ -5,6 +5,8 @@
 
 2-npm i express dotenv nodemon
 
+--ADD the body parser express middleware
+
 -- go to the package.json and add two scripts:
 
 "start": "NODE_ENV=production node server.js
@@ -14,12 +16,12 @@
 
 3-create a config folder and inside config.env file
 add:
-PORT 5000 
+PORT=5000 
 NODE_ENV=development
 DB 
 
 -Load the config file
-
+import dotenv at the top
 dotenv.config({path: './config/config.env'}) 
 
 4-create a basic express server.

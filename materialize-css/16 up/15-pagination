@@ -1,0 +1,14 @@
+SHips and pagination
+
+-How would you create a ul with a bunch of li
+
+add a class of pagination to the ul
+
+and the first li give a class of disabled
+
+and the next icon class of material-icons with chevron_left inside.
+
+-to all the li give a class of waves-effect
+
+
+

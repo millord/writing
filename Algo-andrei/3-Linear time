@@ -1,0 +1,19 @@
+
+
+1-Linear bigO notation O(n)
+
+
+const nemo = ['nemo']
+
+function findMemo(array){
+  for(i = 0; i < array.length; i++){
+    if(array[i] === 'nemo'){
+      console.log('Found Memo')
+    }
+  }
+}
+
+O(n) --> Linear Time
+The big O depends of the numbers of inputs
+
+-Its the most common

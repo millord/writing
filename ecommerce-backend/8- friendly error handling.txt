@@ -1,0 +1,50 @@
+-friendly error handling
+
+---TEST IT---
+
+create a folder inside the root called helpers
+
+inside create a file called:
+
+dbErrorHanlder.js, copy and paste the code from github.
+
+
+-import the {errorHandler} in the controllers
+
+
+-use it:
+
+inside the :
+
+res.json({
+
+ if (err) {
+      return res.status(400).json({
+        err: errorHandler(err),
+      });
+}
+
+--TEST IT-- 
+
+Not to send the salt and the hashed_password when creating a user.
+
+go into the user response a set the that part
+as undefined.
+
+   user.salt = undefined
+    user.hashed_password = undefined
+    res.json({
+      user
+
+    });
+
+--TEST IT CREATING A NEW USER--
+
+
+
+
+
+
+
+
+

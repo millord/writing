@@ -1,0 +1,21 @@
+-Open inmosonia
+
+and do a post request to this route:
+
+http://localhost:5000/api/v1/auth/signup
+
+in the body of the request:
+
+using raw application/json
+
+go to the headers and add Content-Type application/json
+
+"name":"juan",
+"email":"juan@gmail.com"
+"password":"1234567"
+
+
+---TEST IT---
+
+
+

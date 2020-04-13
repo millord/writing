@@ -2,18 +2,50 @@
 
 // using the map function to update --- REDUCE FUNCTIONS ---
 
+First how would you get the sum of all the items in an array:
 
-const numbers  =[1,2,3]
+const grades = [60, 55, 80, 90, 99, 92, 75, 72]
 
 
-function sum(x,y){
-  return x + y
+const sum = (acc, grade) => {
+  return acc + grade
 }
 
-const total = numbers.reduce(sum)
-
+const total = grades.reduce(sum)
 console.log(total)
 
-output: 6
+// How would get the average
+
+const count =   grades.length
+console.log(total / count)
+
+
+How would you create a function that will determines the quantity of letters'
+grade in an array?
+
+const letterGradeCount = grades.reduce(groupByGrade, {})
+
+
+function groupByGrade(acc, grade){
+  const {a = 0, b=  0, c= 0, d=0, f=0} = acc
+  
+   if(grade >= 90){
+     return {...acc, a: a +1}
+   } else if(grade >= 80){
+     return {...acc, b: b + 1}
+   }else if(grade >= 70){
+     return {...acc, c: c +1}
+   }else if(grade >= 60){
+     return {...acc, d: d + 1}
+   }else{
+     return {...acc, f: f+1}
+   }
+  
+  
+  
+}
+console.log(total, total / count, letterGradeCount)
+
+-- GO TO knowthen.com/fp6
 
 
