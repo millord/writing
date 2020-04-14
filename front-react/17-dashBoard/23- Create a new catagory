@@ -1,0 +1,35 @@
+ inside admin create a new file called
+apiAmin.js
+
+copy the code from the index.js signup
+
+and put into the file
+change the name to createCategory with parameters
+userId, token, category
+
+in the fetch add:
+
+`${API}/category/create/${userId}`,
+
+
+in the headers add:
+
+
+Authorization: `Bearer ${token}`
+
+
+stringigy with parameter category
+
+
+import it into the addCategory component
+
+in the clickSubmit function:
+
+createCategory(user._id, token, {name}).then(data => {
+  if(data.error){
+    setError(true)
+  }else{
+    setError('')
+    setSuccess(true)
+  }
+})

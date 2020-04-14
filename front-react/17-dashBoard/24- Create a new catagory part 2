@@ -1,0 +1,38 @@
+create the showSuccess function below the form
+
+
+
+const showSuccess = () => {
+  if(success){
+    return <h3 className="text-success">Category was created</h3>
+  }
+}
+
+const showError = () => {
+  if(error){
+  return <h3 className="text-danger">{name} is should be unique</h3>
+  }
+}
+
+
+Add them right on top of the form
+
+
+GO TO THE BACKEND AND make unique the category.
+
+
+NOTE: In the layout of addCategory change:
+
+{name} for {user.name}
+
+In the AddCategory component add a Back Button
+
+copy the code from the showError function and inside it use the Link
+
+div with class mt-3
+
+and the Link inside to="/admin/dashboard" 
+className="text-warning" with text Back to Dashboard
+
+put it int the return of the layout below form
+

@@ -1,0 +1,75 @@
+Add the category component
+
+Go to signin and login as a admin user
+
+in the dashboard click on add caterory
+
+-create a new folder in the root called admin
+inside AddCategory.js
+
+
+import react
+layout
+isAuthenticated
+Link
+
+
+create the functional component called AddCategory
+add useState with name,setName, error and success
+
+
+error and success by default false and name ''
+
+//desctruture use and info from localStorage
+
+const {user, token} = isAuthenticated()
+
+2-create a form
+
+create the newCategoryForm
+
+Create a form inside
+div form-group
+label inside class text-muted Name as text
+input type text class=form-control
+required
+add a buttom just above the </form> tag with class
+btn btn-outline-primary and text Create Category
+
+create two methods one for onChange (when the user types) and onSubmit (when submiting the form)
+-give a value property and autofocus property
+
+create the handleChange and the clickSubmit methods above this function(newCateryForm).
+
+
+
+const handleChange = (e) => {
+  setError('')
+  setName(e.target.value) 
+}
+
+
+const clickSubmit = (e) => {
+  e.preventDefault()
+  setError('')
+  setSuccess(false)
+  //make request to the api to create category
+}
+
+3-Copy the layout from other compenent 
+
+and change
+
+in descripton ready to add a new category
+eliminate the container fluid
+
+eliminate the col-3
+and the one left class to col-md-8 offset-md-2
+
+ inside that div add the {newCategoryForm()}
+
+
+
+--ADD IT TO THE ROUTES
+use the admin route for it
+and the route /create/category and the AddCaterory component

@@ -1,0 +1,35 @@
+1-Create the Admin Route
+
+-Copy the code from Private Route
+-In the auth folder create a file called
+AdminRoutes.js
+
+Change the name of the component and export it
+
+2-add this to the end of isAuthenticaed()
+
+isAuthenticaed() && isAuthenticated().user.role === 1
+
+NOTE: In order to check that the user is authenticated and also is admin.
+
+3-Import this into the Routes.js component.
+
+4-import the AdminDashboard into the Routes.js
+with path /admin/dashboard
+
+-Create a local database , add an user and change its role to 1 to test the AdminRoutes
+
+Click in the Menu to the Dashboard link to see what happend
+
+
+--CONDITONAL IN THE MENU
+
+Cut the Dashboard link and put it into curly braces
+
+and add to:
+{ isAuthenticated() && isAuthenticated().user.role === 0 && (--user dashboard here)}
+
+and 
+{ isAuthenticated() && isAuthenticated().user.role === 1 && (--admin dashboard here)}
+
+--Change the links and routes

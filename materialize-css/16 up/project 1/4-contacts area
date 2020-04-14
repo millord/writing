@@ -1,0 +1,55 @@
+Contacts area:
+
+
+create a section tag with a container inside
+
+
+section class section section-contact
+with div class row
+inside two divs with class col s12 m6
+
+in the first one a card with class
+card-panel teal white-text center
+inside the first card
+<i class="material-icons medium">emal</i>
+h5 with text Contact Us for Booking
+
+and below a p tag with lorem 20 words
+
+unter the card-panel div
+
+ul with a class of collection with-header
+
+and the li with class collection-header
+
+in that li an h4 with the text Location
+
+close the li and initilize 3 below with class
+collection-item below having as text Travelvill Agency,
+555 Beach rd, Suite
+in the last li put the text Miami FL, 55555
+
+2-In the second div with class col s12 m6
+inside a card with class
+
+<div class="col s12 m6">
+  <div class="card-panel grey lighten-3">
+    <h5>Please fill out this form</h5>
+  <div class="input-field">   
+<input type="text" placeholder="Name" id="name">
+    <label for="name"></label>
+  </div>
+</div>
+
+
+Copy 3 times one for email, phone, messag
+email type email, phone type text, message textarea class material-textarea.
+
+under the last input field (The one for message)
+
+place an input tag with class btn type submit value="Submit"
+
+
+
+
+

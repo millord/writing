@@ -1,0 +1,78 @@
+First video project
+
+1-Navbar (side Nav) color teal
+
+2-slider
+pexels for hd images
+
+SECTIONS -- THATS THE WAY TO MAKE THE LAYOUT
+
+so, below the navbar (side nav) add:
+<section class="slider">
+-- slider component here---
+below the h5 place a button 
+</section>
+
+NOTE: PLACE THE BUTTON WHERE YOU WANT WITH BASIC CSS
+
+3-Search & Icon Boxes
+
+create another section tag with class of section
+
+<section class="section section-search teal darken-1
+white text center">
+
+--component here--
+
+</section>
+
+-div with class container
+div with class row
+div inside with class col s12
+<h3> Search Destinations
+a div with class input-field (INPUT FIELD) and inside that div a input with class white grey-text autocomplete placeholder="Aruba, Cancun"
+
+CUSTOM CSS for the padding and font-size
+.slider .btn {
+  margin-top: 
+}
+
+--WE NEED TO OVERIED MATERIAL
+.section-search input {
+  padding: 5px !important;
+  font-size: 18ppx !important;
+  width: 90% !important;
+  border: #f4f4f4 3px solid !important
+}
+
+.autocomplete-content{
+  position: absolute;
+  width: 100%;
+  text-align:center;
+}
+
+
+4-Icon boxes
+
+add a new section
+
+<section class="section-icons grey lighten-4 center">
+    	div container
+        div row
+        div with class s12 m4
+	inside a card component with class panel
+        inside that card component
+        -material-icons room large teal-text
+	-below and h4 saying Pick Where
+        -below the h4 a p tag with dummy text
+
+        copy and paste it two more times
+        second material icon store
+        h4 travel shop
+     
+
+        and the last icon airplanemode_active 
+</section
+
+
+

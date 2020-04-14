@@ -1,0 +1,20 @@
+Third part the Gallery
+
+
+
+<section class="section section-gallery">
+
+div with class container
+h4 class center
+inside that a span with class teal-text with the word Photo Gallery inside
+
+below the h4
+create a div with class row
+div with class col s12 m3
+img inside src="https://source.unsplash.com/1600x900/?beach" class="materialboxed responsive-img"
+
+copy that three more times 
+Copy the row two more times and change the values
+
+</section>
+

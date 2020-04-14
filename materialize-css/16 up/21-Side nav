@@ -1,0 +1,12 @@
+Options:
+
+menuWidth: => the size
+edge:'right' => will come from the right
+
+onOpen: => accepts a function
+onClose: => accepts a function
+
+
+
+
+

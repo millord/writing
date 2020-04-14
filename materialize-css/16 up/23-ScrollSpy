@@ -1,0 +1,19 @@
+Copy the skeleton
+
+give to the first div the id = who and a class of section scrollspay
+
+The second div id = what  and a class of section scrollspy
+
+and for the third
+
+At the bottom there is a ul tag with some li
+to the ul class of pinned section table-of-contents
+
+for the links go to whataver id I have at the top
+
+so for the first href="#who", href="#what",href="#where"
+
+
+-INITIALIZE IT   
+
+$('.scrollspy').scrollSpy()

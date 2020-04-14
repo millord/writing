@@ -1,0 +1,17 @@
+PrivateRoute for admin part 2
+
+Redicting The user to home (when cannot accces the admin dashboard)
+
+
+1-Go to the signin component
+
+go to the redirectUser
+
+create another if statement
+if(isAuthenticated){
+  return <Redirect to="/home"/>
+}
+
+
+
+

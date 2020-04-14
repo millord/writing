@@ -1,0 +1,33 @@
+Material Box/SLIDER
+
+
+
+Copy the skeleton
+
+how would you create two 6 columns divs like:
+
+-create a div with class row
+inside this div create to more divs
+
+each of them having class: col s12 m6
+and inside thouse too img tag
+
+1-to the image give a class of materialboxed width="100%". Give that to both of the images
+
+1-give a class of materialboxed width="100%" data-caption to the second image
+
+
+SLIDER
+
+give the first div a clas of slider
+and the ul a class of slides
+require the image
+the next div class of caption
+the h5 a class of light grey-text text-lighten-3
+
+copy for the left and right align and change the alignment for the h3 depending of the captions
+
+ADD THIS JAVASCRIPT AT THE END:
+
+
+

@@ -1,0 +1,68 @@
+Modals
+
+
+1-Give a class of modal to the first div
+
+2-give a class of modal to the FIXED FOOTER MODAL
+
+
+3-Give a class of modal to the BOTTOM SHEET MODAL TRIGGER
+
+
+-Go to the firtst one and work on the trigger
+
+give to the a tag above the div with class of modal:
+btn waves-effect waves-light modal-trigger also add a href="#modal1"
+
+-go to the div with the class of modal an id with:
+modal1
+the div inside the modal class modal-content
+and the one below class modal-footer and the a tag inside a class of modal-action modal-close waves-effect waves-green btn-plat
+
+-go and initialize the modal
+
+$('.modal').modal()
+
+and give some options:
+dismissable
+inDuration
+outDuration
+
+add a function
+
+ready: function(modal, trigger){
+    console.log('Modal Opened', modal, trigger)
+}
+
+
+2-Go to the FIXED FOOTER MODAL
+add to the a tag below it the class:
+waves-effect waves-light btn modal-trigger
+href="#modal2"
+
+Add to the div below the id of modal2
+
+the a class of modal modal-fixed-footer
+
+the div below it the class of:
+modal-content
+
+GO BELOW AND the div with the a tag with the ok
+give a class of modal-footer
+and for the a tag class of modal-action modal-close waves-effect waves-green btn-flat.
+
+4-Bootom sheet modal
+ go the a tag give a class of
+
+waves-effect waves-light btn modal-trigger href="#modal3" 
+the div below an id of modal3 
+
+5-below in that BOTTOM SHEET MODAL
+where you have the a tag with the OK inside
+
+give that div a class of modal-footer
+href="#!" for the a tag and also a class of modal-action modal-close waves-effect waves-green btn-flat
+
+
+
+
