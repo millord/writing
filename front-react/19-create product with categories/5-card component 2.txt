@@ -1,0 +1,47 @@
+1-in the core directory create a file called
+
+
+Card.js, make it a functional component accepting product as a prop
+
+import Link
+
+
+create a div className:  col-4 mb-3
+inside that div another div with class card
+nested in that div a div with class card-header having inside
+{product.name}
+create another div with class card-body
+<p>{product.description}</p>
+<p>{product.price}</p>
+
+
+2-Inside a Link create one button below the p tags
+button with class btn  btn-outline-primary mt-2 mb-2
+
+3-below that Link add another button
+
+with class btn btn-outline-warning mt-2 mb-2 with the text
+Add to Card
+
+4-import it in the Home component
+
+in the layout:
+
+
+<h2 className="mb-4">Best Sellers</h2>;
+{
+  productsBySell.map((product, i) => <Card key={i} product={product} />);
+}
+
+<h2 className="mb-4">New Arrivals</h2>;
+{
+  productsByArrival.map((product, i) => <Card key={i} product={product} />);
+}
+
+
+NOTE: go to the Home component and wrap the two card in a div with class row
+
+and pass the className to the layout : container-fluid
+
+
+

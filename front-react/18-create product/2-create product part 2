@@ -1,0 +1,39 @@
+1-create the state
+
+with values and setValues having an object
+
+const [values, setValues] = useState({
+  name: "",
+  description: "",
+  price: "",
+  categories: [],
+  category: "",
+  shipping: "",
+  quantity: "",
+  photo: "",
+  loading: false,
+  error: "",
+  createdProduct: "",
+  redirectToProfile: false,
+  formData: "",
+});
+
+//desctrutucte them
+
+const {
+  name,
+  description,
+  price,
+  categories,
+  category,
+  shipping,
+  quantity,
+  loading,
+  error,
+  createdProduct,
+  redirectToProfile,
+  formData,
+} = values;
+
+//Now start creating the form
+

@@ -1,0 +1,34 @@
+1- go to the db and modify some products the sold part to 15
+
+2-inside core create a new file called apiCore.js
+
+
+copy from apiAdmin the import and one of th get methods;
+
+-called getProducts and pass the parameter sortBy
+
+export const getProducts = (sortBy) => {
+  return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+-go to the Home component and import it
+import too the useState and useEffect
+
+3-create the state:
+
+const [productsBySell, setProductBySell] = useState([]);
+
+const [productsByArrival, setProductByArrival] = useState([]);
+
+const [error, setError] = useState(false);
+
+
+

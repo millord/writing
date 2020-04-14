@@ -1,0 +1,52 @@
+//Now start creating the form
+
+1-PHOTO
+const newPostForm = () => {
+  <form className="mb-3">
+    <h4>Post Photo</h4>
+    <div className="form-group">
+      <label className="btn btn-outline-secondary">
+        <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
+      </label>
+    </div>
+  </form>;
+};
+
+2-NAME
+Create another div below the last div inside the form tag
+
+div with class form-group
+label class text-muted with Name
+input type text className="form-control" value={name}
+add the onChange to all the inputs (to make it dynamic)
+onChange={handleChange('name')}
+ 
+
+3-Copy the div from the Name
+for Description, change  all to description, but instead of input use textarea and remove the type
+value={description}
+
+4-copy the div from Descripion
+for Price, Change all to price
+
+5-to the same but in this case category
+but for category give the select instead of input the select has a closing tag.
+
+<option value="id of the category">Python</option>
+
+and id of a category, remove type, and value
+below that
+
+6-Copy the div for the name and change it to Quantity,
+type number 
+
+
+7-Copy the div for category and change it to Shipping will need a select since is a boolean
+
+and in option
+
+<option value="0">No</option>
+<option value="1">Yes</option>
+
+8-At the end of the form, just above the </form> tag add a button with class btn btn-outline-primary with Create Product
+

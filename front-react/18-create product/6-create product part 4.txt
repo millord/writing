@@ -1,0 +1,44 @@
+
+
+1-Working with the clickSumbit
+go inside this function ...
+
+destructure at the top:
+
+
+
+const {user, token} = isAuthenticated()
+
+const clickSubmit = (event) => {
+  event.preventDefault();
+  setValues({ ...values, error: "", loading: true });
+
+  createProduct(user._id, token, formData).then((data) => {
+    if (data.error) {
+      setValues({ ...values, error: data.error });
+    } else {
+      setValues({
+        ...values,
+        name: "",
+        description: "",
+        photo: "",
+        price: "",
+        quantity: '',
+        loading: false,
+        createdProduct: data.name
+      });
+    }
+  });
+};
+
+
+--TEST IT --
+
+
+GO TO THE AddProduct.js component and add 
+in the category field of the form duplicate the 
+<option value="same id">PHP</option>
+
+--WE WILL FIX THAT LATER...
+
+TEST IT , and check the db.

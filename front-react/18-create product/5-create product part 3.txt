@@ -1,0 +1,23 @@
+1-below the state create the handleChange method.
+
+
+const handleChange = (name) => (event) => {
+  const value = name === "photo" ? event.target.files[0] : event.target.value;
+  formData.set(name, value)
+  setValues({ ...values, [name]: value });
+};
+
+
+get the form data using useEffect
+
+add to the state formData
+
+useEffect(() => {
+  setValues({...values, formData: new formData})
+},[])
+
+2-in the form add onSubmit={clickSubmit}
+
+const clickSubmit = (event) => {
+
+}

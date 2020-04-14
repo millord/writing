@@ -1,0 +1,41 @@
+3-create the state:
+
+const [productsBySell, setProductBySell] = useState([]);
+
+const [productsByArrival, setProductByArrival] = useState([]);
+
+const [error, setError] = useState(false);
+
+
+
+const loadProductsBySell = () => {
+  getProducts("sold").then((data) => {
+    if (data.error) {
+      setError(data.error);
+    } else {
+      setProductsBySell(data);
+    }
+  });
+};
+
+const loadProductsByArrival = () => {
+  getProducts("createdAt").then((data) => {
+    if (data.error) {
+      setError(data.error);
+    } else {
+      setProductsByArrival(data);
+    }
+  });
+};
+
+
+2- run them when the component first load with useEffect
+place it above the return
+
+useEffect(() => {
+  loadProductsByArrival();
+  loadProductsBySell();
+}, []);
+
+
+

@@ -1,0 +1,42 @@
+Populating the products from the db
+
+
+go to AddProduct.js
+
+
+-go in the apiAdmin.js file
+
+and create another funciton to get the categories from the backend:
+
+
+export const getCategories = () => {
+  return fetch(`${API}/categories`, {
+    method: "POST",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+
+2-go inside the AddProduct.js component.
+
+above the useEffect create a method to
+
+// load the categories and set form data
+
+ const init = () => {
+  getCategories().then((data) => {
+    if (data.error) {
+      setValues({ ...values, error: data.error });
+    } else {
+      setValues({ ...values, categories: data, formData: new formData() });
+    }
+  });
+};
+
+
+3-Now go inside the useEffect and run just the init fucntion
+that was just created like:
+init()

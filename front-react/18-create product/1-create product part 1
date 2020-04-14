@@ -1,0 +1,38 @@
+1-Copy the code of createCategory in the apiAmin.js
+
+change it name to createProduct with paramenters:
+userId, token, product
+fetch to `${API}/product/create/${userId}`
+
+remove the Content-Type since we are using form data for the foto
+
+keep the rest
+
+
+in the body: product
+
+
+1-creata a new component to add a product:
+called AddProduct.js
+
+copy the imports,  useState, useEffect, and createProduct from apiAdmin
+
+
+copy the layout from AddCategory:
+
+change the title: to Add a new product
+description: ready to add a new product?
+
+2-Distructure the isAuthenticated()
+
+const  {user, token} = isAuthenticated()
+
+3-import it in the Routes
+
+put inside an admin route
+
+path=/create/product
+
+component={AddProduct}
+
+Test it
