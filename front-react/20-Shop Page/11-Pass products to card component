@@ -1,0 +1,22 @@
+1-in the Shop import the Card
+
+2-where you have the stringify return:
+
+div with class col-8
+h2 class mb-4 Products
+div class row
+map through the filteredResults
+
+{filteredResults.map((product, i) => ())}
+
+and inside return the Card with props
+
+<Card product={product} key={i} />
+
+-- TEST IT -- IF FIND ERROR GO TO
+
+and change  data   for data.data
+
+in the loadFilteredResults.
+
+--TEST IT-- 

@@ -11,7 +11,7 @@ and create another funciton to get the categories from the backend:
 
 export const getCategories = () => {
   return fetch(`${API}/categories`, {
-    method: "POST",
+    method: "GET",
   })
     .then((response) => {
       return response.json();
@@ -31,7 +31,7 @@ above the useEffect create a method to
     if (data.error) {
       setValues({ ...values, error: data.error });
     } else {
-      setValues({ ...values, categories: data, formData: new formData() });
+      setValues({ ...values, categories: data, formData: new FormData() });
     }
   });
 };

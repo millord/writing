@@ -15,8 +15,7 @@ create another div with class card-body
 <p>{product.price}</p>
 
 
-2-Inside a Link create one button below the p tags
-button with class btn  btn-outline-primary mt-2 mb-2
+2-Below the p tags in the same div create two  Links each of them having  button inside with class btn  btn-outline-primary mt-2 mb-2
 
 3-below that Link add another button
 

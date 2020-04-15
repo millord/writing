@@ -40,5 +40,5 @@ const showLoading = () =>
 Add them in the layout above newPostForm and call each of them.
 
 
-
+--TEST TO SEE THE CATEGORIES--
 

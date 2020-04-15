@@ -32,6 +32,8 @@ const clickSubmit = (event) => {
 };
 
 
+ADD THE newProductForm in the layout
+
 --TEST IT --
 
 

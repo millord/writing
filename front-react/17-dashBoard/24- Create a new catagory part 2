@@ -17,6 +17,8 @@ const showError = () => {
 
 Add them right on top of the form
 
+CALL THEM IN THE RETURN
+
 
 GO TO THE BACKEND AND make unique the category.
 
@@ -35,4 +37,6 @@ and the Link inside to="/admin/dashboard"
 className="text-warning" with text Back to Dashboard
 
 put it int the return of the layout below form
+
+--TEST IT--
 

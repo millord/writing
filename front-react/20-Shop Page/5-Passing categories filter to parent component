@@ -1,0 +1,33 @@
+we need to send the data from the child to the parent
+
+1-create the handleFilters function.
+
+const handleFilters = (filters, filterBy) =>{
+  console.log(filters, filterBy)
+}
+
+2-pass it as props to in the Shop component, pass it down via
+the Checkbox component
+
+
+<Checkbox categories={categories}, handleFilters={handleFilters(filters, 'category')} />
+
+
+3-go to the Checkbox component and take as props:
+
+handleFilters
+
+
+4-go into the handleToggle and below the console.log and setChecked place:
+
+ handleFilters(newCheckedCategoryId)
+
+// comment out the console.log
+
+return the handleFilters
+
+<Checkbox
+  categories={categories}
+  handleFilters={(filters) => handleFilters(filters, "category")}
+/>;
+ 

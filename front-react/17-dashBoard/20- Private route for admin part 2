@@ -9,7 +9,7 @@ go to the redirectUser
 
 create another if statement
 if(isAuthenticated){
-  return <Redirect to="/home"/>
+  return <Redirect to="/"/>
 }
 
 

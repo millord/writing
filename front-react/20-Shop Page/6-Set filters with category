@@ -1,0 +1,21 @@
+1-in the  Shop component add new state:
+
+const [myFilters, setMyFilters] = useState({
+  filters:{category: [], price: []}
+})
+
+
+2-go into the body of the handleFilters:
+
+const newFilters = { ...myFilters };
+newFilters.filters[filterBy] = filters;
+setMyFilters(newFilters)
+
+
+and after return in the Layout with JSON.stringify
+
+
+{JSON.stringify(myFilters)}
+
+
+

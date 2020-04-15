@@ -1,0 +1,42 @@
+1-add the props of handleFilters to the RadioBox componet next to prices
+
+1-in the body of the handleChange:
+
+const handleChange = (event) => {
+  handleFilters(event.target.value)
+  setValues(event.target.value)
+}
+
+// TEST IT 
+
+2- go the map inside and add:
+
+name={p}
+
+3-test it you can pick only one radio button
+
+4-go to the parent compoent Shop into the handleFilters
+
+
+// before setMyFilters
+
+if (filterBy == "price") {
+  let priceValues = handlePrice(filters);
+  newFilters.filters[filterBy] = priceValues;
+}
+
+// below this function create this
+
+const handlePrice = (value) => {
+  const data = price;
+  let array = [];
+
+  for (let key in data) {
+    if (data[key]._id === parseInt(value)) {
+      array = data[key].array;
+    }
+  }
+  return array;
+};
+
+

@@ -27,12 +27,13 @@ for Description, change  all to description, but instead of input use textarea a
 value={description}
 
 4-copy the div from Descripion
-for Price, Change all to price
+for Price, Change all to price type number
 
 5-to the same but in this case category
 but for category give the select instead of input the select has a closing tag.
 
-<option value="id of the category">Python</option>
+<option value="id of the category "5e96808c0b4a4f2824b7bad0">Python</option>
+<option value="id of the category "5e96808c0b4a4f2824b7bad0">PHP</option>
 
 and id of a category, remove type, and value
 below that
@@ -47,6 +48,8 @@ and in option
 
 <option value="0">No</option>
 <option value="1">Yes</option>
+
+--PICK YES TO TEST--
 
 8-At the end of the form, just above the </form> tag add a button with class btn btn-outline-primary with Create Product
 

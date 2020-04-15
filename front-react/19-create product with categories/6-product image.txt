@@ -1,0 +1,26 @@
+inside the core create a file called ShowImage.js
+
+
+make it a functional component with parameters item, url
+
+
+<div className="product-img">
+  <img
+    src={`${API}/${url}/photo/${item.id}`}
+    alt={item.name}
+    className="mb-3"
+    style={{ maxHeight: "100%", maxWidth: "100%" }}
+  />
+</div>;
+
+
+2-import this component in the Card component
+
+
+place it before the description:
+
+<ShowImage item={product} url="product" />;
+
+--TEST IT--
+
+

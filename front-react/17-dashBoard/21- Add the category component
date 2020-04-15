@@ -4,7 +4,7 @@ Go to signin and login as a admin user
 
 in the dashboard click on add caterory
 
--create a new folder in the root called admin
+-create a new folder in the src called admin
 inside AddCategory.js
 
 
@@ -33,10 +33,12 @@ div form-group
 label inside class text-muted Name as text
 input type text class=form-control
 required
+autoFocus
+onChange
 add a buttom just above the </form> tag with class
 btn btn-outline-primary and text Create Category
 
-create two methods one for onChange (when the user types) and onSubmit (when submiting the form)
+create two methods one for onChange (when the user types) and onSubmit (when submiting the form in the form tag)
 -give a value property and autofocus property
 
 create the handleChange and the clickSubmit methods above this function(newCateryForm).

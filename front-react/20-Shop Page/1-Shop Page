@@ -1,0 +1,25 @@
+1-inside core create Shop.js
+
+2-import from home
+
+3-create a functional component name Shop
+
+4-Grab from the Home component the Layout and remove
+all inside and create a div with class row
+
+
+-with another div inside with class col-4
+and left side
+
+anthoer div class col-8
+Right
+
+Import it in the routes 
+path='/shop' component={Shop}
+
+5-go to the Menu component and add a new link (copy and paste Home links), name it Shop to="/shop"
+
+
+6-change the title and the description
+
+

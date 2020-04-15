@@ -1,4 +1,4 @@
-1-Copy the code of createCategory in the apiAmin.js
+1-Copy the code of the funciont createCategory of the apiAmin.js
 
 change it name to createProduct with paramenters:
 userId, token, product

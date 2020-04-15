@@ -1,0 +1,19 @@
+
+ in the user folder create a file called:
+
+AdminDashboard.js
+
+Copy all from UserDashboard and modify.
+
+Change:
+
+My Cart to Create Category
+path="/create/category"
+
+Update Profile to Create Product
+path="/create/product"
+
+
+userInfo to adminInfo
+
+Modify what is inside the Layout

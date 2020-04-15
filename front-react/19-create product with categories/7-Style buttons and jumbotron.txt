@@ -1,0 +1,5 @@
+1-inside the src create a file called styles.css
+
+import it in the layout
+
+copy the content 

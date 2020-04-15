@@ -1,0 +1,35 @@
+
+1-Go to the Checkbox component and create the state
+
+const [checked, setChecked] = useState([])
+
+
+2-add to the input field add onChange={handleToggl(c.id)}.
+
+3-create the handleToggle method:
+
+
+const handleToggle = (c) => () => {
+  // return the first index or -1
+  const currentCategoryId = checked.indexOf(c);
+  const newCheckedCategoryId = [...checked];
+  // if currently checked was not already in checked state > push
+  // else pull/take off
+  if (currentCategoryId === -1) {
+    newCheckedCategoryId.push(c);
+  } else {
+    newCheckedCategoryId.splice(currentCategoryId, 1);
+  }
+  console.log(newCheckedCategoryId);
+  setChecked(newCheckedCategoryId);
+};
+
+// below in the input add the value
+
+value={checked.indexOf(c._id === -1)}
+
+--TEST IT-- in the console
+
+
+
+

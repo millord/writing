@@ -13,7 +13,7 @@ get the form data using useEffect
 add to the state formData
 
 useEffect(() => {
-  setValues({...values, formData: new formData})
+  setValues({...values, formData: new FormData()})
 },[])
 
 2-in the form add onSubmit={clickSubmit}

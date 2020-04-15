@@ -1,0 +1,27 @@
+
+1-copy the getCategories into the apiCorel.js
+
+
+2-import getCategories from apiCore
+
+3-create the state to hold the categories
+
+const [categories, setCategories] = useState([])
+const [error, setError] = useState(false)
+
+4-go to the AddProduct and copy the init method into this component
+
+-instead of setting values use setError(data.error)
+
+else: setCategories(data)
+
+
+5-to run it when the component mounts use useEffect
+
+useEffect(() => {
+  init()
+},[])
+
+6-go to the left side bar and use:
+
+{JSON.strinfigy(categories)}

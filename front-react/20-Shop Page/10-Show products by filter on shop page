@@ -1,0 +1,84 @@
+API REQUEST
+
+1-GO to the Shop component
+2-before setMyFilters(newFilters)
+
+3-call this function
+
+loadFilteredResults(myFilters.filters)
+
+4-create the method loadFilteredResults just before return
+
+
+
+const loadFilteredResults = (newFilters) => {
+ console.log(newFilters)
+
+
+}
+
+Test it in the console
+
+
+5-In the Shop component again
+
+6-create a function in the apiCore.js
+
+copy the createCategory and copy here
+
+
+7-Change the name to getFilteredProducts and give the arguments
+skip, limit, filters with a default value of {}
+
+-the api call to: `${API}/products/by/search`
+
+Method POST
+
+remove the Authorization
+
+
+8- for the body you need to send the skip limit and filters
+
+9-create an object above the return of getFilteredProducts call data with:
+
+const data = {
+  limit, skip, filters
+}
+
+10-pass it as the argument of stringify
+
+11-Go into the Shop component
+import the getFilteredProducts
+
+12-add a new state
+
+const [limit, setLimit] = useState(6)
+const [skip, setSkip] = useState(0)
+const [filteredResults, setFilteredResults] = useState()
+
+
+
+13-cut the loadFilteredResults just above the useEffect
+
+ const loadFilteredResulst = newFilters => {
+  getFilteredProducts(skip, limit, newFilters).then(data => {
+    if(data.error){
+      setError(data.error)
+    }else{
+      setFilteredResults(DataView)
+    }
+  })
+}
+
+use JSON.stringify(filteredResults)
+
+--TEST IT FILTERING THE CATEGORIES
+
+
+---SHOW SOME PRODUCTS WHEN THE COMPONENT MOUNT
+
+
+14- In the useEffect use also loadFilteredResults()
+with arguments skip, limit, myFilters.filters
+
+

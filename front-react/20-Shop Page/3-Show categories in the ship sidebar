@@ -1,0 +1,26 @@
+1-go to core and create a file called Checkbox.js
+
+
+2-import the useState and useEffect
+
+
+3-create a functional component taking the props categories
+
+
+in the return map through the categories:
+
+inside the map:
+
+create a li with  key={i} className="list-unstyled" wrapping inside an input with type="checkbox" className="form-check-input" label className="form-check-label" with a body {c.name}
+
+
+4-import it the Shop component
+
+and put it inside the Layout with props:
+<h4>Filter by categories</h4>
+inside an ul put the Checkbox component
+categoreis={categories}  
+
+ --TEST --
+
+

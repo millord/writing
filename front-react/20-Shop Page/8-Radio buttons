@@ -1,0 +1,63 @@
+1-in the core create the RadioBox.js compoennt
+
+2-import react,Fragment,  useState and useEffect
+
+3-create a functional component taking prices
+
+4-create the state:
+const [value, setValues] = useState(0)
+
+5-in the return a Fragment tag
+
+6-inside it {JSON.stringify(prices)}
+input type radio className="mr-2 ml-4"
+label className form-check-label Name
+
+7-Import it in the Shop component
+
+
+8-Copy from the h4 to the last ul closing tag and change to 
+Filter by Price range
+
+9-change Checkbox to RadioBox
+
+10-instead of ul use a div
+
+
+11- in handleFilters take "price"
+
+
+-TEST IT--
+
+
+12- go to Checkbox component and copy the looping through categories code, starting in the return and the closing li
+
+
+and replace all the was in the return of the RadioBox component.
+
+change:
+
+Instead of categories, prices arguments p , i
+
+use a div instead of the li
+
+remove the className
+in the input
+type radio
+change the method in the onChange to handleChange
+and value ={`4{p._id}`}
+className to mr-2 ml-4
+label change to p.name
+
+
+13-create the handleChange method:
+
+above the return
+const handleChange = () => {
+/// come back to it later
+}
+
+BEFORE CHANGE THE PROPS in the <RadioBox /> component inside Shop.js
+
+--TEST IT
+
