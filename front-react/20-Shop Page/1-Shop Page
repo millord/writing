@@ -1,6 +1,5 @@
 1-inside core create Shop.js
 
-2-import from home
 
 3-create a functional component name Shop
 
@@ -21,5 +20,7 @@ path='/shop' component={Shop}
 
 
 6-change the title and the description
+
+
 
 

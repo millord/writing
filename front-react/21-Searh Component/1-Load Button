@@ -1,0 +1,43 @@
+
+
+1-In the Shops component create one more state:
+
+const [size,setSize] = useState(0)
+
+
+2-in the loadFilteredResults
+
+Besides using setFilteredResults (below it)
+
+setSize(data.size)
+setSkip(0)
+
+3-copy the whole loadFilteredResults paste it below it and modify it to:
+
+const loadMore = () => {
+  let toSkip = skip + limit;
+  getFilteredProducts(toSkip, limit, myFilters.filters).then((data) => {
+    if (data.err) {
+      setError(data.error);
+    } else {
+      setFilteredResults([...setFilteredResults, ...data.data]);
+      setSize(data.size);
+      setSkip(toSkip);
+    }
+  });
+};
+
+
+const loadMoreButton = () => {
+  return(
+    size > 0 && size >= limit && (
+      <button onClick={loadMore} className="btn btn-warning mb-5"></button>
+    )
+  )
+}
+
+-add an <hr/>
+
+4-Add inside the dev below the card
+
+

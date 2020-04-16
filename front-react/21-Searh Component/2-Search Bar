@@ -1,0 +1,55 @@
+
+
+1-in core create a new component called Search
+
+
+2-copy the imports from Home
+
+
+3-functional component 
+
+4-return some text inside a div
+
+5-import it in Home
+
+6-After the opening Layout
+--TEST IT
+
+7-create the state in   Search
+const [data, setData] = useState({
+  categories: [],
+  category: '',
+  search: '',
+  results: [],
+  searched: false
+ })
+
+8-get the categories from the backend
+
+9- import getCategories
+
+10-create the loadCategories function just below the state
+
+const { categories, category, search, results } = data;
+
+const loadCategories = () => {
+  getCategories().then((data) => {
+    if (data.error) {
+      console.log(data.error);
+    } else {
+      setData({ ...data, categories: data });
+    }
+  });
+};
+
+
+11-run the useEffect below
+
+useEffect(() => {
+ loadCategories()
+},[])
+
+
+---TEST IT INSIDE THE RETURN USING JSON STRINGIGY 
+
+

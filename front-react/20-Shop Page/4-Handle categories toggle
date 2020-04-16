@@ -4,7 +4,7 @@
 const [checked, setChecked] = useState([])
 
 
-2-add to the input field add onChange={handleToggl(c.id)}.
+2-add to the input field add onChange={handleToggl(c._id)}.
 
 3-create the handleToggle method:
 

@@ -1,3 +1,6 @@
+API call to get the categories
+
+In the Shop component
 
 1-copy the getCategories into the apiCorel.js
 
@@ -9,7 +12,9 @@
 const [categories, setCategories] = useState([])
 const [error, setError] = useState(false)
 
-4-go to the AddProduct and copy the init method into this component
+
+Since we need to initialize
+4-go to the AddProduct and copy the init method into this component ()
 
 -instead of setting values use setError(data.error)
 
@@ -17,6 +22,8 @@ else: setCategories(data)
 
 
 5-to run it when the component mounts use useEffect
+
+useEffect must be called before init
 
 useEffect(() => {
   init()

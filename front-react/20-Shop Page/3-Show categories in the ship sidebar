@@ -11,13 +11,13 @@ in the return map through the categories:
 
 inside the map:
 
-create a li with  key={i} className="list-unstyled" wrapping inside an input with type="checkbox" className="form-check-input" label className="form-check-label" with a body {c.name}
+create a li with  key={i} className="list-unstyled" wrapping inside an input with type="checkbox" className="form-check-input" (label after) label className="form-check-label" with a body {c.name}
 
 
 4-import it the Shop component
 
-and put it inside the Layout with props:
-<h4>Filter by categories</h4>
+and put it inside the Layout with props (LEFT SIDE):
+<h4>Filter by categories</h4> (at top, before the Checkbox Component)
 inside an ul put the Checkbox component
 categoreis={categories}  
 
