@@ -1,0 +1,27 @@
+1- Below of the showItems function create:
+
+const noItemsMessage = () => {
+  <h2>
+    Your Cart is empty. <br />
+    <Link to="/shop">Continue Shopping</Link>
+  </h2>;
+};
+
+2-Now inside the Layout:
+
+create a div with class col-6 (so we can show the products in half of the screen)
+
+inside that div (left half ) write:
+
+{items.length >  0 ? showItems(items) : noItemsMessage()}
+
+3-Copy and past this div and copy below so you can get right side
+remove of what that div has inside and add:
+
+<p>Show checkout options/shipping address/total/update quantity</p>;
+
+4-Import it the Routes.js
+path="/cart"
+
+
+

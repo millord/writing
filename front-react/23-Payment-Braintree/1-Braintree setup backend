@@ -1,0 +1,19 @@
+1-Create a sandbox account in braintree.
+
+2-Log in, and go into settings, there click on API
+
+3-click on generate a new api key.
+
+-from there get the:
+
+Merchant ID
+Public KeY
+Private Key
+
+4-Go to the backend .env file and set that up
+
+MERCHANT_ID=
+PUBLIC_KEY=
+PRIVATE_KEY=
+
+

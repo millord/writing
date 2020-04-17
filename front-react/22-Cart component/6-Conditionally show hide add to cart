@@ -1,0 +1,26 @@
+
+
+1-Go to Cart component
+
+-in the Card component also send as props:
+showAddToCartButton={false}
+
+
+2-Use it in the Card component (get the props of showAddToCartButton = true)
+
+in the Card component below showViewButton you have showAddToCartButton pass the parameter showAddToCartButton:
+
+{showAddToCartButton(showAddToCartButton)}
+
+and pass to the showAddToCartButton above the paramenter showAddToCartButton too:
+
+const showAddToCartButton = (showAddToCartButton) => { ...
+
+also add it before the return:
+
+return showAddToCartButton &&  (...
+
+So if it is true, it will be visible, it not wont.
+
+--NOTEE: change the name of the function showAddToCartButton to showAddCart. Update it below too.
+

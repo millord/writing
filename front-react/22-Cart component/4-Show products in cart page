@@ -1,0 +1,51 @@
+1-Go into the cartHelpers
+
+-Reuse the itemTotal and make this changes:
+
+name to getCart
+remove the length method
+return []
+
+2-Create in core the Cart.js component
+import the itemTotal.
+
+3-Copy the imports from Home.
+
+4-functional component
+
+-use the state:
+
+const [items, setItems] = useState([])
+
+5-Get the items from localStores and populate the state:
+
+useEffect(() => {
+    setItems(getCart())
+},[])
+
+
+6-Copy the Layout from Home, remove all from inside.
+change the title to=Shopping Cart
+description:Manage your cart items. Add remove checkout or continue shoppining.
+
+7-Inside the Layout we will execute a function that will  show all the items
+from localStorage
+
+8-create the function above the return
+
+const showItems = (items) => {
+  return (
+    <div>
+      <h2>
+        Your Cart has {`${items.length} items`}
+        <hr />
+        {items.map((product, i) => (
+          <Card key={i} product={product} />
+        ))}
+      </h2>
+    </div>
+  );
+};
+
+
+

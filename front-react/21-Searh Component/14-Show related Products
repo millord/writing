@@ -1,0 +1,54 @@
+
+1-Go to apiCore.js
+
+copy and method and:
+
+change name to : listRelated
+url for fetch: API/products/related/${productId}
+
+That's it.
+
+2-Import it in Products
+
+3-Create a function in Product.js
+Add the state
+
+const [relatedProduct, setRelatedProduct] = useState([])
+
+4-Below the setProduct(data)
+-fetch related products
+
+calling
+
+listRelated(data._id).then(data =>{
+   if(data.error){
+      setError(data.error)
+  }else{
+   setRelatedProduct(data)     
+  }
+})
+
+5-Pass the relatedProduct to the Card
+
+
+<div className="container-fluid">
+  <div className="col-8">
+    {product && product.descriptio && (
+      <Card product={product} showViewProductButton={false} />
+    )}
+  </div>
+  <div className="col-4">
+    <h4>Related Products</h4>
+    {relatedProduct.map((p, i) => (
+      <div className="mb-3">
+        <Card key={i} product={p} />
+      </div>
+    ))}
+  </div>
+</div>;
+
+
+6-View Products in the related products works
+modify the useEffect, in the array, instead of empty add inside the array [props]
+
+So, anytime you change the props it will update

@@ -1,0 +1,60 @@
+1-install braintree
+
+npm i braintree
+
+
+2-go to routes and create a new file called:
+-braintree.js
+
+3-in that file create import the Router and export it
+
+4-Create the first get route inside it
+
+router.get('/braintree/getToken/:userId', )
+
+5-appy some middlewares, go into user routes and reuse
+
+autentication controllers methods, and paste them in braintree.js
+-remove isAdmin middleware
+-apply them to the route
+
+router.get('/braintree/getToken/:userId',requireSignin, isAuth,  )
+
+6-create a controller method to generate the token when we get a request to that route.
+
+-call the controller: generateToken:
+
+router.get('/braintree/getToken/:userId',requireSignin, isAuth, generateToken )
+
+7-We need to get the route parameter:
+
+--STILL ON braintree.js--
+
+router.param('userId', userById)
+
+8-To be able to use the userById:
+
+reuse the user controller into braintree.js
+
+const {userById} = require('../controllers/user')
+
+
+9-Go to app.js and import this routes and called them:
+
+braintreeRoutes from routes/braintree
+
+-apply it as a middleware
+
+10-In the controllers folder create braintree.js
+
+-import it into routes/braintree.js
+
+11-
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+1-create a new component called Checkout.js inside core.
+
+-copy the imports from Home.
+
+We need to get all the products we have on the Cart. And from there on
+calculate the total:
+
+2-create a functional component taking products as props.
+-in the return, return a div with:
+{JSON.stringify(products)}
+
+3-import the Checkout component in the Cart.js component.
+
+So, remove what is inside the right div and inside a h2 with class mb-4
+having inside: Your cart summary
+and <hr/>
+place the Checkout component.
+
+<Checkout products={items}/>
+
+--TEST IT-go to cart
+
+
+

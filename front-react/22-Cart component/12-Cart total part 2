@@ -1,0 +1,67 @@
+1-remove the JSON stringify from the return, instead show the total
+
+-add an h2
+-inside it
+Total: ${getTotal()}
+--IN THE RETURN 
+
+2-
+
+const Checkout = ({ products }) => {
+  return (getTotal = () => {
+    return products.reduce((currentValue, nextValue) => {
+      return currentValue + nextValue.count * nextValue.price;
+    }, 0);
+  });
+};
+
+-- TEST IT-- should give you the total in the Checkout right side.
+
+3-Allow them to check out with a button.
+
+-bring the isAuthenticated method from auth.
+-in the return (below Total: ${getTotal()})
+
+{
+  isAuthenticated() ? (
+    <button className="btn btn-success">Checkout</button>
+  ) : (
+    <Link to="/signin">
+      <button className="btn btn-primary">Sign in to Checkout</button>
+    </Link>
+  );
+}
+
+--TEST IT--
+
+4-Move this code above into a separate function to handle payments:
+
+{
+  isAuthenticated() ? (
+    <button className="btn btn-success">Checkout</button>
+  ) : (
+    <Link to="/signin">
+      <button className="btn btn-primary">Sign in to Checkout</button>
+    </Link>
+  );
+}
+
+and replace just with the function call:
+
+{showCheckout()}
+
+
+5-Create the showCheckout function just above the return
+
+const Checkout = () => {
+  {
+    isAuthenticated() ? (
+      <button className="btn btn-success">Checkout</button>
+    ) : (
+      <Link to="/signin">
+        <button className="btn btn-primary">Sign in to Checkout</button>
+      </Link>
+    );
+  }
+};
+

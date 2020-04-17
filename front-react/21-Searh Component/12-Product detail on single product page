@@ -1,0 +1,45 @@
+1-Go into the Card component
+
+npm i moment and import it
+
+2-product.discription apply a class of:
+lead mt-2
+
+3-product.price apply a class of:
+black-10
+
+add:
+
+<p>{product.category && product.category.name}</p>
+
+other:
+
+<p className="black-8">
+Added on {moment(product.createdAt).fromNow()}
+</p>
+
+4-Go to the backend 
+controller/product
+productById
+
+add:
+
+After findById(id) and before .exec place:
+.populate("category")
+
+
+
+5-Show the stuck
+first, in the Card component cut the button where you have
+Add to Cart and place instead:
+
+{showAddToCartButton()}
+
+and before the return create the function.
+
+const showAddToCartButton = () => {
+  return (
+    <button className="btn btn-outline-warning mt-2 mb-2">Add to cart</button>
+  );
+};
+

@@ -1,0 +1,32 @@
+1-Go to cartHelpers
+
+Create a method to give us the total of elements in the cart
+
+Call it itemTotal:
+
+export const itemTotal = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      return JSON.parse(localStorage.getItem("cart")).length;
+    }
+  } else {
+    return 0;
+  }
+};
+
+
+2-Go to the Menu.js
+-import it
+
+3-Copy the Link of shop and paste it and modify it to  Cart.
+and add inside:
+
+Cart <sup><small>{itemTotal()}</small></sup>
+
+
+4-Apply some style to it:
+
+minute of the video 3:50
+
+
+

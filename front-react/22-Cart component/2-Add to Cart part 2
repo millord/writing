@@ -1,0 +1,38 @@
+
+1-go to cart, bring the addItem from cartHelpers.js
+
+2-use it to add the item to the cart
+
+3-find the showAddToCartButton, in the button inside add an onClick property:
+
+onClick = { addToCart };
+
+--add redirect to the state--
+
+const [redirect, setRedirect] = useState(false)
+
+
+4-create the addToCart function:
+
+const addToCart = () => {
+  addItem(product, () => {
+    //Add redirect to the state
+    setRedirect(true);
+  });
+};
+
+5-below create the shouldRedirect function 
+
+const shouldRedirect = (redirect) => {
+  if (redirect) {
+    return <Redirect to="cart" />;
+  }
+};
+
+6-And call it above the ShowImage component:
+
+{shouldRedirect(redirect)}
+
+--TEST IT --
+
+Go to inspect/application/ clear the localStorate and test it.

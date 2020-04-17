@@ -1,0 +1,48 @@
+1-implement the increment/decrement functionality
+
+
+continue working on:
+
+const showCartUpdateOptions = (cartUpdate) => {
+  return cartUpdate && <div>
+    inclement/decrement
+  </div>
+}
+
+2-create a state for count:
+
+const [count, setCount] = useState(product.count)
+
+--remember to pass the count value to the showCartUpdateOptions function.
+In the input tag.
+
+const showCartUpdateOptions = (cartUpdate) => {
+  return (
+    cartUpdate && (
+      <div>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text">Adjust Quantity</span>
+          </div>
+          <input
+            type="number"
+            className="form-control"
+            onChange={handleChange(product._id)}
+            value={count}
+          />
+        </div>
+      </div>
+    )
+  );
+};
+
+3-Above the showCartUpdateOptions create the handleChange method.
+
+const handleChange = productId => event => {
+  setCount(event.target.value < 1 ? 1 : event.target.value)
+  if(event.target.value >= 1){
+    updateItem(productId, event.target.value)
+  }
+}
+
+--CREATE THE updateItem in the the cartHelpers.js

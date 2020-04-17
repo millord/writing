@@ -1,0 +1,29 @@
+1-Go to the Cart component:
+
+pass to the Card component another props called:
+
+cartUpdate={true}
+
+You want this update capability only to show on the Cart component:
+
+2-Go to the Card componenet and take as props:
+
+cartUpdate = false
+
+
+3-in the Card component above the return, create this function:
+
+const showCartUpdateOptions = (cartUpdate) => {
+  return cartUpdate && <div>
+    inclement/decrement
+  </div>
+}
+
+use it in the render below the {showAddToCart(showAddToCartButton)}
+
+--TEST IT GOING TO THE CART COMPONENT where is the only place you can see
+increment/decrement.
+
+--Go to home where you should not see it.
+
+

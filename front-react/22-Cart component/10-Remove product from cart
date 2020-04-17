@@ -1,0 +1,52 @@
+ 1-Go to cartHelpers
+
+2-reuse updateItem
+
+modofy:
+
+in the mapping part:
+
+change it to: cart.splice(i,1)
+
+return the cart
+
+3-import it in Cart.js
+
+add it as a prop to the Card component (which is in the return of the Cart component):
+
+showRemoveProductButton={true}
+
+4-Go to the Card component and take it as props:
+
+showRemoveProductButton = false
+
+
+5-create the function below, reuse the showAddToCart function, and modify it:
+
+name: showRemoveButton
+taking as paramenter: showRemoveProductButton
+in the return 
+
+return showRemoveProductButton && (...
+
+-give it to the button a class instead of warning to danger
+-change the text inside to Remove Product
+-in the onClick:
+
+onClick={() => removeItem(product._id)}
+
+6-Go above the showCartUpdateOptions:
+
+{showRemoveButton(shoRemoveProductButton)}
+
+
+---TEST IT---
+
+
+7-Updating the useEffect to re-render the updated items list
+
+-Go into the Cart.js and add items into the useEffect
+
+
+
+
