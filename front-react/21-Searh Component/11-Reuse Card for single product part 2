@@ -1,0 +1,42 @@
+1-Go to Card, to make it look better.
+remove the first div with class: col-4 mb-3
+
+2-Go to Home, and where you used the Card component:
+
+<div key={i} className="col-4 mb-3">
+  <Card product={product} />
+</div>;
+
+// Do the same for the Best Sellers section
+
+3-Go to Shop.js
+
+and replace what is in the Card for this:
+
+<div key={i} className="col-4 mb-3">
+  <Card product={product} />
+</div>;
+
+
+4-Go back to products, pass one more props to the Card:
+showViewProductButton={false}
+
+5-Go to Card, and take the showViewProductButton as a props with a default value of true.
+
+// In the Card component cut the button
+// and replace it with, remove the Link as a parent of the button {showViewButton(showViewProductButton)}
+
+// inside the Card above the of the return
+// create the showViewButton function
+
+const showViewButton = (showViewProductButton) => {
+  showViewButton && (
+    <Link to={`/product/${product._id}`} className="mr-2">
+      <button className="btn btn-outline-primary mt-2 mb-2">
+        View Product
+      </button>
+    </Link>
+  );
+};
+
+

@@ -1,5 +1,7 @@
 1-add the props of handleFilters to the RadioBox componet next to prices
 
+In the RadioBox Component
+
 1-in the body of the handleChange:
 
 const handleChange = (event) => {
@@ -15,7 +17,7 @@ name={p}
 
 3-test it you can pick only one radio button
 
-4-go to the parent compoent Shop into the handleFilters
+4-go to the parent component Shop into the handleFilters
 
 
 // before setMyFilters
@@ -28,7 +30,7 @@ if (filterBy == "price") {
 // below this function create this
 
 const handlePrice = (value) => {
-  const data = price;
+  const data = prices;
   let array = [];
 
   for (let key in data) {

@@ -9,6 +9,8 @@ map through the filteredResults
 
 {filteredResults.map((product, i) => ())}
 
+-create a loop inside  div with class col-6 mb-3 with key={i}
+
 and inside return the Card with props
 
 <Card product={product} key={i} />

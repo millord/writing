@@ -1,0 +1,19 @@
+
+1-In the Product component, go to Layout. And modify.
+
+<Layout
+  title={product && product.name}
+  description={
+    product && product.description && product.description.substring(0, 100)
+  }
+  className="container-fluid"
+></Layout>;
+
+2-Inside the Layout, make sure you have the product and product descriptoin.
+
+{product &&  product.description
+<Card product={product}/> }
+
+TEST IT
+
+

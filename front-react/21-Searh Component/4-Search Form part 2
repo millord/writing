@@ -1,13 +1,16 @@
 
 1- add the button
 
-in the input right above the span
+in the input right above the closing span
 
 <div>
   <div className="btn input-group-append" style={{ border: "none" }}>
     <button className="input-group-text">Search</button>
   </div>
 </div>;
+
+
 -- TEST IT---
+
 
 

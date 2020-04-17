@@ -1,8 +1,10 @@
-1-in the core create the RadioBox.js compoennt
+--This is a child component of Shop----
+
+1-in the core create the RadioBox.js component
 
 2-import react,Fragment,  useState and useEffect
 
-3-create a functional component taking prices
+3-create a functional component taking prices, and handleFilters as a prop
 
 4-create the state:
 const [value, setValues] = useState(0)
@@ -15,7 +17,7 @@ label className form-check-label Name
 
 7-Import it in the Shop component
 
-
+In the Shop component return
 8-Copy from the h4 to the last ul closing tag and change to 
 Filter by Price range
 
@@ -44,8 +46,8 @@ use a div instead of the li
 remove the className
 in the input
 type radio
-change the method in the onChange to handleChange
-and value ={`4{p._id}`}
+change the method in the onChange to handleChange (not calling it)
+and value ={`${p._id}`}
 className to mr-2 ml-4
 label change to p.name
 

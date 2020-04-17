@@ -65,7 +65,7 @@ const [filteredResults, setFilteredResults] = useState()
     if(data.error){
       setError(data.error)
     }else{
-      setFilteredResults(DataView)
+      setFilteredResults(data.data)
     }
   })
 }

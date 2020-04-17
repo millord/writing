@@ -1,0 +1,30 @@
+1- In the Search component
+
+2-go to the searchProduct method modify it:
+
+const searchProducts = (result = []) => {
+  return (
+    <div>
+      <h2 className="mt-4 mb-4">{searchMessage(searched, results)}</h2>
+      <div className="row">
+        {results.map((product, i) => (
+          <Card key={i} product={product} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+and put above this function the searchMessage function:
+
+const searchMessage = (searched, results) => {
+  if (searched && results.length > 0) {
+    return `Found ${result.length} products`;
+  }
+  if (searched && results.length < 1) {
+    return `No Products Found`;
+  }
+};
+
+--- TEST IT --
+

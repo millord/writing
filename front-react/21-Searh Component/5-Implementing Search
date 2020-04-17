@@ -1,0 +1,41 @@
+-- in the Search component
+
+1-handleChange
+
+
+const handleChange = (name) => (event) => {
+  setData({ ...data, [name]: event.target.value, search: false });
+};
+
+
+const searchSubmit = (e) => {
+  e.preventDefault();
+  searchData();
+};
+
+
+searchData === will make the api request.
+
+
+// Test it , search for a book and see it in the console
+
+
+
+2-Copy and paste a method from the apiCore.js
+
+and make some changes:
+
+-name list, paramenters: params
+
+npm i query-string
+
+import it in apiCore as queryString
+
+before the fetch call create this constant
+
+const query = queryString.stringify(params)
+
+in the fetch the route is: `${API}/products/search?${query}`
+
+
+

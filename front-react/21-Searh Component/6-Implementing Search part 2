@@ -1,0 +1,29 @@
+1-go into Search.js
+
+2-bring the list function
+
+
+3-go into the searchData function
+
+if (search) {
+  list({ search: search || undefined, category: category }).then((response) => {
+    if (response.error) {
+      console.log(response.error);
+    } else {
+      setData({ ...data, results: reponse, searched: true });
+    }
+  });
+}
+
+Go inside the the return and 
+
+{JSON.stringify(resutls)}
+
+
+--TEST IT
+
+
+Search a book you know is there.
+
+
+

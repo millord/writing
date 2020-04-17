@@ -1,0 +1,65 @@
+
+1-in core create Product.js
+
+2-copy the imports from Home.js
+remove Search
+
+3-functional component
+
+4-Copy the Layout
+-return <p>Product Page</p>
+
+5-import it in the Routes
+
+6-In the Route path="/product/:productId"
+
+7-Go to Card
+-In the button link to={`/product/${product._id}`}
+
+--TEST IT--
+
+7-Go to Product and create state to hold the products
+
+const [product, setProduct] = useState({})
+const [error, setError] = useState(false)
+
+8-create a method and run it in useEffect.
+
+9-// take props in the Product component
+
+useEffect(() => {
+  const productId = props.match.params.productId;
+  loadSingleProduct(productId);
+}, []);
+
+
+10-create the loadSingleProduct method above the useEffect
+
+
+// create read method to get a single product from the api
+
+const loadSingleProduct = (productId) => {
+  read(productId).then((data) => {
+    if (data.error) {
+      setError(data.error);
+    } else {
+      setProduct(data);
+    }
+  });
+};
+
+11-Go into the Layout (still on Product) and add heading:
+
+<h2 className="mb-4">Single Product</h2>
+<div className="row">
+    {JSON.stringify(product)}
+</div>
+
+12-Go into the apiCore.js and copy one get method and modify it:
+
+-Change the name to read
+-parameter productId
+-fetch to: `${API}/product/${productId}`
+
+import read into the Product component
+

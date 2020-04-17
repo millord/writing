@@ -1,6 +1,6 @@
-we need to send the data from the child to the parent
+we need to send the data from the parent to the child
 
-1-create the handleFilters function.
+1-create the handleFilters  in the Shop component function.
 
 const handleFilters = (filters, filterBy) =>{
   console.log(filters, filterBy)
@@ -23,7 +23,7 @@ handleFilters
  handleFilters(newCheckedCategoryId)
 
 // comment out the console.log
-
+go to the Shop component
 return the handleFilters
 
 <Checkbox

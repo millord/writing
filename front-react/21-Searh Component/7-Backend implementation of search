@@ -1,0 +1,53 @@
+1-In the Search Component
+
+2-go inside the return and where you are returning the {searchForm()}
+
+Copy and paste it below with class container-fluid instead
+
+and put the method {searchProducts(result)}
+
+3-create the searchProducts just above the searchForm function:
+
+const searchProducts = (results = []) => {
+  return(
+    <div className="row">
+      {results.map((product, i) => (<Card key={i} product={product} />))}
+    </div>
+  )
+}
+
+--TEST IT -- search for products
+
+4-Go to the backend to get the products.
+
+routes, products
+
+route.get('/products/search', listSearch)
+
+-import it at the top of that file.
+
+5-Go to the controllers/products.js, and at the bottom create the method.
+
+exports.listSearch = (req, res) => {
+  // create query object to hold search value and category value
+  const query = {};
+  // assign search value to query.name
+  if (req.query.search) {
+    query.name = { $regex: req.query.search, $options: "i" };
+    // assign category value to query.category
+    if (req.query.category && req.query.category != "All") {
+      query.category = req.query.category;
+    }
+    // find the product based on query object with 2 properties
+    // search and category
+    Product.find(query, (err, products) => {
+      if (err) {
+        return res.status(400).json({
+          error: errorHandler(err),
+        });
+      }
+      res.json(products);
+    }).select("-photo");
+  }
+};
+
