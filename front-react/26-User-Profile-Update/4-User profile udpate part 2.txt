@@ -1,0 +1,46 @@
+video 132
+
+
+const handleChange = (name) => (event) => {
+  setValues({ ...values, error: false, [name]: event.targer.value });
+};
+
+const clickSubmit = (e) => {
+  e.preventDefault();
+  update(props.match.params.userId, token, { name, email, passoword }).then(
+    (data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        updateUser(data, () => {
+          setValues({
+            ...values,
+            name: data.name,
+            email: data.email,
+            success: true,
+          });
+        });
+      }
+    }
+  );
+};
+
+
+// AT THE END REDIRECT THE USER TO CART
+
+
+const redirectUser = (success) => {
+  if (success) {
+    return <Redirect to="/cart" />;
+  }
+};
+
+
+// add it in the return below the {profileUpdate()}
+// {redirectUser(success)}
+
+// if you get an error with the localStorage make you
+// to wrap the localStorage.getItem('jwt') with JSON.parse
+
+
+

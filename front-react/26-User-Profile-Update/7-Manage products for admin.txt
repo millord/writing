@@ -1,0 +1,23 @@
+video 135
+
+==WE ARE LOOKING FOR THAT ADMIN CALL UPDATE AND DELETE PRODUCT, NOW HE CAN ONLY CREATE PRODUCT.
+
+1-Go inside the AdminDashboard and reuse the View Orders Link
+
+path="/admin/products"
+
+Inside Manage Products
+
+
+2-GO to admin an create a new Component called:
+
+ManageProducts.js
+
+reuse the import from   AddCategory.js
+
+-create a functional component called ManageProducts
+-reuse the Layout from Home
+-remove all the content except h2 (change it to Manage Products)
+-in the Layout change title to = Manage Products
+-description: Perform CRUD on products
+

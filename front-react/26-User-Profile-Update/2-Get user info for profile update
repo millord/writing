@@ -1,0 +1,52 @@
+video:131
+
+-Before the allow the user to update the profile. We need to have the proper user information, to get that information we need to make request to the backend.
+
+-Go into the Profile component and import the read,and updata and updateUser from the apiUser
+
+-add useState and useEffect
+
+-create a functional component
+
+-in order to get the user information we need the userId, so we know which user to fetch (which is in the route)
+
+
+// Take props to grab the user information from the route
+// with props.match.params.userId
+
+const Profile = (props) => {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+    error: false,
+    success: false,
+  });
+
+  // destruture
+  const { name, email, password, error, success } = values;
+
+  const init = (userId) => {};
+
+  useEffect(() => {
+    init(props.params.match.userId);
+  }, []);
+  return (
+    <Layout
+      title="Profile"
+      description="update your frile"
+      className="container-fluid"
+    >
+      <h2 className="mb-4">Profile Update</h2>
+    </Layout>
+  );
+};
+
+/// TEST IT
+See the console.log
+you should see the userId
+
+--get token from isAuthenticated
+
+const {token} = isAuthenticated()
+

@@ -1,0 +1,82 @@
+video:130
+
+--in the frontend
+
+1-First thing is to add a route.
+-before creating it, import it in the Routes.js
+
+import Profile from './user/Profile'
+
+-It has to be a PrivateRoute
+-path="/profile/:userId"
+exact
+component={Profile}
+
+2-Lets go and create this component in user folder called.
+
+Profile.js
+
+-reuse the imports from the UserDashBoard
+
+-create a functional component:
+
+-just return in a <h2>Profile</h2>
+
+3-Go into the UserDashboard and modify the link
+to="/profile/${_id}"
+
+--TEST IT--
+
+4-Now we need to grab the userId the profile component to fetch the data from a particular user. we need two methods:
+
+One for read the user information
+Other for update the user information
+
+5-Go to the backend and you will see them already.
+Go to backend/routes/user and you will find a get method for getting the user info and a put to update it.
+
+6-Go to the frontend and create the file
+apiUser.js into the user folder
+
+-go to apiCore.js and reuse the getProduct function
+and for update reuse the createOrder method.
+
+modify it (inside the apiUser.js)
+
+name:read
+params: userId,token
+fetch: `{API}/user/${userId}`
+method: GET
+headers:Accept, Content-Type, Authorization
+keep the rest the same.
+
+
+Now modify the createOrder:
+
+name:update	
+params: userId,token, user
+fetch: `{API}/user/${userId}`
+method: PUT
+headers:Accept, Content-Type, Authorization
+in the body: JSON.stringify(user)
+keep the rest the same.
+
+
+7-After updating the user information in the backend we also need to update it in localStorage. We are saving the user in the localStorage and from there we are grabing the user. Otherwise unless the user signout and signin again they will see the changes, but it we update the localStorage they will see the changes.
+
+-So, lets create this method.
+
+export const updateUser = (user, next) => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("jwt")) {
+      let auth = localStorage.getItem("jwt");
+      auth.user = user;
+      localStorage.setItem("jwt", JSON.stringify(auth));
+      next();
+    }
+  }
+};
+
+
+
+

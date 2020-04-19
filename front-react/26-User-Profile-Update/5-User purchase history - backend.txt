@@ -1,0 +1,32 @@
+video 133
+
+
+1-go to the backend
+/routes/user
+
+-create a get route.
+
+router.get("/orders/by/user/:userId", requireSignin, isAuth, purchaseHistory);
+
+
+-import purchaseHistory from controllers/user
+
+-go ahead and create the controller into the user controllers
+
+NOTE:--Each order is asociated with the user in the model.
+
+exports.purchaseHistory = (req, res) => {
+  Order.find({ user: req.profile._id })
+    .populate("user", "_id name")
+    .sort("-created")
+    .exec((err, orders) => {
+      if (error) {
+        return res.status(400).json({
+          error: errorHandler(error),
+        });
+      } else {
+        res.json(orders);
+      }
+    });
+};
+

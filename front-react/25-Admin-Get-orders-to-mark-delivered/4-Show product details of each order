@@ -1,3 +1,43 @@
 Video: 126
 
+1-We need to loop through all of those products and show the product information.
+
+2-Go to admin/Orders.js
+
+-in the return, after the h3
+
+{
+  o.products.map((p, pIndex) => (
+    <div
+      className="mb-4"
+      key={pIndex}
+      style={{ padding: "20px", border: "1px solid indigo" }}
+    >
+      {showInput("Product name", p.name)}
+      {showInput("Product price", p.price)}
+      {showInput("Product total", p.count)}
+      {showInput("Product Id", p._id)}
+    </div>
+  ));
+}
+
+--there you loop through the order product--
+
+3-Display the product name, price, product count and so on.
+
+the function for the above code is called showInput:
+
+const showInput = (key, value) => {
+  <div className="input-group mb-2 mr-sm-2">
+    <div className="input-group-prepend">
+      <div className="input-group-text">{key}</div>
+      <input type="text" value={value} className="form-control" readOnly />
+    </div>
+  </div>;
+};
+
+
+
+---TEST IT---
+
 

@@ -1,0 +1,105 @@
+Video: 127
+
+Now we can show all the orders, but what we cannot do is 
+update the status of the order. For that we need to go to our backend, into the Order model.
+
+Check the enum field:
+
+--What we need is a method that will return all that options to the front-end
+
+1-Create a route in the orders.js: 
+
+router.get(
+  "/order/status-values/:userId",
+  requiredSignin,
+  isAuth,
+  isAdmin,
+  getStatusValues
+);
+
+
+-import it from the controllers/order
+
+
+2-Inside the controllers/order
+
+-create the method, go at the bottom of the file.
+
+exports.getStatusValues = (req, res) => {
+  res.json(Order.schema.path("status").enumValues);
+};
+
+
+3-Go into the frontend:
+
+-Go to apiAdmin reuse the listOrders method, and 
+do some changes:
+
+-name: getStatusValues
+-params: userId, token
+-fetch: `${API}/order/status-values/${userId}`
+--keep the rest the same.
+
+4-Go inside the admin folder into Orders.js
+
+-resuse the loadOrders function:
+-place it just before the useEffect
+
+// create the state
+
+const [statusValues, setStatusValues] = useState([]);
+
+const loadStatusValues = () => {
+  getStatusValues(user._id, token).then((data) => {
+    if (data.error) {
+      console.log(data.error);
+    } else {
+      setStatusValues(data);
+    }
+  });
+};
+
+5-call it inside the useEffect method.
+
+useEffect(() => {
+  loadStatusValues()
+},[])
+
+6-creating a select option to loop through the values
+
+-create this funcion above the return:
+
+const showStatus = (order) => {
+  <div className="form-group">
+    <h3 className="mark mb-4">Status: {order.status}</h3>
+    <select
+      className="form-control"
+      onChange={(e) => handleStatusChange(e, order._id)}
+    >
+      <option>Update Status</option>
+      // Loop through the status values
+      {statusValues.map((status, index) => (
+        <option key={index} value={status}>
+          {status}
+        </option>
+      ))}
+    </select>
+  </div>;
+};
+
+
+--create the handleStatusChange above the showStatus method:
+
+
+const handleStatusChange = () => {
+  console.log("update order status");
+};
+
+
+7-Take the showStatus function into the return:
+
+and remove the {o.status} and place it there {showStatus(order)} == this will be dynamic.
+
+--TEST IT CHANGING THE STATUS AND SEE IT IN THE CONSOLE
+
+

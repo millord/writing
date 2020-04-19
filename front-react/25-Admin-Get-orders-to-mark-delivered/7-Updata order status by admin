@@ -1,0 +1,41 @@
+video: 129
+
+In the last lesson we created the order status method so we can send the order status to update. Now we can move on to the front-end.
+
+
+1-Go into the apiAdmin.js and reuse the getStatusValues and modify it:
+
+name: udpateOrderStatus
+params: userId, token, orderId, status
+fetch: `${API}/order/${orderId}/status/${userId}`
+method: "PUT"
+headers: Accept, Content-Type,  Authorization
+body: JSON.stringify({status, orderId})
+
+the rest the same.
+
+2-Now we can use the method in the Orders.js component which is in the admin folders.
+
+-Import it in that file, and instead of console.log use it
+
+-Go into the handleStatusChange
+
+ const handleStatusChange = (e, orderId) => {
+  updateOrderStatus(user._id, token, orderId, e.target.value).then((data) => {
+    if (data.error) {
+      console.log("Status update failed");
+    } else {
+      loadOrders();
+    }
+  });
+};
+
+--TEST IT --
+Modify an order status.
+
+
+
+
+
+
+

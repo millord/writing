@@ -1,0 +1,32 @@
+video 134
+
+1-Go into the add the {purchaseHistory(history)}
+below the {userInfo()}
+
+2-Now up to modify the purchaseHistory function, which is only giving static data.
+
+params: history
+
+3-We will loop through the purchase inside the li
+-place a JSON.stringigy to test and go into the dashboard
+
+4-Make the history look good.
+
+{
+  history.map((h, i) => {
+    {
+      h.products.map((p, i) => {
+        return (
+          <div key={i}>
+            <h6>Product Name: {p.name}</h6>
+            <h6>Product Price: {p.price}</h6>
+            <h6>Purchase Data: {moment(p.createdAt).fromNow()}</h6>
+          </div>
+        );
+      });
+    }
+  });
+}
+
+---TEST IT---
+

@@ -1,0 +1,40 @@
+video 134
+
+// make a request to the  backend and orders of that user.
+
+-go inside apiUser
+
+1-reuse the read method from apiUser and modify it:
+
+
+name:getPurchaseHistory
+params:userId, token
+fetch `${API}/orders/by/user/${userId}`
+method:GET
+headers: Accept, Content-Type, Authorization
+Keep the same.
+
+2-Import it into the UserDashboard
+
+-create a state to hold the history of the user
+
+const [history, setHistory] = useState([]);
+
+// below getting the user
+
+const init = (userId, token) => {
+  getPurchaseHistory(userId, token).then((data) => {
+    if (data.error) {
+      console.log(data.error);
+    } else {
+      setHistory(data);
+    }
+  });
+};
+
+// This init will be execute by the useEffect method
+
+useEffect(() => {
+  init(user._id, token);
+});
+

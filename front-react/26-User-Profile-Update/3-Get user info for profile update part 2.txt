@@ -1,0 +1,34 @@
+video: 131
+
+
+const { name, email, password, error, success } = values;
+
+  const init = (userId) => {
+    read(userId, token).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: true });
+      } else {
+        setValues({ ...values, name: data.name, email: data.email });
+      }
+    });
+  };
+
+  useEffect(() => {
+    init(props.params.match.userId);
+  }, []);
+  return (
+    <Layout
+      title="Profile"
+      description="update your frile"
+      className="container-fluid"
+    >
+      <h2 className="mb-4">Profile Update</h2>
+      {JSON.stringify(values)}
+    </Layout>
+  );
+};
+
+
+--TEST IT--
+
+WE THAT INFORMATION WE WILL PRE-POPULATE A FORM

@@ -1,0 +1,68 @@
+video 132
+
+Inside the Profile.js return remove the JSON.stringify and place the:
+
+{profileUpdate()} which is a function that be will create:
+
+{profileUpdate(name, email, password)}
+
+so, above the return
+
+const profileUpdate = (name, email, password) => (
+  <form>
+    <div className="form-group">
+      <label className="text-muted">Name</label>
+      <input
+        type="text"
+        onChange={handleChange("name")}
+        className="form-control"
+        value={name }
+      />
+    </div>
+  </form>
+);
+
+/// Create the handleChange on top of profileUpdate
+
+const handleChange = (e) => {
+ /// code here later
+}
+
+1-reuse the div with the inputs twice, to create
+the email and password field. 
+
+ <form>
+    <div className="form-group">
+      <label className="text-muted">Name</label>
+      <input
+        type="text"
+        onChange={handleChange("name")}
+        className="form-control"
+        value={name}
+      />
+    </div>
+    <div className="form-group">
+      <label className="text-muted">Email</label>
+      <input
+        type="email"
+        onChange={handleChange("email")}
+        className="form-control"
+        value={email}
+      />
+    </div>
+    <div className="form-group">
+      <label className="text-muted">Password</label>
+      <input
+        type="password"
+        onChange={handleChange("password")}
+        className="form-control"
+        value={password}
+      />
+    </div>
+<button onClick={clickSubmit} className="btn btn-primary">
+  Submit
+</button>;
+  </form>
+
+
+

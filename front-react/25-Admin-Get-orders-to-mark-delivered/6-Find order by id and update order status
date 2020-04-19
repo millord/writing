@@ -1,0 +1,79 @@
+Video: 128
+
+
+1-In the last lesson we added the order status in the select
+
+-Now we are just console logging. Its time to send it to the backend to create a controller method and a route to handle the update of the order.
+
+
+-In the backend go to routes/order.js
+
+reuse the get method of getStatusValue, but change it to put.
+
+router.put('/order/:orderId/status/:userId', 
+  requiredSignin,
+  isAuth,
+  isAdmin,
+  updateOrderStatus
+)
+
+
+router.param('orderId', "orderById")
+
+Now we need to create one middleware (for the orderById) and one controller (for the updateOrderStatus)
+
+
+2-Importing the controllers, in this same file /controllers/order.js, update the imports to have also:
+
+orderById, updateOrderStatus
+
+3-Go inside the order controller and create the method a the top of the file.
+
+
+-- orderById:
+
+exports.orderById = (req, res, next, id) => {
+  Order.findById(id)
+    .populate("products.product", "name price")
+    .exec((err, order) => {
+      if (err || !order) {
+        return res.status(400).json({
+          error: errorHandler(error),
+        });
+      } else {
+        req.order = order;
+        next();
+      }
+    });
+};
+
+
+--Now go to the bottom of the file and create the 
+
+
+-UpdateOrderStatus
+
+
+exports.updateOrderStatus = (req, res) => {
+  Order.update(
+    { _id: req.body.orderId },
+    { $set: { status: req.body.status } },
+    (err, order) => {
+      if (error) {
+        return res.status(400).json({
+          error: errorHandler(error),
+        });
+      } else {
+        res.json(order);
+      }
+    }
+  );
+};
+
+
+ 
+
+
+
+
+
