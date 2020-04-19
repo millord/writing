@@ -1,0 +1,21 @@
+1-In the Checkout component create this function to show the errors
+
+const showError = (error) => (
+  <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
+    {error}
+  </div>
+);
+
+
+2-Call this method inside the return below the h2 Total: ...
+
+{showError()}
+
+3-Hiding the error when typing
+
+Using the onBlur property.
+
+
+-Go insde the showDropIn function and locate the first div.
+There add this method:
+<div onBlur={() => setData({...data, error: ""})}>

@@ -1,0 +1,34 @@
+video number: 123
+---Get all the orders from the backend and use them in the frontend.
+
+-Go to the backend
+
+-in the order.js routes
+
+create a get request.
+
+router.get("/order/list/:userId", requiredSignin, isAuth, isAdmin, listOrders);
+
+-import it from controllers/order
+
+-create the method in controllers
+
+const { create, listOrders } = require("../controllers/order");
+
+
+-go into the order controllers and create this method
+
+exports.listOrders = (req, res) => {
+  Order.find()
+    .populate("user", "_id name address")
+    .sort("-created")
+    .exec((error, orders) => {
+      if (error) {
+        return res.status(400).json({
+          error: errorHandler(error),
+        });
+      }
+      res.json(orders);
+    });
+};
+

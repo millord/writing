@@ -1,0 +1,65 @@
+-Implement the payment process in the front-end
+
+1-go in the apiCore
+
+add one more method
+reuse the getBraintreeClientToken and do some changes:
+
+call it:
+
+processPayment
+arguments:
+-userId, token, paymentData
+-fetch to: `${API}/braintree/payment/${userId}`
+-method: POST
+-keep the Accept, Content-Type and Authorization
+
+In the body:
+
+body: JSON.stringify(paymentData)
+
+The rest keeps the same.
+
+2-Move to the Checkout component
+
+-import the processPayment
+
+3-Go inside the buy method and instead of console.log:
+
+console.log("send nonce and total to process", 
+           nonce,  
+          getTotal(products)
+)    
+
+comment that out, and add:
+also comment out the other two console.log that are inside that function
+type:
+
+const paymentData = {
+  paymentMethodNonce: nonce,
+  amount: getTotal(products),
+};
+
+processPayment(userId, token, paymentData)
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
+
+
+4-Go into the button of the showDropIn function that says Pay and modify it with:
+
+add btn-block
+
+
+--TEST IT---
+
+Enter the card number:
+
+4111 1111 1111 1111     
+exp: 11/22
+
+Check the console.log, should give a success message, success true.
+
+
+
+
+    

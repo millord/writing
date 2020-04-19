@@ -1,0 +1,62 @@
+1-Go to the backend and create a new file in models called:
+Order.js
+
+Copy the code from the file of the source code since he did it himself.
+
+ 
+Where you have two schemas:
+
+a-CartItemSchema
+b-OrderSchema
+
+video No. 119.
+
+-The OrderSchema is using the CartItemSchema to save the products
+
+2-Go into the controllers order.js and continue working on the create method:
+
+-import the models: 
+
+a-CartItemSchema
+b-OrderSchema
+
+Into controllers:
+
+const {Order, CartItem} = require('../models/order')
+const {errorHandler} = require('../helpers/dbErrorHandler')
+
+exports.create = (req, res) => {
+  // Before saving the order we need the user as well
+  // because orders will be asociated with the user
+  req.body.order.user = req.profile;
+  const order = new Order(req.body.order);
+  order.save((error, data) => {
+    if (error) {
+      return res.status(400).json({
+        error: errorHanlder(error),
+      });
+    } else {
+      res.json({ data });
+    }
+  });
+};
+
+3-Test it making a payment.
+
+-address
+fake card number and ccv
+
+4-Check the db to see if it was saved.
+
+5-Go into the front end and uncomment the code in the Checkout component
+in the buy function to empty the cart.
+
+6-go into the  emptyCart function and when setting the data 
+success  change it to true.
+
+--TEST IT--
+you should see the success message:
+
+Thanks! Your payment was successful!
+
+

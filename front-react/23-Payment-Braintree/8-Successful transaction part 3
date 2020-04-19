@@ -1,0 +1,58 @@
+--TEST IT---
+
+Enter the card number:
+
+4111 1111 1111 1111     
+exp: 11/22
+
+Check the console.log, should give a success message, success true.
+
+
+1-Go back to Checkout:
+
+processPayment(userId, token, paymentData)
+  .then((response) => {
+    setData({ ...data, sucess: response.success });
+    // empty cart
+    // create order
+  })
+  .catch((error) => console.log(error))
+  .catch((error) => {
+    setData({ ...data, error: error.message });
+  });
+
+2-Show the message to the user that the payment was successfull:
+
+const showSuccess = (success) => {
+  <div className="alert alert-info" style={{ display: success ? "" : "none" }}>
+    Thanks! Your payment was successful!
+  </div>;
+};
+
+// place this in the return below the Total: ${...
+
+{
+  showSuccess(data.success);
+
+---The message stays forever
+
+3-Fix it
+Go into the getToken function and remove:
+
+...data.
+
+--TEST IT---
+
+4-Go to the braintree sandbox dashboard and get for the payments in the system.
+
+5-Activate the CVV option
+
+-into the braintree sandbox dashboard
+-go to processing
+-CVV
+
+
+
+
+
+    

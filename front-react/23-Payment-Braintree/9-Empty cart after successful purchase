@@ -1,0 +1,32 @@
+Once the user pays for the product, we need to empty the cart for the 
+localStorage.
+
+1-Go into cartHelpers.js
+
+-there, create a method that will clear out the items from the localStorage.
+
+export const emptyCart = (next) => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("cart");
+    next();
+  }
+};
+
+
+2-Go into the Checkout component and import it.
+
+-execute it  when we recieve the sucessfull payment, 
+in the buy function, inside the processPayment function after
+setting the data into the state.
+
+setData({})...
+
+emptyCart(() => {
+ console.log('payment success and empty cart')
+})
+
+
+--TEST IT MAKING ANOTHER PURCHASE WITH THE FAKE CARD DATA.
+
+
+    

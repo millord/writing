@@ -1,0 +1,82 @@
+IN THE FRONTEND
+
+1-Go into the apiCore.js
+
+-reuse the processPayment function and modify it:
+
+name: createOrder
+params: userId, token, createOrderData
+fetch: `${API}/order/create/${userId}`
+keep: Accept, Content-Type and Authorization
+
+in the body send the order inside an object {order: createOrderData}
+
+-all the rest stays the same.
+
+2- with this, we can use this method in the Checkout process to create a new order,  before we empty the cart from the localStorage.
+
+3-Go into the Checkout component and import the  createOrder function form apiCore.js
+
+-go into the buy function
+
+-in the processPayment method after the first console that log and before using setData({...data, success:response.success})...
+
+create the createOrderData object:
+
+createOrderData = {
+ products: products,
+ transaction_id: responde.transaction_id,
+ amount: response.transaction.amount,
+ address: data.address
+}
+
+// next add the address to state in the Checkout component
+// it should look like this:
+
+const [data, setData] = useState({
+  loading: false,
+  success: false,
+  clientToken:null,
+  error:'',
+  instance: {},
+  address: ''
+})
+
+4-Add textarea for address input in the showDropIn()
+
+create a div after:
+{data.clientToken !== null && products.length > 0 ? (
+
+<div>
+  <div className="form-group mb-3">
+    <label className="text-muted">Delivery Address:</label>
+    <textarea
+      onChange={handleAddress}
+      className="form-control"
+      value={data.address}
+      placeholder="Type your delivery address here..."
+    />
+  </div>
+   <DropIn /> and rest of the code...
+
+// just below the useEffect method create handleAddress()
+
+const handleAddress = (event) => {
+  setData({ ...data, address: event.target.value });
+};
+
+
+--NOTE: before testing, create this variable on top of the buy function:
+
+let deliveryAddress = data.address
+
+and use it in the createOrderData object to be the value of the address: property.
+
+now.
+
+---TEST IT--- SHOULD STAY HANGING loading...
+
+
+
+
+

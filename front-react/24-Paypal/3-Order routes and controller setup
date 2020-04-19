@@ -1,0 +1,41 @@
+Once the payment is done, we need to send the order information
+to the backend and save it in the database, So the users can 
+see the purchase history, and admin can see how many orders
+, so they can process them.
+
+1-Go to our backend to create a new route and controller.
+
+2-there, create a route called order.js
+
+-reuse all the braintree route.
+-remove all the routes, I mean, all the router.get...,route.post...
+
+-we are going to use the userById route.
+
+-we need also the auth controllers also.
+
+-remove the braintree controllers imports
+
+and replace them by:
+
+const {create} = require('../controllers/order')
+
+3-create the route:
+
+router.post('/order/create/:userId', requireSignin, isAuth, create)
+
+4-import this route into the app.js file
+-call it orderRoutes
+-put it in the middlewares
+
+5-go into the controllers folder and create the orders.js file
+
+-So before we create new order and save it to the database we will
+have a look in the console.
+
+exports.create = (req, res) => {
+  console.log('Create order:', req.body)
+}
+
+
+

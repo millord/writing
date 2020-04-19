@@ -1,0 +1,48 @@
+1-Go into the Checkout component
+
+2-Go into the showDropIn function,
+-there into the DropIn
+-in the options add:
+paypal:{
+flow: "vault"
+}
+
+3-Test it, you should have the button activated.
+
+-Go into your braintree dashboard, go into options
+
+--REWATCH THE VIDEO, to set up the Paypal sandbox.
+
+4--LOADING for the user..
+
+create a new state:
+
+loading: false
+
+4- go into the buy function and at the top of the function:
+
+const buy = () => {
+  setDate({loading: true})...
+
+below, after executing the emptyCart function, after the console.log:
+
+setData({loading: false })
+
+-In the next .catch after:
+    console.log(error)
+    setData({loading: false})
+
+
+5-With that set up:
+
+create the showLoading function:
+
+const showLoading = () => loading && <h2>Loadning...</h2>;
+
+place it before the return, after showSuccess.
+
+-inside the return:
+{showLoading(data.loading)}
+put it above showSuccess
+
+ 

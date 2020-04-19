@@ -49,7 +49,55 @@ braintreeRoutes from routes/braintree
 
 -import it into routes/braintree.js
 
-11-
+11- (INSIDE THE /controllers/braintree.js)
+
+-import the User model
+-require braintree package
+-require dotenv
+
+
+11- connect to braintree using the keys
+
+const gateway = braintree.connect({
+  environment: braintree.Environment.Sandbox,
+  merchatId: process.env.BRAINTREE_MERCHANT_ID,
+  publicKey: process.env.BRAINTREE_PUBLIC_KEY,
+  privateKey: process.env.BRAINTREE_PRIVATE_KEY
+})
+
+
+
+12-create the generateToken function using gateway:
+
+exports.generateToken = (req, res) => {
+  gateway.clientToken.generate({}, function (err, response) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(response);
+    }
+  });
+};
+
+13-trying to make a get request:
+Go into insomnia
+make a get request to:
+
+-first, signin with a user so you can get the user id. Put it at the end of the request. Also, send the token in the request.
+
+Content-Type : application/json
+Authorization : Bearer token_here
+
+
+http://localhost:8000/api/braintree/getToken/USERID_HERE
+
+
+
+
+
+
+
+
 
 
 

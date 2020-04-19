@@ -1,0 +1,110 @@
+1-we need braintree-web-drop-in-react:
+
+npm i braintree-web-drop-in-react
+
+2-create a method to make request to the backend to get the token:
+
+-create it in the apiCore.js
+
+reuse the listRelated and modify it:
+
+call it getBraintreeClientToken:
+
+export const getBraintreeClientToken = (userId, token) => {
+  return fetch(`${API}/braintree/getToken/${userId}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+3- Go to checkout to get the token from the backend.
+import it in Checkout component.
+
+-create a state, to handle the data and error:
+
+const [data, setData] = useState({
+   success: false,
+   clientToken: null,
+   error: '',
+   instance: {},
+   address:''
+})
+
+
+When this component mounts (Checkout) we want to get the clientToken from the backend.
+
+-get the user id and token
+
+place this below the state:
+
+const userId = isAuthenticated() && isAuthenticated().user._id
+const userId = isAuthenticated() && isAuthenticated().token
+
+
+
+4-Now when pass them to the getBraintreeClientToken.
+
+-First, create a method for when the component mounts
+
+const getToken()
+
+-since we need it to run anytime the component mount we nee to initialize it in a useEffect method.
+
+const getToken = (userId, token) => {
+  getBraintreeClientToken(userId, token).then((data) => {
+    if (data.error) {
+      setData({ ...data, error: data.error });
+    } else {
+      setData({ ...data, clientToken: data.clientToken });
+    }
+  });
+};
+
+useEffect(() => {
+  getToken(userId, token);
+}, []);
+
+
+5-import the  DropIn from 'braintree-web-drop-in-react' (still in the Checkout component)
+
+6-just above the render create the showDropIn function.
+
+const showDropIn = () => (
+  <div>
+    {data.clientToken !== null && getFilteredProducts.length > 0 ? (
+      <div>
+        <DropIn
+          options={{
+            authorization: data.clientToken.clientToken,
+          }}
+          onInstance={(instance) => (data.instance = instance)}
+        />
+        <button className="btn btn-success">Checkout</button>
+      </div>
+    ) : null}
+  </div>
+);
+
+
+7-Go showCheckout function and instead of Checkout
+place {showDropIn()}
+also change the first button into a div and remove the className.
+
+--TEST IT---
+
+
+
+
+
+
+
+
+

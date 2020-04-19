@@ -1,0 +1,58 @@
+1-Send the payment method and the total amount to the backend when the checkout button is clicked.
+
+
+2-Go to Checkout
+-In the button of showDropIn change from Checkout to Pay.
+-When that button is clicked we need to execute a function
+
+onClick={buy}
+
+create the buy method on top of showDropIn
+
+
+const buy = () => {
+  // send the nonce to your server
+  // nonce = data.instance.requestPaymentMethod()
+
+  let nonce;
+  let getNonce = data.instance
+    .requestPaymentMethod()
+    .then((data) => {
+      console.log(data);
+      nonce = data.nonce;
+      // once you have nonce (card type, card number) send nonce as 'paymentMethodNonce'
+      // and also total to be charged
+      console.log(
+        "send nonce and total to process: ",
+        nonce,
+        getTotal(products)
+      );
+    })
+    .catch((error) => {
+      console.log("dropin error", error);
+      setData({ ...data, error: error.message });
+    });
+};
+
+// IF YOU GET AN ERROR SOMETHING UNDEFINED, go into the showDropIn method and
+in onInstance change from only instance to data.instance
+
+--TEST IT---
+
+It should give you and error .
+
+
+Now Try we this credit card number:
+
+4111 1111 1111 1111
+exp: 11/22
+
+Try to Pay, it should go through
+
+Check the console for the token.
+
+
+
+
+
+

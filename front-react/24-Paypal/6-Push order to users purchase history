@@ -1,0 +1,52 @@
+1-When we create a new order we want to set this orders in the user purchase history. For that we need to create a middleware
+
+2-still in the order routes (backend)
+
+const { userById, addOrderToUseHistory } = require("../controllers/users");
+
+3-Go inside the user.js (controllers)
+
+4-Apply it as a middlewares:
+
+router.post("/order/create/:userId", requireSignin, isAuth, addOrderToUserHistory, create)
+
+5-In the user controller add a new function:
+
+exports.addOrderToUserHistory = (req, res, next) => {
+  let history = [];
+
+  req.body.order.products.forEach((item) => {
+    history.push({
+      _id: item.name,
+      name: item.name,
+      description: item.description,
+      category: item.category,
+      quantity: item.count,
+      transaction_id: req.body.order.transaction_id,
+      amount: req.body.order.amount,
+    });
+  });
+  // Find the user
+  User.findOneAndUpdate(
+    { _id: req.profile._id },
+    { $push: { history: history } },
+    { new: true },
+    () => {
+      if (error) {
+        return res.status(400).json({
+          error: "Could not update user purchase history",
+        });
+      }
+      next();
+    }
+  );
+};
+
+--TRY IT---
+
+-Go to home and add two item to the cart
+-add the address, the card number and ccv
+hit pay.
+
+-See if it is in the db, also check the purchase history.
+ecommerce/collections/users/history
