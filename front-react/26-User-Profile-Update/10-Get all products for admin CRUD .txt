@@ -1,0 +1,20 @@
+video 138
+
+1-Before fixing the styling we have to show the total of products.
+
+2-Go into the ManageProducts
+
+Inside the Layout before you start to loop
+above the ul write:
+
+<h2 className="text-center">Total {products.length}</h2>
+
+below it add a horizontal line
+
+<hr/>
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+video 136
+
+-We need to bring all the products from the db an display them in ManageProducts.js
+-We will implement update and delete
+
+
+
+1-Go into the apiAdmin
+
+-To perform crud on product we need:
+
+get all products
+get a single product
+update single product
+delete single product
+
+// GET ALL
+// reuse the getCategories and modify for GET ALL
+// name: getProducts
+// params: none
+// fetch: `{API}/products`
+// keep the rest the same
+
+// DELETE A PRODUCT
+// reuse the updateOrderStatus
+// name: deleteProduct
+// params: productId, userId, token
+// fetch: `{API}/product/${productId}/${userId}`
+//Method: DELETE
+// headers
+// do not send anything in the body (remove it)
+
+// GET A SINGLE PRODUCT
+// reuse the getProducts
+// name: getProduct
+// params: productId
+// fetch: `{API}/product/${productId}`
+//Method: DELETE
+// headers
+// do not send anything in the body (remove it)
+
+// UPDATE A PRODUCT
+// reuse the deleteProduct
+// name: updateProduct
+// params: productId, userId, token, product
+// fetch: `{API}/product/${productId}/${userId}`
+//Method: PUT
+// headers: remove Content-Type
+// we need body: product
+

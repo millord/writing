@@ -1,0 +1,107 @@
+video 139
+
+
+1-Sincie updating a product is pretty similar to creating a product.
+
+reuse all the code of AppProduct.js
+
+-and create the UpdateProduct.js copy all from AddProduct here, and start modify
+
+name: UpdateProduct
+
+
+2-Add this component to the Routes.js
+
+AdminRoute
+path="/admin/product/update/:productId"
+
+3-Try entering to update a product.
+
+-What will do is instead of creating a product from scratch we will update the existing, which id is in the route.
+
+-We will make a get request to our backend to load that single product with that product id.
+
+4-import getProduct, getCategories, updateProduct
+
+-Leave the state as it is.
+
+-init ==> where you are loading the categories leave it as it is.
+
+5-Besides all we need to get that single product too
+
+-add props to the UpdateProduct component as param
+
+6-Go into the useEffect and add inside the init
+
+init(props.match.params.productId)
+
+7-Change the init method name to:
+
+initCategories
+
+and use it inside init.
+
+8-we are going to create another init method:
+
+
+const init = (productId) => {
+  getProducts(productId).then((data) => {
+    if (data.error) {
+      setValues({ ...values, error: data.error });
+    } else {
+      // populate the state
+      setValues({
+        ...values,
+        name: data.name,
+        description: data.description,
+        price: data.price,
+        category: data.category._id,
+        shipping: data.shipping,
+        quantity: data.quantity,
+        formData: new FormData(),
+      });
+      // load categores
+      initCategories();
+    }
+  });
+};
+
+
+// leave the handleChange as it is
+
+
+9-change createProduct to updateProduct
+params:add as first parameter match.params.productId, keep the other arguments.
+
+10-in the initCategories in the setValues remove the ...values
+
+--THE FORM SHOULD BE POPULATED--
+ 
+
+11-Change the button name from Create Product to Update Product.
+
+12-Go into the showSuccess and change the message to:
+"is updated!"
+
+13-Redirect the user once we update the product. 
+
+// functiont to redirect the user
+
+const redirectUser = () => {
+  if (redirectToProfile) {
+    if (!error) {
+      return <Redirect to="/" />;
+    }
+  }
+};
+
+
+// add it to the user
+
+{redirectUser()}
+ 
+
+14-Go into the backend and take a look to the product controller into the update controller.
+
+
+

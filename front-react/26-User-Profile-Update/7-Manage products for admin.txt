@@ -17,7 +17,17 @@ reuse the import from   AddCategory.js
 
 -create a functional component called ManageProducts
 -reuse the Layout from Home
--remove all the content except h2 (change it to Manage Products)
 -in the Layout change title to = Manage Products
 -description: Perform CRUD on products
 
+inside the Layout create:
+
+ <div className="row">
+  <div>...</div>
+</div>;
+
+3-Use this component in Routes:
+path="/admin/products"
+Admin Route
+
+--TEST IT-- click in the links

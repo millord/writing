@@ -1,0 +1,120 @@
+video 137
+
+1-In the ManageProduct
+
+-import getProducts, deleteProduct
+
+2-getProducts and deleteProducdts both can be implement
+in ManageProducts.
+
+-When the component mounts, the first thing to do is get all the products
+
+-create a state for that.
+
+const [products, setProducts] = useState([]);
+const {user, token} = isAuthenticated()
+
+// create a function called loadProducts
+
+const loadProducts = () => {
+  getProducts().then((data) => {
+    if (data.error) {
+      console.log(data.error);
+    } else {
+      setProducts(data);
+    }
+  });
+  // call it when the components mounts
+  useEffect(() => {
+    loadProducts()
+  },[])
+
+  // create also the delete method
+  const destroy = productId => {
+    deleteProduct(productId, user._id, token).then(data => {
+      if(data.error){
+        console.log(data.error)
+      } else{
+        loadProducts()
+      }
+    })
+  }
+
+};
+
+
+// this way we can populate the products in the state
+
+// call it when the components mounts
+// also get the user and token
+
+3-In the return:
+
+FULL COMPONENT:
+
+const [products, setProducts] = useState([]);
+const { user, token } = isAuthenticated();
+
+// create a function called loadProducts
+
+const loadProducts = () => {
+  getProducts().then((data) => {
+    if (data.error) {
+      console.log(data.error);
+    } else {
+      setProducts(data);
+    }
+  });
+  // call it when the components mounts
+  useEffect(() => {
+    loadProducts();
+  }, []);
+
+  // create also the delete method
+  const destroy = (productId) => {
+    deleteProduct(productId, user._id, token).then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        loadProducts();
+      }
+    });
+  };
+  return (
+    <Layout
+      title="Home"
+      description="Home E-commerce App"
+      className="container-fluid"
+    >
+      <div className="row">
+        <div className="col-12">
+          <ul className="list-group">
+            {products.map((p, i) => (
+              <li
+                key={i}
+                className="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <strong>{product.name}</strong>
+                <Link to={`/admin/product/update/${p._id}`}>
+                  <span className="badge badge-warning  badge-pill">
+                    Update
+                  </span>
+                </Link>
+                <span
+                  onClick={() => destroy(p._id)}
+                  className="badge badge-danger badge-pill"
+                >
+                  Delete
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+
+
+
