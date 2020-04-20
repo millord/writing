@@ -5,6 +5,7 @@
 const searchProducts = (result = []) => {
   return (
     <div>
+     // add this line below
       <h2 className="mt-4 mb-4">{searchMessage(searched, results)}</h2>
       <div className="row">
         {results.map((product, i) => (

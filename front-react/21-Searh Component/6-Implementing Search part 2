@@ -1,19 +1,26 @@
+video:93
 1-go into Search.js
-
 2-bring the list function
+3-Go into the searchData function and execute the list from apiCore:
+Add this code:
 
 
-3-go into the searchData function
-
-if (search) {
-  list({ search: search || undefined, category: category }).then((response) => {
-    if (response.error) {
-      console.log(response.error);
-    } else {
-      setData({ ...data, results: reponse, searched: true });
+// make sure that search is not em
+const searchData = () => {
+    // make sure that search is not empty
+    if (search) {
+      // send as query the search and category
+      list({ search: search || undefined, categories: category }).then(
+        (response) => {
+          if (response.error) {
+            console.log(data.error);
+          } else {
+            setData({ ...data, results: response, searched: true });
+          }
+        }
+      );
     }
-  });
-}
+  };
 
 Go inside the the return and 
 

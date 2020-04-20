@@ -1,7 +1,7 @@
 
 1-in core create Product.js
 
-2-copy the imports from Home.js
+2-Reuse the imports from Home.js
 remove Search
 
 3-functional component
@@ -13,30 +13,39 @@ remove Search
 
 6-In the Route path="/product/:productId"
 
-7-Go to Card
+7-Go to Card -View product
 -In the button link to={`/product/${product._id}`}
 
---TEST IT--
+
+
+
+
+--TEST IT-- You should to go the product page and see the id in the url
 
 7-Go to Product and create state to hold the products
 
-const [product, setProduct] = useState({})
+const [product, setProduct] = useState([])
 const [error, setError] = useState(false)
 
-8-create a method and run it in useEffect.
 
-9-// take props in the Product component
+We need to create a method to give a call to the api to 
+get a single product.
 
-useEffect(() => {
-  const productId = props.match.params.productId;
-  loadSingleProduct(productId);
-}, []);
+-This methods will be  called --read-- and will be created in the apiCore.js file.
 
+Go into the apiCore.js and copy one get method and modify it:
 
-10-create the loadSingleProduct method above the useEffect
+-Change the name to read
+-parameter productId
+-fetch to: `${API}/product/${productId}`
 
+-import read into the Product component
 
-// create read method to get a single product from the api
+-Create a new method(loadSingleProduct) that will be run  in useEffect method to get mounted everytime the
+component mounts.
+
+-acept props in the Product component
+
 
 const loadSingleProduct = (productId) => {
   read(productId).then((data) => {
@@ -48,18 +57,20 @@ const loadSingleProduct = (productId) => {
   });
 };
 
+// run it in the useEffect component
+
+useEffect(() => {
+  const productId = props.match.params.productId;
+  loadSingleProduct(productId);
+}, []);
+
+
 11-Go into the Layout (still on Product) and add heading:
 
 <h2 className="mb-4">Single Product</h2>
 <div className="row">
     {JSON.stringify(product)}
-</div>
+</div
 
-12-Go into the apiCore.js and copy one get method and modify it:
 
--Change the name to read
--parameter productId
--fetch to: `${API}/product/${productId}`
-
-import read into the Product component
 

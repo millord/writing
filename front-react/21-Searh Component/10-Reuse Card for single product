@@ -11,8 +11,7 @@
 
 2-Inside the Layout, make sure you have the product and product descriptoin.
 
-{product &&  product.description
-<Card product={product}/> }
+{product && product.description && <Card product={product} />}
 
 TEST IT
 

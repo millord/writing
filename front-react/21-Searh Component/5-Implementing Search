@@ -4,38 +4,46 @@
 
 
 const handleChange = (name) => (event) => {
-  setData({ ...data, [name]: event.target.value, search: false });
+  setData({ ...data, [name]: event.target.value, searched: false });
 };
+
+
+
 
 
 const searchSubmit = (e) => {
   e.preventDefault();
+  // call the searchData function which you will create above it
   searchData();
 };
+
+const searchData = () => {
+  console.log(search, catetory)
+}
+
 
 
 searchData === will make the api request.
 
 
-// Test it , search for a book and see it in the console
+// Test it , select a category and search for a book and see it in the console
+
+It should send you what you searched and the category
 
 
 
-2-Copy and paste a method from the apiCore.js
+2-Go into apiCoreCopy and reuse a get method from the apiCore.js
 
 and make some changes:
 
--name list, paramenters: params
-
-npm i query-string
-
-import it in apiCore as queryString
-
-before the fetch call create this constant
-
+-name: list
+-add as a parameter: params
+-npm i query-string
+-import it in apiCore as queryString
+-create a const name query before calling fetch
 const query = queryString.stringify(params)
+-fetch the route is: `${API}/products?${query}`
 
-in the fetch the route is: `${API}/products/search?${query}`
-
+The rest keep the same.
 
 

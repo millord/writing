@@ -1,13 +1,16 @@
 
 
-1-In the Shops component create one more state:
+1-In the Shops component create one more state: 
+
+THIS IS TO SHOW A BUTTON BELOW, THAT WHEN YOU CLICK ON IT YOU WILL GET
+MORE PRODUCTS
 
 const [size,setSize] = useState(0)
 
 
 2-in the loadFilteredResults
 
-Besides using setFilteredResults (below it)
+Besides using setFilteredResults add also (below it)
 
 setSize(data.size)
 setSkip(0)
@@ -20,7 +23,7 @@ const loadMore = () => {
     if (data.err) {
       setError(data.error);
     } else {
-      setFilteredResults([...setFilteredResults, ...data.data]);
+      setFilteredResults([...FilteredResults, ...data.data]);
       setSize(data.size);
       setSkip(toSkip);
     }
@@ -31,13 +34,13 @@ const loadMore = () => {
 const loadMoreButton = () => {
   return(
     size > 0 && size >= limit && (
-      <button onClick={loadMore} className="btn btn-warning mb-5"></button>
+      <button onClick={loadMore} className="btn btn-warning mb-5">Load More Products</button>
     )
   )
 }
 
 -add an <hr/>
 
-4-Add inside the dev below the card
+4-Add it outside the loop inside the div below the card
 
 
