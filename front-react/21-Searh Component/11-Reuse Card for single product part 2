@@ -1,5 +1,5 @@
 1-Go to Card, to make it look better.
-remove the first div with class: col-4 mb-3
+replace the first div with class: col-4 mb-3
 
 2-Go to Home, and where you used the Card component:
 
@@ -39,5 +39,7 @@ const showViewButton = (showViewProductButton) => {
   );
 };
 
+
+---TEST IT, YOU WONT THE THE VIEW PRODUCT BUTTON
 
 

@@ -1,18 +1,43 @@
  1-Go to cartHelpers
 
-2-reuse updateItem
+
+2-reuse updateItem and name it removeItem
 
 modofy:
 
+most all stays the same (updating and removing most of the time
+do the same)
+
 in the mapping part:
 
-change it to: cart.splice(i,1)
+change cart[i].count = count;    to: cart.splice(i,1)
 
-return the cart
+and besides of setting the item with localStorate return the cart  below it
 
 3-import it in Cart.js
 
 add it as a prop to the Card component (which is in the return of the Cart component):
+
+
+/// Remove Item
+export const removeItem = (productId) => {
+  let cart = [];
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+
+    cart.map((product, i) => {
+      if (product._id === productId) {
+        cart.splice(i, 1);
+      }
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  return cart;
+};
+
 
 showRemoveProductButton={true}
 
@@ -21,7 +46,7 @@ showRemoveProductButton={true}
 showRemoveProductButton = false
 
 
-5-create the function below, reuse the showAddToCart function, and modify it:
+5-create the function below (inside the Cart component), reuse the showAddToCart function, and modify it:
 
 name: showRemoveButton
 taking as paramenter: showRemoveProductButton
@@ -45,7 +70,7 @@ onClick={() => removeItem(product._id)}
 
 7-Updating the useEffect to re-render the updated items list
 
--Go into the Cart.js and add items into the useEffect
+-Go into the Cart.js and add --items-- into the useEffect
 
 
 

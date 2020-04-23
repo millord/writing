@@ -20,13 +20,7 @@ const buy = () => {
     .then((data) => {
       console.log(data);
       nonce = data.nonce;
-      // once you have nonce (card type, card number) send nonce as 'paymentMethodNonce'
-      // and also total to be charged
-      console.log(
-        "send nonce and total to process: ",
-        nonce,
-        getTotal(products)
-      );
+      console.log("send nonce and total to process: ",nonce, getTotal(products));
     })
     .catch((error) => {
       console.log("dropin error", error);
@@ -39,7 +33,7 @@ in onInstance change from only instance to data.instance
 
 --TEST IT---
 
-It should give you and error .
+It should get you and error .
 
 
 Now Try we this credit card number:

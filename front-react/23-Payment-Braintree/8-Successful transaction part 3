@@ -8,7 +8,7 @@ exp: 11/22
 Check the console.log, should give a success message, success true.
 
 
-1-Go back to Checkout:
+1-Go back to Checkout and modify the processPayment function:
 
 processPayment(userId, token, paymentData)
   .then((response) => {

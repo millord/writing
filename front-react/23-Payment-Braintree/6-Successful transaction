@@ -35,6 +35,8 @@ comment that out, and add:
 also comment out the other two console.log that are inside that function
 type:
 
+--THIS GOES BEFORE THE CATCH
+
 const paymentData = {
   paymentMethodNonce: nonce,
   amount: getTotal(products),
@@ -44,7 +46,7 @@ processPayment(userId, token, paymentData)
   .then((response) => console.log(response))
   .catch((error) => console.log(error));
 
-
+-- UNTIL HERE, THERE WILL BE USE TWO CATCH METHODS
 4-Go into the button of the showDropIn function that says Pay and modify it with:
 
 add btn-block

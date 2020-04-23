@@ -2,21 +2,25 @@
 
 npm i moment and import it
 
-2-product.discription apply a class of:
-lead mt-2
+-import moment
 
-3-product.price apply a class of:
+--WE ARE GOING TO IMPROVE HOW THIS LOOKS
+
+2-apply a class of lead m-2 to product.discription
+
+3-apply a class of black-10 to product.price
 black-10
 
-add:
+add below price:
 
 <p>{product.category && product.category.name}</p>
-
-other:
 
 <p className="black-8">
 Added on {moment(product.createdAt).fromNow()}
 </p>
+
+-----
+-- POPULATE THE CATEGORY FIELD IN THE BACKEND---
 
 4-Go to the backend 
 controller/product
@@ -27,19 +31,23 @@ add:
 After findById(id) and before .exec place:
 .populate("category")
 
+--go into the Card component
 
+5-Show the stock
 
-5-Show the stuck
-first, in the Card component cut the button where you have
-Add to Cart and place instead:
-
-{showAddToCartButton()}
-
-and before the return create the function.
+-Before the return create the function.
 
 const showAddToCartButton = () => {
   return (
     <button className="btn btn-outline-warning mt-2 mb-2">Add to cart</button>
   );
 };
+
+
+Replace the button where you have
+Add to Cart with:
+
+{showAddToCartButton()}
+
+
 

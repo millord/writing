@@ -22,7 +22,7 @@ exports.processPayment = (req, res) => {
     },
     (error, result) => {
       if (error) {
-        res.status(500).json(erro);
+        res.status(500).json(error);
       } else {
         res.json(result);
       }

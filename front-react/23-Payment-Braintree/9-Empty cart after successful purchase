@@ -21,6 +21,12 @@ setting the data into the state.
 
 setData({})...
 
+processPayment(userId, token, paymentData).then((response) => {
+          setData({ ...data, success: response.success });
+          emptyCart(() => {
+            console.log("Payment success and empty cart");
+          });
+
 emptyCart(() => {
  console.log('payment success and empty cart')
 })

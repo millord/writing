@@ -10,7 +10,6 @@ You want this update capability only to show on the Cart component:
 
 cartUpdate = false
 
-
 3-in the Card component above the return, create this function:
 
 const showCartUpdateOptions = (cartUpdate) => {

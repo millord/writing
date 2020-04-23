@@ -16,7 +16,7 @@ export const itemTotal = () => {
 
 
 2-Go to the Menu.js
--import it
+-import it the itemTotal
 
 3-Copy the Link of shop and paste it and modify it to  Cart.
 and add inside:

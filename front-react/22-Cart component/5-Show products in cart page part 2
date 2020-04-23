@@ -15,7 +15,7 @@ inside that div (left half ) write:
 
 {items.length >  0 ? showItems(items) : noItemsMessage()}
 
-3-Copy and past this div and copy below so you can get right side
+3-Copy and paste this div and copy below so you can get right side
 remove of what that div has inside and add:
 
 <p>Show checkout options/shipping address/total/update quantity</p>;

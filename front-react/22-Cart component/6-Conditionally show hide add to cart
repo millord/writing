@@ -1,18 +1,21 @@
 
 
-1-Go to Cart component
+1-Inside the Cart component
 
--in the Card component also send as props:
+Locate the Card component also send as props:
 showAddToCartButton={false}
 
 
-2-Use it in the Card component (get the props of showAddToCartButton = true)
+==FIRST, IN THE CARD COMPONENT RENAME showAddToCartButton to showAddCart ==
 
-in the Card component below showViewButton you have showAddToCartButton pass the parameter showAddToCartButton:
 
-{showAddToCartButton(showAddToCartButton)}
+2-Now move to thethe Card component and add the props of showAddToCartButton = true)
 
-and pass to the showAddToCartButton above the paramenter showAddToCartButton too:
+3-Still in the Card component below showViewButton you have showAddToCartButton pass the parameter showAddToCartButton:
+
+{showAddCart(showAddToCartButton)}
+
+4-Pass the showAddToCartButton paramenter to the showAddCart too:
 
 const showAddToCartButton = (showAddToCartButton) => { ...
 
@@ -22,5 +25,4 @@ return showAddToCartButton &&  (...
 
 So if it is true, it will be visible, it not wont.
 
---NOTEE: change the name of the function showAddToCartButton to showAddCart. Update it below too.
 

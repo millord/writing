@@ -1,9 +1,13 @@
 
+--Call the api for showing related products
+
+
 1-Go to apiCore.js
 
-copy and method and:
+reuse the read method and modify:
 
-change name to : listRelated
+name: listRelated
+params: productId
 url for fetch: API/products/related/${productId}
 
 That's it.
@@ -15,10 +19,7 @@ Add the state
 
 const [relatedProduct, setRelatedProduct] = useState([])
 
-4-Below the setProduct(data)
--fetch related products
-
-calling
+4-Taking advantage of the loadSingleProduct, place  listRelated below the setProduct(data) (in the same block of code)
 
 listRelated(data._id).then(data =>{
    if(data.error){
@@ -30,25 +31,26 @@ listRelated(data._id).then(data =>{
 
 5-Pass the relatedProduct to the Card
 
+-First, remove everything only leaving the div the class row
+-there create two divs
+-one with col-8 and the other with col-4
 
-<div className="container-fluid">
-  <div className="col-8">
-    {product && product.descriptio && (
-      <Card product={product} showViewProductButton={false} />
-    )}
-  </div>
-  <div className="col-4">
-    <h4>Related Products</h4>
-    {relatedProduct.map((p, i) => (
-      <div className="mb-3">
-        <Card key={i} product={p} />
-      </div>
-    ))}
-  </div>
-</div>;
+-In the first div copy what you had before:
+
+{product && product.description && (
+<Card product={product} showViewProductButton={false} />
+)}
+
+in the second div, placing the iteration in a div with calss mb-3: 
+
+ <h4>Related Products</h4>
+{relatedProduct.map((p, i) => (
+<div className="mb-3">
+<Card key={i} product={p} />
 
 
-6-View Products in the related products works
-modify the useEffect, in the array, instead of empty add inside the array [props]
+6-Make the links of the related products work:
 
-So, anytime you change the props it will update
+modify the useEffect in the Products component, in the array, instead of empty add inside the array [props]
+
+

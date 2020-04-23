@@ -6,10 +6,21 @@ name to getCart
 remove the length method
 return []
 
+export const getCart = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      return JSON.parse(localStorage.getItem("cart"));
+    }
+  }
+  return [];
+};
+
+
+
 2-Create in core the Cart.js component
 import the itemTotal.
 
-3-Copy the imports from Home.
+3-Reuse the imports from Home.
 
 4-functional component
 
@@ -24,7 +35,7 @@ useEffect(() => {
 },[])
 
 
-6-Copy the Layout from Home, remove all from inside.
+6-Reuse the Layout from Home, remove all from inside.
 change the title to=Shopping Cart
 description:Manage your cart items. Add remove checkout or continue shoppining.
 

@@ -1,9 +1,9 @@
 
-1-go to cart, bring the addItem from cartHelpers.js
+1-go to Card, bring the addItem from cartHelpers.js
 
 2-use it to add the item to the cart
 
-3-find the showAddToCartButton, in the button inside add an onClick property:
+3-find the showAddToCartButton, in the button inside add an onClick property addToCart (which is a function we will create):
 
 onClick = { addToCart };
 
@@ -12,7 +12,8 @@ onClick = { addToCart };
 const [redirect, setRedirect] = useState(false)
 
 
-4-create the addToCart function:
+--USING THE addItem inside this function --
+4-create the addToCart function that takes an item and a callback function.
 
 const addToCart = () => {
   addItem(product, () => {
@@ -21,7 +22,7 @@ const addToCart = () => {
   });
 };
 
-5-below create the shouldRedirect function 
+5-below addCart create the shouldRedirect function 
 
 const shouldRedirect = (redirect) => {
   if (redirect) {

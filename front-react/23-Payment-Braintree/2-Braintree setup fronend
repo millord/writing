@@ -26,7 +26,7 @@ export const getBraintreeClientToken = (userId, token) => {
 };
 
 3- Go to checkout to get the token from the backend.
-import it in Checkout component.
+import getBraintreeClientToken in Checkout component.
 
 -create a state, to handle the data and error:
 
@@ -46,7 +46,7 @@ When this component mounts (Checkout) we want to get the clientToken from the ba
 place this below the state:
 
 const userId = isAuthenticated() && isAuthenticated().user._id
-const userId = isAuthenticated() && isAuthenticated().token
+const token = isAuthenticated() && isAuthenticated().token
 
 
 
@@ -77,34 +77,57 @@ useEffect(() => {
 
 6-just above the render create the showDropIn function.
 
-const showDropIn = () => (
-  <div>
-    {data.clientToken !== null && getFilteredProducts.length > 0 ? (
-      <div>
-        <DropIn
-          options={{
-            authorization: data.clientToken.clientToken,
-          }}
-          onInstance={(instance) => (data.instance = instance)}
-        />
-        <button className="btn btn-success">Checkout</button>
-      </div>
-    ) : null}
-  </div>
-);
+ const showDropIn = () => (
+    <div>
+      {data.clientToken !== null && products.length > 0 ? (
+        <div>
+          <DropIn
+            options={{
+              authorization: data.clientToken,
+            }}
+            onInstance={(instance) => (data.instance = instance)}
+          />
+          <button className="btn btn-success">Checkout</button>
+        </div>
+      ) : null}
+    </div>
+  );
 
+7-Go above to the showCheckout function and instead of the text Checkout
+place {showDropIn()}. Also change the first button into a div and remove the className.
 
-7-Go showCheckout function and instead of Checkout
-place {showDropIn()}
-also change the first button into a div and remove the className.
+NOte: YOU STILL SHOULD BE RETURNING {showCheckout()}
 
 --TEST IT---
 
 
 
+  return (
+    <div>
+      <h2>Total: ${getTotal()}</h2>
+      {showCheckout()}
+    </div>
+  );
+};
 
 
 
+
+--CHECKOUT--
+
+
+ const showCheckout = () => {
+    return (
+      <div>
+        {isAuthenticated() ? (
+          <div>{showDropIn()}</div>
+        ) : (
+          <Link to="/signin">
+            <button className="btn btn-primary">Sign in to Checkout</button>
+          </Link>
+        )}
+      </div>
+    )
 
 
 

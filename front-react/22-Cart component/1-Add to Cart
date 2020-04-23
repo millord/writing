@@ -6,6 +6,7 @@
 
 JSON.parse() === to convert json to object
 JSON.stringify() === to convert object to json
+if (typeof window !== "undefined") { ==== mean, if you are in the browser
 
 
 What we are doing:
@@ -23,7 +24,7 @@ export const addItem = (item, next) => {
   let cart = [];
   if (typeof window !== "undefined") {
     if (localStorage.getItem("cart")) {
-      cart = localStorage.getItem("cart");
+      cart = JSON.parse(localStorage.getItem("cart"));
     }
     cart.push({
       ...item,

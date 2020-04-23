@@ -12,7 +12,7 @@ npm i braintree
 
 router.get('/braintree/getToken/:userId', )
 
-5-appy some middlewares, go into user routes and reuse
+5-apply some middlewares, go into user routes and reuse
 
 autentication controllers methods, and paste them in braintree.js
 -remove isAdmin middleware

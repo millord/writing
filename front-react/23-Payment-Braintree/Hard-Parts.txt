@@ -1,0 +1,2 @@
+// 2-Braintree get the userId and token from isAuthenticated()
+// 3-Buy method
