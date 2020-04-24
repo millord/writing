@@ -1,0 +1,12 @@
+// -npm i react-router-dom
+//1-import BrowserRouter, Switch and Route from react-router-do
+// 2 - Use the Switch and Route to create a route
+
+<Switch>
+<Route path="/" exact component={Home} />
+</Switch>
+
+
+//3- Wrap the Switch inside opening and closing <BrowserRouter> to work.
+
+

@@ -2,7 +2,9 @@
 
 2-still in the order routes (backend)
 
-const { userById, addOrderToUseHistory } = require("../controllers/users");
+const { userById, addOrderToUseHistory } = require("../controllers/order");
+
+-- ITS A MIDDLEWARE --- 
 
 3-Go inside the user.js (controllers)
 
@@ -31,7 +33,7 @@ exports.addOrderToUserHistory = (req, res, next) => {
     { _id: req.profile._id },
     { $push: { history: history } },
     { new: true },
-    () => {
+    (error, data) => {
       if (error) {
         return res.status(400).json({
           error: "Could not update user purchase history",

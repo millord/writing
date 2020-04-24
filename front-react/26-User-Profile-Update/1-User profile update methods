@@ -64,6 +64,8 @@ keep the rest the same.
 
 7-After updating the user information in the backend we also need to update it in localStorage. We are saving the user in the localStorage and from there we are grabing the user. Otherwise unless the user signout and signin again they will see the changes, but it we update the localStorage they will see the changes.
 
+-in the auth/index.js
+
 -So, lets create this method.
 
 export const updateUser = (user, next) => {

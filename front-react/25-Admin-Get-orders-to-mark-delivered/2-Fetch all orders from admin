@@ -18,11 +18,12 @@ headers:Accept, Authorization
 
 -Call it Order.js
 
--reuse the links from the AddProduct component.
+-reuse the imports from the AddProduct component.
 
 -create a functional component.
 
 -import the listOrders function from apiAdmin.js
+-get the user and token from isAuthenticated
 
 // first thing, make a request to the backend
 // to get all the orders

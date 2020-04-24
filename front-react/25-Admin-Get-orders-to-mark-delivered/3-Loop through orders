@@ -6,7 +6,7 @@ number of orders
 -Go into the Orders.js component
 
 -Change the name of the function noOrders to
-shoOrdersLength and modify it.
+showOrdersLength and modify it.
 
 removing what is in the return now and changing it to.
 

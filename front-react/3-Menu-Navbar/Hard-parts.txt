@@ -1,0 +1,26 @@
+//1- Import the withRouter to access history
+
+-import { withRouter} from 'react-router-dom' 
+
+-Export the component with it: 
+
+export default withRouter(Menu);
+
+
+This is to acccess the history later
+
+
+2-Conditionally highlighting the links.
+
+const isActive = (history, path) => {
+  if(history.location.pathname === path){
+    return {color: "#ff9900"}
+ } else {
+     return {color: "#fffff"} 
+   }
+}
+
+Add that function to the style property:
+
+style={isActive(history, '/')}
+

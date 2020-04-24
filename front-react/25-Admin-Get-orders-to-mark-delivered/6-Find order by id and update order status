@@ -3,7 +3,7 @@ Video: 128
 
 1-In the last lesson we added the order status in the select
 
--Now we are just console logging. Its time to send it to the backend to create a controller method and a route to handle the update of the order.
+-Now we are just console logging. Its time to send it to the backend. Create a controller method and a route to handle the update of the order.
 
 
 -In the backend go to routes/order.js

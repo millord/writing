@@ -19,7 +19,7 @@ in the body send the order inside an object {order: createOrderData}
 
 -go into the buy function
 
--in the processPayment method after the first console that log and before using setData({...data, success:response.success})...
+-in the processPayment method after the first console.log and before using setData({...data, success:response.success})...
 
 create the createOrderData object:
 
@@ -29,6 +29,10 @@ createOrderData = {
  amount: response.transaction.amount,
  address: data.address
 }
+
+--After creating that object call the createOrder function with its paramenters
+
+createOrder(userId, token, createOrderData)
 
 // next add the address to state in the Checkout component
 // it should look like this:

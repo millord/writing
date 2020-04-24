@@ -2,7 +2,7 @@ video:131
 
 -Before the allow the user to update the profile. We need to have the proper user information, to get that information we need to make request to the backend.
 
--Go into the Profile component and import the read,and updata and updateUser from the apiUser
+-Go into the Profile component and import the read,and update, updateUser from the apiUser
 
 -add useState and useEffect
 
@@ -29,7 +29,7 @@ const Profile = (props) => {
   const init = (userId) => {};
 
   useEffect(() => {
-    init(props.params.match.userId);
+    init(props.match.params.userId);
   }, []);
   return (
     <Layout

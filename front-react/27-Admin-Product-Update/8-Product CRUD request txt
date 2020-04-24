@@ -26,7 +26,7 @@ delete single product
 // name: deleteProduct
 // params: productId, userId, token
 // fetch: `{API}/product/${productId}/${userId}`
-//Method: DELETE
+// Method: DELETE
 // headers
 // do not send anything in the body (remove it)
 
@@ -35,8 +35,7 @@ delete single product
 // name: getProduct
 // params: productId
 // fetch: `{API}/product/${productId}`
-//Method: DELETE
-// headers
+// Method: GET
 // do not send anything in the body (remove it)
 
 // UPDATE A PRODUCT
@@ -44,7 +43,7 @@ delete single product
 // name: updateProduct
 // params: productId, userId, token, product
 // fetch: `{API}/product/${productId}/${userId}`
-//Method: PUT
+// Method: PUT
 // headers: remove Content-Type
 // we need body: product
 

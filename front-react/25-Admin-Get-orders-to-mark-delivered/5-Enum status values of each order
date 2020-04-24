@@ -42,7 +42,7 @@ do some changes:
 
 4-Go inside the admin folder into Orders.js
 
--resuse the loadOrders function:
+-resuse the loadOrders function and name it loadStatusValues:
 -place it just before the useEffect
 
 // create the state

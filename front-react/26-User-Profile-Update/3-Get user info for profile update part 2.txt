@@ -14,7 +14,7 @@ const { name, email, password, error, success } = values;
   };
 
   useEffect(() => {
-    init(props.params.match.userId);
+    init(props.match.params.userId);
   }, []);
   return (
     <Layout
