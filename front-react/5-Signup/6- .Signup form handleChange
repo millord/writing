@@ -29,7 +29,7 @@ and in the password type to password.
 
 Signup
 
-Grabing the values
+Grabing the values (using an object due to the amount of values)
 
 
 1-Add useState in the Signup component:

@@ -1,0 +1,37 @@
+1- POST request to the api (Signup)
+
+
+export const signup = (user) => {
+  return fetch(`${API}/signup`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
+2-showError() and showSuccess():
+
+const showError = () => (
+  <div className="alert alert-danger" style={{ diplay: error ? "" : "none" }}>
+    {error}
+  </div>;
+);
+
+-for success:
+
+const showSuccess = () => (
+  <div className="alert alert-info" style={{ diplay: success ? "" : "none" }}>
+    New account is created. Please signin.
+  </div>;
+);
+

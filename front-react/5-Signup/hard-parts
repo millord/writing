@@ -1,0 +1,55 @@
+--1-Signup Form, 2-Setting the Values, 3-onChange  and  4-onSubmit.
+
+
+1-Signup Form:
+
+
+  <div>
+<label className="text-muted"> Name</label>
+  <input
+    onChange={handleChange("name")}
+    type="text"
+    className="form-control"
+    value={name}
+   />
+</div>
+
+
+2-Creating the state using an object when having multiple values:
+
+  const [value, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+    error: "",
+    success: false
+  });
+
+3-onChange:
+
+  const handleChange = name => event => {
+    setValues({ ...values, error: false, [name]: event.target.value });
+  };
+
+
+4-onSubmit:
+
+const clickSubmit = event => {
+    event.preventDefault();
+    setValues({ ...values, error: false });
+    signup({ name, email, password }).then(data => {
+      if (data.error) {
+        setValues({ ...values, error: data.error, success: false });
+      } else {
+        setValues({
+          ...values,
+          name: "",
+          email: "",
+          password: "",
+          error: "",
+          success: true
+        });
+      }
+    });
+  };
+
