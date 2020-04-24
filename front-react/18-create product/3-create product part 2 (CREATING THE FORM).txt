@@ -1,7 +1,7 @@
 //Now start creating the form
 
 1-PHOTO
-const newPostForm = () => {
+const newProductForm = () => {
   <form className="mb-3">
     <h4>Post Photo</h4>
     <div className="form-group">

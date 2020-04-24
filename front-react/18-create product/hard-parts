@@ -1,0 +1,83 @@
+1-Call to the api to create a product:
+
+export const createProduct = (userId, token, product) => {
+  return fetch(`${API}/product/create/${userId}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: product,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
+1.2 onSubmit to create a product:
+
+  const clickSubmit = (event) => {
+    event.preventDefault();
+    setValues({ ...values, error: "", loading: true });
+
+    createProduct(user._id, token, formData).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+      } else {
+        setValues({
+          ...values,
+          name: "",
+          description: "",
+          photo: "",
+          price: "",
+          quantity: "",
+          loading: false,
+          success: true,
+          createdProduct: data.name,
+        });
+      }
+    });
+  };
+
+2-The photo/file field:
+
+<div className="form-group">
+   <label className="btn btn-outline-secondary">
+    <input
+       onChange={handleChange("photo")}
+       type="file"
+       name="photo"
+       accept="image/*"
+      />
+    </label>
+</div>
+
+3-The Select category field:
+
+<label className="text-muted">
+    Category{" "}
+    <select className="form-control" onChange={handleChange("category")}>
+    <option>Please select</option>
+   {categories.map((c, i) => (
+   <option key={i} value={c._id}>
+   {c.name}
+   </option>
+   ))}
+   </select>
+</label>
+
+4-onChange for the form:
+
+
+const handleChange = (name) => (event) => {
+   const value = name === "photo" ? event.target.files[0] : event.target.value;
+   formData.set(name, value);
+   setValues({ ...values, [name]: value });
+};
+
+
+
