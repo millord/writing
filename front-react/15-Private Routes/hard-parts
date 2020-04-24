@@ -1,0 +1,18 @@
+1-Render to props:
+To return a component depending if the user is login.
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) =>
+      isAuthenticated() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{ pathname: "/signin", state: { from: props.location } }}
+        />
+      )
+    }
+  />
+);
+
