@@ -1,0 +1,42 @@
+1-showLoading, 2-Redirect, 3-authenticate the user
+
+1-showLoading:
+
+const showLoading = () =>
+  loading && (
+  <div className="alert alert-info">
+     <h2>Loading...</h2>
+  </div>
+);
+
+
+2-redirectUser:
+
+const redirectUser = () => {
+  if(redirectToReferrer){
+    return <Redirect to="/" />
+ }
+}
+
+
+3-authenticate the user:
+
+export const authenticate  = (data, next) => {
+    if(typeof window !== "undefined") {
+      localStorage.setItem('jwt", JSON.stringify(data))
+       next();
+  } 
+}
+
+4-Using the authenticate middleware function:
+
+authenticate(
+   data,
+   () => {
+   setValues({
+   ...values,
+   redirectToReferrer:true
+  })  
+  }
+ )
+

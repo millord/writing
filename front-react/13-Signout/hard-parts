@@ -1,0 +1,22 @@
+1-Signout the user fro localStorage:
+
+export const signout = next => {
+  if(typeof window !== "undefined"){
+    localStorage.removeItem('jwt')
+    next()
+    return fetch(`${API}/signout`, {
+      method: "GET"
+    })
+    .then(response => {
+      console.log('signout', response)
+    }).catch(err => console.log(err))
+  }
+}
+
+
+2-calling the signout middleware:
+
+
+onClick={() =>  signout(() => {
+  history.push("/")
+})}

@@ -1,0 +1,42 @@
+1-Conditionally showing links with the isAuthenticated method, 
+
+
+export const isAuthenticated = () => {
+  if (typeof window == "undefined") {
+    return false;
+  }
+  if (localStorage.getItem("jwt")) {
+    return JSON.parse(localStorage.getItem("jwt"));
+  } else {
+    return false;
+  }
+};
+
+
+2-Showing link if is isAthenticated and is admion
+
+{isAuthenticated() && isAuthenticated().user.role === 1 && (
+   <li className="nav-item">
+   <Link
+   className="nav-link"
+   to="/admin/dashboard"
+   style={isActive(history, "/admin/dashboard")}
+   >
+   Admin Dashboard
+   </Link>
+  </li>
+)}
+
+3-Show if the link isAuthenticated:
+
+{!isAuthenticated() && (
+    <Fragment>
+    <li className="nav-item">
+    <Link
+    className="nav-link"
+    to="/signup"
+    style={isActive(history, "/signup")}
+     >
+     Signup
+   </Link>
+</li>
