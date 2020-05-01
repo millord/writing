@@ -1,0 +1,50 @@
+CRUD functionality
+
+
+1-Go to the ProductAttributes component.
+
+Import Button, Modal
+
+// adding the Modal
+// below the Button ==> trash alternate
+
+<Modal open={true} dimmer="blurring">
+  <Modal.Header>Confirm Delete</Modal.Header>
+  <Modal.Content>
+    <p>Are you sure you want to delete this product</p>
+  </Modal.Content>
+  <Modal.Actions>
+    <Button content="Cancel" />
+    <Button negative icon="trash" labelPosition="right" content="Delete" />
+  </Modal.Actions>
+</Modal>;
+
+
+2---TEST IT--
+
+You should see the modal open
+
+
+3-Time to toggle from false to true.
+
+// add a piece of state to track the value
+
+const [modal, setModal] = React.useState(false)
+
+// Go inside the <Modal> tag change the
+// open={modal}
+
+// add an onClick property to the Delete Product
+// Button
+
+
+// make sure you dont call the function inmeditly
+// add this to the Button component
+
+
+<Button 
+  onClick={() => setModal(true)}
+/>
+
+// Do the opposite with the button for cancel
+// set it to false

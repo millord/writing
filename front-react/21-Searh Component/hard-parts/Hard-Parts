@@ -1,0 +1,41 @@
+1-Load more button:
+
+2-in the loadFilteredResults
+
+Besides using setFilteredResults add also (below it)
+
+setSize(data.size)
+setSkip(0)
+
+3-copy the whole loadFilteredResults paste it below it and modify it to:
+
+const loadMore = () => {
+  let toSkip = skip + limit;
+  getFilteredProducts(toSkip, limit, myFilters.filters).then((data) => {
+    if (data.err) {
+      setError(data.error);
+    } else {
+      setFilteredResults([...FilteredResults, ...data.data]);
+      setSize(data.size);
+      setSkip(toSkip);
+    }
+  });
+};
+
+
+3-Get products by search:
+
+export const list = (params) => {
+  const query = queryString.stringify(params);
+  return fetch(`${API}/products/search?${query}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+

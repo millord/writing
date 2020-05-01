@@ -1,7 +1,7 @@
 User Signup part 2
 
 const signup = user => {
-    fetch(`${API}/signup`, {
+    return fetch(`${API}/signup`, {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -1,0 +1,61 @@
+1-Provide an onClick to the Button inside the modal. (the one with the content fo Delete)
+
+onClick={handleDelete}
+
+
+// now create the handleDelete function above the return.
+
+to make the request to the backend
+
+-import axios, baseUrl
+
+async function handleDelete() {
+  const url = `${baseUrl}/api/product`;
+  const payload = { params: { _id } };
+  await axios.delete(url, payload);
+}
+
+
+2-Move the backend, product.js
+
+HANDLING TO SEPARATE REQUEST WITH DIFFENTE METHODS
+
+USING switch statement:
+
+export default async (req, res) => {
+  switch (req.method) {
+    case "GET":
+      await handleGetRequest(req, res);
+      break;
+    case "DELETE":
+      await handleDelete(req, res);
+      break;
+    default:
+      res.status(405).send(`Method ${req.method} not allowed`);
+      break;
+  }
+};
+
+async function handleGetRequest(req, res) {
+  const { _id } = req.query;
+  const product = await Product.findOne({ _id });
+  res.status(200).json(product);
+}
+
+async function handleDelete(req, res) {
+  const { _id } = req.query;
+  await Product.findOneAndDelete({ _id });
+  res.status(204).json({});
+}
+
+
+--GO back to the ProductAttributes.js to implement redirect
+
+-import {useRouter} from 'next/router'
+
+
+const router = useRouter()
+
+// in the handleDelete function
+
+router.push('/')

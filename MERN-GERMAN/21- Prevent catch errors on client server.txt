@@ -1,0 +1,47 @@
+
+// Disabling the Submit button if anyone
+// of those fields is empty
+
+//1- create a new piece of state
+
+const [disabled, setDisabled] = React.useState(true);
+
+// What you are going to do its whenever a product
+// is updated check it anyone of its fields its empty
+
+// 2-Go to the Submit button and add in the disabled prop
+
+disabled={disabled || loading}
+
+
+// 3- Figure out when we have empty values
+// using the => useEffect
+
+// use the minute 4:10 of the course
+
+React.useEffect(() => {
+  const isProduct = Object.values(product).every(el => Boolean(el))
+  isProduct ? setDisabled(false) : setDisabled(true)
+}, [product])
+
+--TEST IT--
+
+catch(error){
+  console.error('ERROR!', error)
+}
+
+// try submitting an error
+
+// solution: remove the setLoading which is inside the try
+// add a finally below the catch and there use setLoading(false)
+
+catch(error){
+  console.error('ERROR!', error)
+}finally{
+  setLoading(false)
+}
+
+--That will solve the spinner issue.
+
+
+

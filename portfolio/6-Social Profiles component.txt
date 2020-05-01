@@ -1,0 +1,31 @@
+1-create a inside the data folder called:
+
+socialProfijes.js
+
+inside the socialProfiles.js file
+
+-get the assets from the file
+
+
+import emailIcon from "../assets/email_icon.png";
+import githubIcon from ".../assets/github_icon.png";
+import linkedinIcon from ".../assets/linkedin_icon.png";
+import twitterIcon from ".../assets/twitter_icon.png";
+
+const SOCIAL_PROFILES = [
+  { _id: 1, link: "mailto:juancarlosmillord@gmail.com", image: emailIcon },
+  { _id: 2, link: "https://github.com/millord", image: githubIcon },
+  {
+    _id: 3,
+    link: "https://www.linkedin.com/in/juan-millord-5368a0139/",
+    image: linkedinIcon,
+  },
+  { _id: 4, link: "https://twitter.com/JuanMillord", image: twitterIcon },
+];
+
+
+export default SOCIAL_PROFILES
+
+
+2-create a new component called SocialProfiles and take props so you can loop through them in the App component as you did with the Projects component
+

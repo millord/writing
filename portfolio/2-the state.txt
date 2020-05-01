@@ -1,0 +1,17 @@
+1-add a constructor to the App component
+2-add the this.state:
+
+this.state = {displayBio: false}
+
+3-cut from the p tag I live in Santo Domingo... 
+until Besides coding.
+-create a variable called bio below the render method and paste it there (the content inside parenthesis).
+-now place it inside the jsx like: {bio}
+
+4-use terniary
+
+const bio = this.state.displayBio ? (full text here) : null
+
+
+
+

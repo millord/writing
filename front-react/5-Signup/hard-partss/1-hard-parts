@@ -4,15 +4,17 @@
 1-Signup Form:
 
 
-  <div>
-<label className="text-muted"> Name</label>
-  <input
-    onChange={handleChange("name")}
-    type="text"
-    className="form-control"
-    value={name}
-   />
-</div>
+  <form>
+      <div>
+        <label className="text-muted"> Name</label>
+        <input
+          onChange={handleChange("name")}
+          type="text"
+          className="form-control"
+          value={name}
+        />
+      </div>
+     </form>
 
 
 2-Creating the state using an object when having multiple values:
@@ -36,7 +38,9 @@
 
 const clickSubmit = event => {
     event.preventDefault();
+    // setting the values comming from the fiels
     setValues({ ...values, error: false });
+   // sending the values to the backend
     signup({ name, email, password }).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error, success: false });

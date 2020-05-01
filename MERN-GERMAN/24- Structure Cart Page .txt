@@ -1,0 +1,69 @@
+-Get some styles in the cart component
+
+pages/cart.js
+
+// import CartItemList
+// import CartSummary
+
+import {Segment} from 'semantic-ui-react'
+
+function Cart() {
+ return(
+   <Segment>
+   <CartItemList/>
+   <CartSummary/>
+   </Segment>
+ )
+}
+
+2-Go inside the CartItemList
+
+import { Header, Segment, Button } from "semantic-ui-react";
+
+function CartItemList() {
+  return (
+    <Segment secondary color="teal" inverted textAlign="center" placeholder>
+      <Header icon>
+        <Icon name="shopping basket" />
+        No products in your cart. Add some!
+      </Header>
+      
+    </Segment>
+  );
+}
+
+
+--Hard code the user:
+
+const user = false
+
+
+ <div>
+        {user ? (
+          <Button color="orange">View Product</Button>
+        ) : (
+          <Button color=" blue">Loging to Add Products</Button>
+        )}
+</div>
+
+
+3-Go into CartSummary.js
+
+
+import { Divider, Segment, Button } from "semantic-ui-react";
+
+function CartSummary() {
+  return (
+    <>
+      <Divider />
+      <Segment clearing size="large">
+        <strong>Sub total:</strong> $0.00
+        <Button icon="cart" color="teal" floader="right" content="Checkout" />
+      </Segment>
+    </>
+  );
+}
+
+
+
+

@@ -1,0 +1,31 @@
+ 1-Go to the pages/product.js
+
+below the return and above the export default:
+
+Product.getInitialProps = ({ query: { _id } }) => {
+  const url = "http://localhost:3000/api/product";
+  payload = { params: { _id } };
+  const response = axios.get(url, payload);
+};
+
+2-Now to create end point:
+-Go to api/product
+
+-Import the Product model in it:
+
+export default async (req, res) => {
+  const { _id } = req.query;
+  const product = await Product.findOne({ _id });
+  res.status(200).json(product);
+};
+
+3-Go back to the pages/product and add inside the getInitialProps
+
+return { product: response.data }
+
+and add product as an argument in Product({product})
+
+---TEST IT --- console.log(product) inside the Product component and go see it being in a single product page.
+
+
+

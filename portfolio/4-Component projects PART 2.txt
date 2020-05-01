@@ -1,0 +1,24 @@
+
+import react and the projects array from data
+
+1-create class based component called Projects
+
+-in the return
+div
+h2 with text: Hightlighted Projects
+below the h2 add another div
+inside that div:
+
+{
+  PROJECTS.map((project, i) => <div>{project.title}</div>);
+}
+
+export default Projects;
+
+
+2-Add it in the App component
+-before the closing div add an hr and below that
+add the <Projects/>
+
+
+

@@ -1,0 +1,37 @@
+1- Show active link
+
+to manually do it, just add and active prop:
+
+<Menu.Item header active>
+
+2-Do it dinamically:
+
+we need to know what route we are currently on:
+
+useRoute
+
+import it from next/router
+
+
+3-add it at the top
+
+const router = userRouter()
+
+Applying it conditionally:
+
+create a helper function:
+
+function isActive(router) {
+    return router === router.pathname
+  } 
+
+
+add it to each menu item:
+
+<Menu.Item header active={isActive('/')}>
+
+
+
+4-Repeat it for all the links.
+
+skip log out.

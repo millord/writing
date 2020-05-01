@@ -1,0 +1,51 @@
+1-Go to Semantic UI React
+
+We are going to use the startup files that came with the tutorial.
+
+
+2-The links of the style sheets are on _App/Layout.js
+
+3-We need a Header in each of our pages
+
+How would you wrap the Layout into any component?
+
+Next.js makes it easy using a costume page (in the page folder) called _app.
+
+4-In the _app.js (inside pages) import Layout component.
+
+wrap the Component (named Component) with the Layout component.
+
+--TEST-- 
+
+
+4-Adding the styles
+
+Go to the Header component
+-import the Menu component from sematic-ui-react
+
+return the Menu component with opening and closing tags.
+with props ==> fluid id="menu" inverted
+
+<Menu fluid id="menu" inverted>
+
+
+</Menu>
+
+-import the Container component fron semantic-ui-react and add it inside the Menu with props ==> text
+Like this:
+
+function Header() {
+  return (
+    <Menu fluid id="menu" inverted>
+      <Container text>
+
+      </Container>
+    </Menu>
+  )
+}
+
+-Import the Link component from next/link
+
+
+
+

@@ -1,0 +1,59 @@
+1-We are going to use the Card element from semantic-ui
+
+-go to the pages/index.js
+-remove the console.log and useEffect.
+
+
+2-in that component (Home)
+
+import ProductList
+
+// inside the index.js
+
+function Home({products}){
+  return <ProductList products={products}/>
+}
+
+
+3-Go the ProductList componet
+
+- import {Card}
+
+function ProductList () {
+  return <Card.Group items={mapProductsToItems(products)}/>
+}
+
+Above the return inside the ProductList component create the 
+mapProductsToItems funcioon:
+
+function mapProductsToItems(products) {
+  return products.map((product) => ({
+    header: product.name,
+    image: product.mediaUrl,
+    color: "teal",
+    fluid: true,
+    childKey: product._id,
+    href: `/product?_id=${product._id}`,
+  }));
+}
+
+--TEST IT--
+
+Add the price. So inside the object and below the image property:
+
+meta: `$${product.price}`
+
+--Make it to display 3 items for a given row:
+
+add to the Card component:
+
+ <Card.Group itemsPerRow="3" centered  items={mapProductsToItems(products)}/>
+
+--TEST IT--
+
+MAKE RESPONSIVE:
+
+so inside the Card the stackable prop
+
+also go to the header component and add it as a prop too.
+

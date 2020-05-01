@@ -1,0 +1,65 @@
+How to take the data and creata a product with it
+
+a-take the image file and upload it
+b-take
+
+1-Need to register in cloudinary.com
+
+-In the dashboard Check you cloud name
+
+Watch the video 3. Upload Product Image until minute 4:20 for Setting up the account.
+
+3--create a separate function called handleImageUpload
+
+
+async function handleImageUpload() {
+  const data = new FormData();
+  data.append("file", product.media);
+  data.append("upload_preset", "PRESET_I_GAVE_IN_CLOUDINARY");
+  data.append("cloud_name", "NAME_I_GAVE_IN_CLOUDINARY");
+  // check the video at minute 6:20 for this field below
+  const response = await axios.post(process.env.CLOUDINARY_URL, data);
+  const mediaUrl = response.data.url;
+  return mediaUrl;
+}
+
+-Then call this function inside the handleSubmit function just below
+the event.preventDefault()
+
+and remove the console.log and make that function async and await 
+handleImageUpload()
+
+const mediaUrl = await handleImageUpload()
+
+4-import baseUrl, that to make the api request in handleSubmit function below
+const mediaUrl
+
+const url = `${baseUrl}/api/product`
+const payload = {name,price, description, mediaUrl}
+await axios.post(url, payload)
+
+
+5-Now go into the api/product and add a new case:
+
+// below the GET
+
+await handlePostRequest(req, res)
+
+-below create the function.
+
+
+async function handlePostRequest(req, res){
+  const {name, price, description, mediaUrl} = req.body
+  if(!name || !price || !description|| !mediaUrl){
+    return res.status(422).send("Product missing one or more fields")
+  }
+  const product = await new Product({
+    name,
+    price,
+    description,
+    mediaUrl
+  }).save()
+  res.status(201).json(product)
+}
+
+

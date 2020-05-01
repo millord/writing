@@ -1,4 +1,4 @@
-1-Signout the user fro localStorage:
+1-Signout the user from localStorage:
 
 export const signout = next => {
   if(typeof window !== "undefined"){
@@ -20,3 +20,5 @@ export const signout = next => {
 onClick={() =>  signout(() => {
   history.push("/")
 })}
+
+

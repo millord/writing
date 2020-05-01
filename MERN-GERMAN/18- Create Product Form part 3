@@ -1,0 +1,56 @@
+Simulating sending the data to the backend
+
+1-Login the submitted data to the console
+2-CLear out the form fields
+3-show a success message
+
+// make all the fields control adding:
+
+value={product.name}
+
+value={product.price}
+
+value={product.description}
+
+place this on top just below the import and above the function:
+
+const INITIAL_PRODUCT = {
+  name: "",
+  price: "",
+  media: "",
+  description: "",
+};
+
+Later pass the name to be the inital value of useState for product:
+
+function handleSubmit(event) {
+  event.preventDefault();
+  console.log(product);
+  setProduct(INITIAL_PRODUCT)
+}
+
+--Succes message:
+
+Just inside the Form component add:
+<Form success={true}
+<Message
+  success
+  icon="check"
+  header="Success!"
+  content="Your product has been posted"
+/>
+
+
+--Add to the state a variable called success and set it to false.
+
+const [success, setSuccess] = React.useState(false)
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  console.log(product);
+  setProduct(INITIAL_PRODUCT);
+  setSuccess(true);
+}
+ 
+

@@ -1,0 +1,23 @@
+1-npx create-react-app portfolio
+2-remove the src and create it having index.js and App.js in it
+
+import React from "react";
+import ReactDOM from "react-dom";
+import { App } from "./App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+
+3-create a class based component
+-name App
+in the return
+-div
+-h1 Hello!
+p tag with: My Name is Juan Millord. I'm a web developer
+p tag with: I'm always looking forward to working on meaningful projects
+p I live in Santo Domingo, and code every day
+p with: My Favorite language is JavaScript, and I think React.js is awesome
+p Besides coding, I also love music and pizza.
+
+
+

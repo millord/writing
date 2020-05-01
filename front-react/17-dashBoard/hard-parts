@@ -6,23 +6,6 @@
   } = isAuthenticated();
 
 
-2-Private Route Admin
-
-export const AdminRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      isAuthenticated() && isAuthenticated().user.role === 1 ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{ pathname: "/signin", state: { from: props.location } }}
-        />
-      )
-    }
-  />
-);
-
 3-Call api to create a category:
 
 export const createCategory = (userId, token, category) => {

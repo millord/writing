@@ -1,0 +1,45 @@
+GO to mongo atlas a create  a connection.
+
+2-Go to the next.config.js in the root directory and add the mongodb connection string.
+
+3-go to the utils folder (dedicated to utils)
+
+go into the connectDB.js
+
+import mongoose from 'mongoose'
+
+const connection = {};
+
+async function connectDb() {
+  if (connection.isConnected) {
+    console.log("Using existing connection");
+    return;
+  }
+  const db = await mongoose.connect(process.env.MONGO_SRV, {
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  console.log("DB Connected");
+  connection.isConnected = db.connection[0].readyState;
+}
+
+export default connectDb;
+
+
+// THAT IS THE WAY TO CONNECT TO A SERVERLESS APP
+
+
+-Now into the enpoint we are going right now, api/products
+
+import connectDb here
+
+
+and execute it at the top:
+
+connectDb()
+
+--TEST IT-- you should see on the terminal, db connected.
+
+

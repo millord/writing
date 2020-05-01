@@ -1,0 +1,36 @@
+we need to send the data from the parent to the child
+
+-creating the filters in the state:
+
+const [myFilters, setMyFilters] = useState({
+  filters:{category: [], price: []}
+})
+
+
+1-create the handleFilters  in the Shop component function.
+
+const handleFilters = (filters, filterBy) =>{
+  console.log(filters, filterBy)
+}
+
+
+2-pass it as props to in the Shop component, pass it down via
+the Checkbox component
+
+<Checkbox
+  categories={categories}
+  handleFilters={(filters) => handleFilters(filters, "category")}
+/>;
+
+3-HandleFilters
+
+ const handleFilters = (filters, filterBy) => {
+    const newFilters = { ...myFilters };
+    newFilters.filters[filterBy] = filters;
+    if (filterBy == "price") {
+      let priceValues = handlePrice(filters);
+      newFilters.filters[filterBy] = priceValues;
+    }
+    loadFilteredResults(myFilters.filters);
+    setMyFilters(newFilters);
+  };

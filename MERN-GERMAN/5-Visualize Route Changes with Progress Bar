@@ -1,0 +1,28 @@
+1-install nprogress (is installed already)
+
+
+To give some visual feedback to the user.
+
+
+Go to Header and import Router and NProgress from 'nprogress'
+
+
+import Router, {userRouter} from 'next/router'
+
+
+Add this functions above the function definition
+
+Router.onRouteChangeStart = () => NProgress.start()
+Router.onRouteChangeComplete = () =>  NProgress.done()
+Router.onRouteChangeError = () => NProgress.done()
+
+
+TEST THE ROUTE
+
+If you want to change the color of the progress bar.
+
+Go to static/styles.css and there you can change the 
+css variable --progressBar
+ 
+
+

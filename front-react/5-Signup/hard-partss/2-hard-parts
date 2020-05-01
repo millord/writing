@@ -1,6 +1,10 @@
 1- POST request to the api (Signup)
 
 
+TWO PHASES
+1-Sending the data
+2-Getting data back (response)
+
 export const signup = (user) => {
   return fetch(`${API}/signup`, {
     method: "POST",
@@ -17,6 +21,9 @@ export const signup = (user) => {
       console.log(err);
     });
 };
+
+
+
 
 
 2-showError() and showSuccess():

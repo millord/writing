@@ -1,0 +1,15 @@
+Go into the api/product.js
+
+
+-modify the handlePostRequest function
+wrap everything inside try/catch
+
+(Dont put the const {name, price, description, mediaUrl} = req.body)
+
+try{
+   -- code here --
+}
+catch(error){
+    console.error(error)
+    res.status(500).send('Server error in creating product')
+}

@@ -1,0 +1,66 @@
+1-To import the data:
+
+Rewatch that video to import the data from the json file to mongoAtlas
+
+video No. 10
+
+2-Create the model:
+-go into the models/Products folder
+
+import mongoose from "mongoose";
+import shortid from "shortid";
+
+const { String, Number } = mongoose.Schema.Types;
+
+import mongoose from "mongoose";
+
+const ProductSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  sku: {
+    type: String,
+    unique: true,
+    default: shortid.generate(),
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  mediaUrl: {
+    type: String,
+    required: true,
+  },
+});
+
+export default mongoose.models.Product ||
+  mongoose.model("Product", ProductSchema);
+
+
+// import it into the api/product
+
+
+
+inside the product api file
+
+export default async (req, res) => {
+  const products = await Product.find();
+  res.status(200).json(products);
+};
+
+
+--TEST IT-- with a console.log in the console.
+
+TEST IT IN THE CONSOLE. I YOU GET THE 
+
+
+
+
+
+
+

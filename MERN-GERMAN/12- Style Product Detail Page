@@ -1,0 +1,99 @@
+1-Go inside pages/product
+
+-remove the console.log
+-remove the fragmens
+
+2-Import the ProductSummary and ProductAttributes
+
+function Product ({product}) {
+
+  return(
+    <>
+    <ProductSummary {...product}  />
+    <ProductAttributes {...product} />
+    </>
+  )
+}
+
+
+3-Now go into the ProductSummary component
+
+-Import Item and Label
+
+desctructure name, sku,  price, mediaUrl, _id, 
+
+
+steps: First Item.Group, inside it Item and then Item.Content
+Start with: Item.Header, Item.Description, Label, close Item.Description
+Item.Extra with the  <AddProductToCart productId={_id}/> component inside.
+
+function ProductSummary({}) {
+  return (
+    <Item.Group>
+      <Item>
+        <Item.Image size="medium" src={mediaUrl} />
+        <Item.Content>
+          <Item.Header>{name}</Item.Header>
+          <Item.Description>
+            <p>${price}</p>
+            <Label>SKU: {sku} </Label>
+            <Item.Extra>
+           <AddProductToCart productId={_id}/>
+             </Item.Extra>
+          </Item.Description>
+        </Item.Content>
+      </Item>
+    </Item.Group>
+  );
+}
+
+
+4-Now going into the AddProductToCart component:
+
+
+ProductAttributes
+
+import { Header, Button } from "semantic-ui-react";
+
+function ProductAttributes({ description }) {
+  return (
+    <>
+      <Header as="h3">About this product</Header>
+      <p>{description}</p>
+      <Button
+        icon="trash alternate outline"
+        color="red"
+        content="Delete Product"
+      />
+    </>
+  );
+}
+
+===TEST IT-- SEE THE SINGLE PRODUCT
+
+
+--LAST THING TO ADD IS THE INPUT FOR INCREMENT
+
+
+-Go to AddProductToCart
+
+import { Input } from "semantic-ui-react";
+
+function AddProductToCart() {
+  return (
+    <Input
+      value="1"
+      type="number"
+      min="1"
+      placeholder="Quantity"
+      action={{
+        color: "Orange",
+        content: "Add to Cart",
+        icon: "plus cart",
+      }}
+    />
+  );
+}
+
+
+

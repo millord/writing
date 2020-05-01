@@ -1,0 +1,23 @@
+Go to utils
+
+baseUrl.js
+
+
+
+
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://deployment-url.now.sh"
+    : "http://localhost:3000";
+
+export default baseUrl;
+
+2-Go to the index.js (where Home is)
+
+import baseUrl
+
+-replace the localhost part of the url to :
+
+`${baseUrl}/api/product`
+
+3-Go to the product.js

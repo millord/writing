@@ -1,0 +1,25 @@
+Instead of mapping through the project
+-map through the Project component.
+
+
+1-create the Projet component :
+
+-make it a class based component
+
+<Project key={PROJECT._id} project={PROJECT} />
+
+-WE WILL WORK WITH PROPS WITHIN THIS COMPONENT, SO DESTRUCTURE THEN FIRTS
+
+const {title, image, description, link} = this.props.projects
+
+Now return:
+
+<div style={{ display: "inline-block", width: 300, margin: 10 }}>
+     <h3>{title}</h3>
+     <img src={image} alt="profile" style={{ width: 200, height: 120 }} />
+     <p>{description}</p>
+   <a href={link}>{link}</a>
+</div>
+
+
+

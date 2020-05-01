@@ -2,7 +2,7 @@ API call to get the categories
 
 In the Shop component
 
-1-copy the getCategories into the apiCorel.js
+1-copy the getCategories into the apiCore.js
 
 
 2-import getCategories from apiCore

@@ -13,7 +13,7 @@ export const isAuthenticated = () => {
 };
 
 
-2-Showing link if is isAthenticated and is admion
+2-Showing link if is isAthenticated and is admin
 
 {isAuthenticated() && isAuthenticated().user.role === 1 && (
    <li className="nav-item">

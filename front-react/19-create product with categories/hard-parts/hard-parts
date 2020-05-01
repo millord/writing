@@ -29,7 +29,7 @@ export const getProducts = (sortBy) => {
 };
 
 
-3-Get the products by sell and by arrival:
+
 
 --- Get products by sel
 

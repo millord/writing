@@ -1,0 +1,9 @@
+1-import the profile pic from assests
+2-and above the h1 saying hello add an image tag:
+
+alt="profile"
+className="profile"
+
+
+
+

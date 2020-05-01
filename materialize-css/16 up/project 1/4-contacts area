@@ -20,7 +20,7 @@ unter the card-panel div
 
 ul with a class of collection with-header
 
-and the li with class collection-header
+and the li with class collection-item
 
 in that li an h4 with the text Location
 

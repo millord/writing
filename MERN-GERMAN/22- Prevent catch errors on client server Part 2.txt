@@ -1,0 +1,61 @@
+1-Go inside the utils/catchErrors.js
+
+function catchErrors(error, displayError) {
+  let errorMsg;
+  if (error.response) {
+    // the request was made and the server responsed with
+    // a status code that is not in the range of 2XX
+    errorMsg = error.response.data;
+    console.log("Error response", errorMsg);
+
+    // For Cloudinary image uploads
+    if (error.response.data.error) {
+      errorMsg = error.response.data.error.message;
+    }
+  } else if (error.request) {
+    // The request was made, but response was recieved
+    errorMsg = error.request;
+    console.log("Error request", errorMsg);
+  } else {
+    // Something else happened in making the request
+    // that triggered an error
+    errorMsg = error.message;
+    console.log("Error message", errorMsg);
+  }
+  displayError(errorMsg);
+}
+
+export default catchErrors
+
+// create another piece of state
+
+const [error, setError] = React.useState('')
+
+// Now go inside the handleSubmit in the create.js
+
+and in the catch statement:
+
+catchErrors(error, setError)
+
+2-Display the errors to the users
+
+Inside the Form component add a prop:
+
+error={Boolean(error)}
+
+reuse the Message component.
+
+-remove success and add error
+-remove icon
+-header = "Oops!"
+-content={error}
+
+
+-Import catchErrors inside the create.js
+
+-TEST ITT- add an error:  
+
+Finally: Go inside the catchErrors.js and instead of console.log change them to
+console.error
+
+

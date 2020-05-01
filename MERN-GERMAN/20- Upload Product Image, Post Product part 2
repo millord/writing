@@ -1,0 +1,42 @@
+Go back to handleSubmit
+
+
+-There add this to the handleSubmit below const response...
+
+
+console.log({response})
+
+setProduct(INITIAL_PRODUCT)
+setSuccess(true)
+
+--Use a loading spinner:
+
+// add this prop on Form loading={true}
+
+// create a separate loading piece of state
+
+const [loading, setLoading] = React.useState(false);
+
+// add it in the handleSubmit function
+//after the preventDefault
+
+setLoading(true);
+
+// and after the const response
+setLoading(false);
+
+
+2-Disable the onSubmit function (so it wont run couple of times)
+
+// inside the <Form.Field type submit
+// add this prop
+
+disabled={loading}
+
+3-Last thing, go into the api/product and add before the switch
+
+-import connectDb 
+
+and add it connectDb()
+
+-Restar the server and test it adding new product throught the form.

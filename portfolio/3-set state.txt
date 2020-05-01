@@ -1,0 +1,26 @@
+
+1- place the whole terniary expression inside the jsx:
+
+{this.state.displayBio ? (full text here) :  null}
+
+2-Now instead of returning null:
+
+<button>READ MORE</button>
+
+-Now above the render create:
+
+readMore(){
+  this.setState({displayBio: true})
+} 
+
+-add the onClick to the button
+
+-create another button saying Show Less inside the first  div in the terniary expression.
+
+3-create a toggleDisplayBio method and set it to the opposite of what is in the state:
+
+toggleDisplayBio () {
+  this.setState({ displayBio: !this.state.displayBio})
+}
+
+4-add it to the onClick in both buttons.

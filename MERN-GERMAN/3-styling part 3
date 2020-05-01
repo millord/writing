@@ -1,0 +1,28 @@
+1-What links are shown for the authenticated and unauthenticated user:
+
+based on hard-code user value
+
+If we have a user we will show, the logout and account links otherwise we will show the Login and signup links.
+
+using a ternary:
+
+wrap in frament ==>  <> </>
+from the Account link to Logout link
+
+do the same for the Login and Signup link, so it will look like:
+
+
+{user ? (<> account and Logout links </>) 
+
+: 
+
+(<> Login and Signup links </>) 
+
+}
+
+also if there is not user dont show the create link
+
+
+{user && user link}
+
+--TEST NAVIGATION-- 

@@ -1,0 +1,67 @@
+import {Button, Form, Icon, Message, Segment} from 'semantic-ui-react'
+
+
+function Signup(){
+  return <>
+  <Message
+  attached
+  icon="settings"
+  header="Get Started!"
+  content="Create a new account"
+  color="teal"
+  />
+  <Form>
+    <Segment>
+      <Form.Input
+      fluid
+      icon="user"
+      iconPosition="left"
+      label="Name"
+      placeholder="Name"
+      name="name"
+      
+      />
+    </Segment>
+  </Form>
+  </>
+}
+
+// reuse the <Form.Input/> you used for the name and add:
+
+// EMAIL
+
+      <Form.Input
+      fluid
+      icon="envelope"
+      iconPosition="left"
+      label="Email"
+      placeholder="Email"
+      name="email"
+      type="email"
+      
+      />
+      
+// PASSWORD  
+
+      <Form.Input
+      fluid
+      icon="lock"
+      iconPosition="left"
+      label="Password"
+      placeholder="Password"
+      name="password"
+      type="password"
+      
+      />
+
+// The button:
+
+  <Button
+      icon="signup"
+      type="submit"
+      color="orange"
+      content="Signup"
+      />
+
+-Then below the form a Message component:
+

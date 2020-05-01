@@ -1,0 +1,65 @@
+So we dont have to wait for the component to display. We can get the data in the server.
+
+-go to the /pages/index.js
+
+
+we do it with getInitialProps
+
+-first, we pass the props to the component
+
+below the return and before exporting the component:
+
+
+Home.getInitialProps = () => {
+  return {hello: 'world'}
+}
+
+
+Now we need to pass the props to the Home component. For that go to the custom _app.js component, and inside the function (above render):
+
+const {Component, pageProps} = this.pageProps
+  return (
+    <Layout>
+      <Component {...pageProps}/>
+    </Layout>
+  )
+
+Inside the __app.js component:
+
+// Place it like this since its a class based component
+
+static async getInitialProps({Component, ctx}){
+  let pageProps = {}
+
+  if(Component.getInitialProps){
+  pageProps = await  Component.getInitialProps(ctx)
+  }
+  return {pagesProps}
+}
+
+
+---TEST IT IN THE CONSOLE ---
+
+
+Now initial props works:
+
+go into the index.js (Home component) and in the getProducts function:
+
+cut 
+
+const ulr = "url"
+const reponse = await ...continue.
+
+and place it inside the getInitialProps function.
+
+Home.getInitialProps = async () => {
+  const url = "http://localhost:3000/api/products"
+  const response = await Axios.get(url)
+  return {products: response.data}
+}
+
+Now distrutucte product as the props in the Home. (we are in the same file)
+
+-Comment out the useEffect function and test.
+
+

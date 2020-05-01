@@ -1,0 +1,93 @@
+JSON.parse() === to convert json to object
+JSON.stringify() === to convert object to json
+if (typeof window !== "undefined") { ==== mean, if you are in the 
+
+1-Adding items into the Cart
+
+export const addItem = (item = [], count = 0, next = (f) => f) => {
+  let cart = [];
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    cart.push({
+      ...item,
+      count: 1,
+    });
+
+    cart = Array.from(new Set(cart.map((p) => p._id))).map((id) => {
+      return cart.find((p) => p._id === id);
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    next();
+  }
+};
+
+
+2-create the addToCart function that takes an item and a callback function.
+
+const addToCart = () => {
+  addItem(product, () => {
+    //Add redirect to the state
+    setRedirect(true);
+  });
+};
+
+3-Get the total amount of elements in the Cart
+
+// Get the total amount of elements in the Cart
+export const itemTotal = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      return JSON.parse(localStorage.getItem("cart")).length;
+    } else {
+      return 0;
+    }
+  }
+};
+
+3-// Get Cart
+export const getCart = () => {
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      return JSON.parse(localStorage.getItem("cart"));
+    }
+  }
+  return [];
+};
+
+
+4-Remove Item
+
+
+/// Remove Item
+export const removeItem = (productId) => {
+  let cart = [];
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+
+    cart.map((product, i) => {
+      if (product._id === productId) {
+        cart.splice(i, 1);
+      }
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  return cart;
+};
+
+
+5-Empty the Card
+
+
+export const emptyCart = (next) => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("cart");
+    next();
+  }
+};
+

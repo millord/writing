@@ -1,0 +1,69 @@
+
+// Keeping track of the values with useState
+
+// inside the CreateProduct function add state
+
+const [product, setProduct] = React.useState({
+  name:'',
+  price:'',
+  media: '',
+  description:''
+})
+
+
+// add onChange to all but submit field:
+
+onChange = { handleChange };
+
+
+now above the return create handleChange.
+
+
+function handleChange(event){
+  const {name, value} = event.target
+  setProduct({[name]: value})
+  // test it with the console.log
+  console.log(product)
+}
+
+--TEst it
+
+
+--We need to keep the previos changes--
+
+function handleChange(event) {
+  const { name, value } = event.target;
+  // getting the previous State
+  setProduct((prevState) => ({ ...prevState, [name]: value }));
+  console.log(product);
+}
+
+
+--TEST IT-- 
+
+--Fixing the problem with the media field
+
+function handleChange(event) {
+  const { name, value, files } = event.target;
+  if (name === "media") {
+    setProduct((prevState) => ({ ...prevState, media: files[0] }));
+  } else {
+    setProduct((prevState) => ({ ...prevState, [name]: value }));
+    console.log(product);
+  }
+}
+
+---SHOW A PREVIEW TO KNOW ITS THE ONE THAT WE CHOOSE--
+
+-Add a new state
+
+// place this just below the first setProduct 
+// in the handleChange function
+
+setMediaPreview(window.URL.createObjectURL(files[0]))
+
+
+- To display it add an Image component just above the Form.Field for TextArea like this:
+
+<Image src={mediaPreview} rounded centered size="small" />
+

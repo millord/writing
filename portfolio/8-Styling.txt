@@ -1,0 +1,38 @@
+1-create a index.css inside the src directory
+
+2-add the index.css into the index.js
+
+3-Go to materilized-css and add it into the project
+
+4-go to font google and find economica and rototo-condensed
+
+-@font-face {
+  font-family: RobotoCondensed;
+  src: url(assets/roboto-condensed.light.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: EconomicaBold;
+  src: url(assets/economica-bold.light.ttf);
+  font-weight: 800;
+}
+
+body {
+  text-align: center;
+  font-size: 20px;
+  padding: 2.5%;
+  font-family: "RobotoCondensed";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "EconomicaBold";
+}
+
+
+
+

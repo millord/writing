@@ -1,0 +1,52 @@
+1-Go to pages/index.js
+
+2-import React
+
+
+-inside the Home function call useEffect
+
+React.useEffect(() => {
+    getProducts()
+},[])
+
+
+-import axios
+
+-define the function below
+
+function getProducts(){
+   const url = 'http://localhost:3000/api/products' 
+   axios.get(url)
+
+}
+
+-By simple creating a file into pages creates a route for that file.
+-By creating an api folder into pages and there are created as API endpoints
+
+go to 
+ /pages/api/products
+
+and its empty, you need to create a function.
+
+first, import products from '../../static/products.json'
+
+export default (req, res) => {
+  res.status(200).json(products)
+}
+
+
+-Go to the pages/index.js and modify the getProducts function:
+using async/await
+
+async function getProducts(){
+   const url = 'http://localhost:3000/api/products' 
+   const response = await axios.get(url)
+   console.log(response.data)
+
+}
+
+
+---TEST IT IN THE CONSOLE.LOG---
+
+
+
