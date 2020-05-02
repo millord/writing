@@ -1,0 +1,48 @@
+// go into pages/signup.js
+// import axios
+// import baseUrl
+
+// go into the handleSubmit function, remove the console.log there
+// inside the try and below the setError('')
+
+const url = `${baseUrl}/api/signup`;
+const payload = { ...user };
+await axios.post(url, payload);
+
+// now go to the models/User.js
+// create the model
+
+import mongoose from "mongoose";
+
+const { String } = mongoose.Schema.Types;
+
+const UserSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      select: false,
+    },
+    role: {
+      type: String,
+      required: true,
+      default: "user",
+      enum: ["user", "admin", "root"],
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export default mongoose.models.User || mongoose.model("User", UserSchema);
+

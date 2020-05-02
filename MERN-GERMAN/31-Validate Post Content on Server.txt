@@ -1,0 +1,20 @@
+// go into the api/signup
+
+// import isEmail from 'validator/lib/isEmail'
+// import isLength from 'validator/lib/isLength'
+
+// add this just at the beginning of the try {
+
+// validate the name / email and password
+
+if (!isLength(name, { min: 3, max: 10 })) {
+  return res.status(422).send("Name must be 3-10 characters long");
+} else if (!isLength(password, { min: 6 })) {
+  return res.status(422).send("Password must be at least 6 characters long");
+} else if (!isEmail(email)) {
+  return res.status(422).send("Email must be valid");
+}
+
+
+---TEST ITTT
+

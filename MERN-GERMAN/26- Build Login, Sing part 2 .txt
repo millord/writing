@@ -1,0 +1,60 @@
+--Getting the data from the form into the state:
+
+import React from 'react'
+
+const INITIAL_USER = {
+  name: "",
+  email: "",
+  password: "",
+};
+
+-- Add the state inside the function
+
+ const [user, setUser] = React.useState(INITIAL_USER);
+  
+-- create the handleChange function:
+
+  
+  function handleChange (event){
+    
+  }
+
+-- add the onChange property to each input field but the submit button: 
+
+onChange={handleChange}
+
+
+ function handleChange (event){
+    const {name, value} = event.target
+    setUser(prevState => ({...prevState, [name]: value}))
+  }
+
+--add the value prop to each input field:
+
+value{user.name}
+value{user.email}
+value{user.password}
+
+
+---TEST IT--- 
+
+
+2-Disabling the Signup button if one of those fields is not provided.
+
+-for that we will use what we did with useEffect.
+
+Place it about the handleChange function
+
+-- add this piece to the state
+
+const [disabled, setDisabled] = React.useState(true)
+
+useEffect(() => {
+ const isUser = Object.values(user).every(el => Boolean(el))
+ isUser ? setDisabled(false) : setDisabled(true)
+},[user])  
+
+
+3-add the disabled property to the Submit button:
+
+disabled={disabled}

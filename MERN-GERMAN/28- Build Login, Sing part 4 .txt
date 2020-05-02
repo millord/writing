@@ -1,0 +1,24 @@
+1-Reuse all the signup file into the login
+and modify
+
+-remove the name from the INITIAL_USER
+
+-remove the input file
+
+-modify the Message component
+
+icon: privacy
+header: "Welcome Back"
+content: "Log in with email and password"
+color: "blue" 
+
+
+2-Below, for the Icon component:
+
+New user? 
+href="/signup"
+<a>Sign up here</a>
+
+--TEST IT--
+
+change the button from signup to Login

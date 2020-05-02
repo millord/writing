@@ -1,0 +1,24 @@
+1-go into the pages/signup
+
+go inside the handleSubmit
+
+// below const payload
+const resonse = await axios.post(url, payload);
+handleLogin(response.data);
+
+// import from utils handleLogin
+
+//  adding the cookie function
+
+// go inside the /utils/auth.js
+
+// import cookie from 'js-cookie'
+// import Router from 'next/router'
+
+export function handleLogin(token) {
+  cookie.set("token", token);
+  Router.push("/account");
+}
+
+-- RESTART THE SERVER AND TEST IT--
+

@@ -1,0 +1,50 @@
+// Add the logic to eventually submit to and endpoints
+
+-add the onSubmit property to the Form component and loading={loading}
+
+<Form onSubmit={handleSubmit}>
+
+-Create the handleSubmt function
+
+
+const [loading, setLoading] = React.useState(false);
+const [error, setError] = React.useState("");
+
+async function handleSubmit() {
+  event.preventDefault();
+  try {
+    setLoading(true);
+    setError('')
+    console.log(user)
+  } catch (error) {
+    catchErrors(error, setError);
+  } finally {
+    setLoading(false);
+  }
+}
+
+// modify the disabled prop into Signup button
+// disabled={disabled || loading}
+// add the error={Boolean(error)} to the Form component
+
+// add inside the Form component just above the 
+// Segment tag
+
+<Message
+error
+header="Oops!"
+content={error}
+/>
+
+
+-- TEST IT IN THE CONSOLE --
+
+
+-Finally go into the pages/create, modify the handleSubmit function.
+
+below the setLoading(true);
+
+setError('')
+
+
+---TEST IT--- you should see an object witht the data.

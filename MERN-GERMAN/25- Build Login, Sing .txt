@@ -64,4 +64,19 @@ function Signup(){
       />
 
 -Then below the form a Message component:
+-import the link component fron next/link
+
+<Message attached="bottom" warning>
+        <Icon name="help" />
+        Existing user?{" "}
+        <Link>
+          <a>Log in here</a>
+        </Link>{" "}
+        instead.
+</Message>
+
+--TEST IT---
+
+-Go and set user to false so you can see the signup link and enter into the form.
+
 
