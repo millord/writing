@@ -1,0 +1,95 @@
+// go into the _app.js
+
+// since this component is where getInitialProps is
+// and since this component is executed each time
+// the app start
+
+// import {parseCookies} from 'nookies'
+
+// inside the  MyApp component:
+
+//  below static async getInitialProps ...
+
+const { token } = parseCookies(ctx);
+
+// go inside the auth.js file and create this function
+
+export function redirectUser(ctx, location) {
+  if (ctx.req) {
+    ctx.res.writeHead(302, { Location: location });
+    ctx.res.end();
+  } else {
+    Router.push(location);
+  }
+}
+
+// Go inside the api/account.js
+
+// import the User model
+// import jwt
+// import connectDb
+
+connectDb();
+
+export default async (req, res) => {
+  if (!("authorization" in req.headers)) {
+    return res.status(401).send("No authorization token");
+  }
+  try {
+    const { userId } = jwt.verify(
+      req.headers.authorization,
+      process.env.JWT_SECRET
+    );
+    const user = await User.findOne({ _id: userId });
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404).send("User not found");
+    }
+  } catch (error) {
+    res.status(403).send("Invalid token");
+  }
+};
+
+// import redirectUser from utils auth
+// import baseUrl
+// import axios
+// Now after we execute getInitialProps
+// if (Component.getInitialProps){
+// and before the return {pageProps}
+
+if (!token) {
+  const isProtectedRoute =
+    ctx.pathname === "/account" || ctx.pathname === "/create";
+  if (isProtectedRoute) {
+    redirectUser(ctx, "/login");
+  }
+} else {
+  try {
+    const payload = { headers: { Authorization: token } };
+    const url = `${baseUrl}/api/account`;
+    const response = axios.get(url, payload);
+    const user = response.data;
+    pageProps.user = user;
+  } catch (error) {
+    console.error("Error getting current user", error);
+  }
+}
+
+
+// in the return of _app.js add to the Layout component
+
+<Layout {...pageProps} />
+
+// also go into the Layout component and get user data as props along with children
+
+// inside the Layout pass as props to header
+
+<Header user={user}/>
+
+// also go into Header component
+
+// destructure user as props
+// remove the hard-code user
+
+--TEST IT -- the links should change depending if the user is log in

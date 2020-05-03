@@ -1,0 +1,40 @@
+/ Its a long video --rewatch it
+
+
+// Go into the AddProductToCart.js component
+
+// 1 - make it possible to increment and decrement the number
+// of cart items
+
+// to do that we need to keep that value on state
+// So, create a state, import React from react
+
+const [quantity, setQuantity] = React.useState(1)
+
+// now pass quantity as the value in the Input component
+value={quantity}
+
+// add an onChange property
+
+onChange={event => setQuantity(Number(event.target.value))}
+
+
+/// TEST IT ---
+
+// Now passing the user data
+
+// Go to the parent component of AddProductToCart
+
+// Go to the Product component
+// inside the return add to the ProductSummary this prop
+
+user={user}
+
+// Go to the ProductSummary component an destructure(take as prop user)
+
+// and inside tha componet pass the user down
+// go into the AddProductToCart inside this same component and pass the prop
+// <AddProductToCart user={user} productId={_id}
+// Finally to to the AddProductToCart and take as props ({user})
+
+

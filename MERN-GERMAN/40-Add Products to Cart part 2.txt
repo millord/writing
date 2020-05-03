@@ -1,0 +1,39 @@
+ // Inside the AddProductToCart
+// showing the button conditionally
+
+// inside the action prop of the input component
+//  import the router 
+// import {useRouter} from 'next/router'
+// execute the userRouter a the top (below the state)
+
+const router = userRouter()
+
+action={user ? {
+  color:'orange',
+  content: 'Add to Cart',
+  icon: 'plus cart'
+  onClick: handleAddProductToCart
+} : {
+  color: 'blue',
+  content: 'Sign Up to Purchase',
+  icon: 'signup',
+  onClick: () => router.push('/signup') 
+}}
+
+
+// create the function above the return
+// first import : axios, baseUrl
+// import cookie from 'js-cookie'
+// in this component takes as props productId
+
+async function handleAddProductToCart() {
+  const url = `${baseUrl}/api/cart`
+  const payload = {quantity, productId}
+  const token = cookie.get('token')
+  const headers = {headers: {Authorization: token}}
+  await axios.put(url, payload, headers)
+   
+}
+
+
+

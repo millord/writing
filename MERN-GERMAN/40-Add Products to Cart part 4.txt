@@ -1,0 +1,119 @@
+
+// Go into the AddProductToCart
+// Add some loading state in tha component
+// import catchErrors from utils
+
+const [loading, setLoading] = useState(false)
+const [success, setSuccess] = useState(false)
+// and modify handleAddProductToCart accordingly
+
+async function handleAddProductToCart(){
+  try {
+    setLoading(true)
+    const url = `${baseUrl}/api/cart`
+    const payload = {quantity, productId}
+    const token = cookie.get('token')
+    const headers = {headers: {Authorization: token}}
+    await axios.put(url, payload, headers)
+    setSuccess(true)
+  } catch (error) {
+    catchErrors(error, window.alert)    
+  }finally{
+   setLoading(false)
+  }
+}
+
+
+// now go into the backend
+// api/cart
+// and since we are making multiple request
+// we use a switch statement
+
+// rename the function you have there to handleGetRequest
+// the one with GET request
+
+// create the switch statement
+
+export default async (req, res) => {
+  switch (req.method) {
+    case "GET":
+      await handleGetRequest(req, res);
+      break;
+    case "PUT":
+      await handlePutRequest(req, res);
+      break;
+    default:
+      rs.status(405).send(`Method ${req.method} not allowed!`);
+      break;
+  }
+};
+
+
+// Go into the AddProductToCart
+// Add some loading state in tha component
+// import catchErrors from utils
+
+const [loading, setLoading] = useState(false)
+const [success, setSuccess] = useState(false)
+// and modify handleAddProductToCart accordingly
+
+async function handleAddProductToCart(){
+  try {
+    setLoading(true)
+    const url = `${baseUrl}/api/cart`
+    const payload = {quantity, productId}
+    const token = cookie.get('token')
+    const headers = {headers: {Authorization: token}}
+    await axios.put(url, payload, headers)
+    setSuccess(true)
+  } catch (error) {
+    catchErrors(error, window.alert)    
+  }finally{
+   setLoading(false)
+  }
+}
+
+// Go into the Input component
+// go into the action and modify accordingly
+// make a nested ternary 
+
+action={
+  user && success ? {
+    color: 'blue',
+    content: 'Item Added!',
+    icon: 'plus cart',
+    disabled: true
+  } : user ? {
+    color: 'orange',
+    content:'Added to Cart',
+    icon: 'plus cart',
+    loading: loading,
+    disabled: loading,
+    onClick: handleAddProductToCart
+  }
+}
+
+
+// save and test. //
+
+
+// show the button for 3 seconds
+
+// good use case for useEffect
+
+React.userEffect(() => {
+  let timeout;
+  if (success) {
+    timeout = setTimeout(() => setSuccess(false), 3000);
+  }
+  return () => {
+    clearTimeout(timeout);
+  };
+}, [success]);
+
+
+
+---TEST IT---
+
+
+s

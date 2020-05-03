@@ -1,0 +1,38 @@
+
+// go into the Cart component pages/cart
+
+// passing down the props
+
+//In the Cart component pass the products to CartItemList
+
+<CartItemList products={products}/>
+
+// go inside the CartItemList and take the products as props
+
+// There we have a hard code user
+// go back into the parent component Cart and take as props user
+// and pass it down to CartItemList
+// remove the hard code user
+
+// inside the CartItemList
+// create a conditional
+
+if(products.length === 0){
+  /// move all the code here (including the return)
+}
+
+// import {useRouter} from 'next/router'
+
+// execute useRouter inside the function:
+
+const router = useRouter()
+
+// now go into the View Products button
+// add an onClick
+
+onClick={() => router.push('/')}
+
+// and for Login to Add Products button
+
+onClick={() => router.push('/login')}
+

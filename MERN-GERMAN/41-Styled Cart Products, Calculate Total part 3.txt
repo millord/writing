@@ -1,0 +1,29 @@
+// now go into the Cart component
+// and pass the product props
+
+<CartSummary products={products} />;
+
+// so we can calculate that total:
+// Now go into the CartSummary component
+// take the products prop
+
+// we need to hide the checkout button if there
+// there are not items in the cart
+
+// for that add a new piece of state
+
+const [isCartEmpty, setCartEmpty] = React.useState(false);
+
+// so if isCartEmpty is true we want to disable the button
+// Go inside the Segment componenet into the
+// Button component with icon="cart" and add
+
+disabled = { isCartEmpty };
+
+React.useEffect(() => {
+  setCartEmpty(products.length === 0);
+}, [products]);
+
+
+
+

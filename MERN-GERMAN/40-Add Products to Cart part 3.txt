@@ -1,0 +1,42 @@
+// create handlePutRequest
+
+async function handlePutRequest(req, res) {
+  const { quantity, productId } = req.body;
+  if (!("authorization" in req.headers)) {
+    return res.status(401).send("No authorization token");
+  }
+  try {
+    const { userId } = jwt.verify(
+      req.headers.authorization,
+      process.env.JWT_SECRET
+    );
+    // Get user cart based on userId
+    const cart = await Cart.findOne({ user: userId });
+    // Check if product already exists in cart
+    const productExists = Cart.products.some((doc) =>
+      Object(productId).equals(doc.product)
+    );
+    // If so, increment quantify (by number provided to request)
+    if (productExists) {
+      await Cart.findOneAndUpdate(
+        { _id: cart._id, "products.product": productId },
+        { $inc: { "products.$.quantify": quantity } }
+      );
+    } else {
+      const newProduct = { quantity, product: productId };
+      await Cart.findOneAndUpdate(
+        { _id: cart._id },
+        { $addToSet: { products: newProduct } }
+      );
+    }
+    res.status(200).send("Cart updated");
+    // If not, add new product with given  quantity
+  } catch (error) {
+    console.error(error);
+    res.status(403).send("Please login again");
+  }
+}
+
+// import Types
+
+const { ObjectId } = mongoose.Types

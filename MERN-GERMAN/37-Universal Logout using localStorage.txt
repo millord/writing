@@ -1,0 +1,28 @@
+// Universal logout
+
+// go inside the utils/auth.js
+
+// into the hadleLogout function
+
+// below cookie.remove('token')
+
+window.localStorage.setItem('logout', Date.now())
+
+// go inside the _app.js file and add a lifecycle above the render()
+
+
+// import Router from 'next/router'
+
+componentDidMount(){
+  window.addEventListener('storage', this.syncLogout)
+}
+
+syncLogout = event => {
+  if(event.key === 'logout'){
+    console.log('logged out from storage')
+   Router.push('/login')
+  }
+}
+
+
+---TEST IT---

@@ -1,0 +1,14 @@
+// whenever a user logs in
+// if we get an invalid token
+
+// go back to the _app.js
+// import destroyCookie from nookie
+
+// inside the catch part of getInitialProps
+// below the console.error
+// there, we will
+
+// 1) Throw out invalid token
+destroyCookie(ctx, 'token')
+// 2) Redirect to login 
+redirectUser(ctx, '/login')

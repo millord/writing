@@ -1,0 +1,40 @@
+// Calculating and displaying total
+
+// go into the utils/calculateCartTotal.js
+
+// first create a function
+
+function calculateCartTotal(products) {
+  const total = products.reduce((acc, el) => {
+    acc += el.Product.price * el.quantity;
+    return acc;
+  }, 0);
+  const cartTotal = ((total * 100) / 100).toFixed(2);
+  const stripeTotal = Number((total * 100).toFixed(2));
+  return {cartTotal, stripeTotal}
+}
+
+export default calculateCartTotal;
+
+
+// then use the calculateCartTotal back in 
+// the CartSummary component
+//import it from utils
+
+// we want to calcutate the total whenever our
+// products change so we can use th useEffect
+// for that create two pieces of state
+
+const [cartAmount, setCartAmount] = React.useState(0)
+const [stripeAmount, setStripeAmount] = React.useState(0)
+
+React.useEffect(() => {
+  const {cartTotal, stripeAmount} = calculateCartTotal(products)
+  setCartAmount(cartTotal)
+  setStripeAmount(stripeTotal)
+},[products])
+
+
+// now go into the return and remove the 
+// hard coded sub-total: with
+${cartAmount}
