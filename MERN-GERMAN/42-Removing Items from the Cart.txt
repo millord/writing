@@ -1,0 +1,39 @@
+// Go inside the Cart.js component
+
+// import React to useState
+// import axios and baseUrl
+// import cookie from 'js-cookie'
+// create a piece of state
+
+const [cartProducts, setCartProducts] = React.useState(products)
+
+async function handleRemoveFromCart(productId){
+  const url = `${baseUrl}/api/cart`
+
+  const token = cookie.get('token')
+  const payload = {
+    params: {productId},
+    headers: {Authorization: token}
+  }
+  const response =  await axios.delete(url, payload)
+  setCartProducts(response.data)
+}
+  
+
+// then, instead of passing in the return products to each component
+// in the return pass cartProducts to both
+// CartItemList and CartSummary
+
+
+
+// pass this function to the CartItemList as a prop
+
+handleRemoveFromCart={handleRemoveFromCart}
+
+// go inside the CartItemList
+// take into props the handleRemoveFromCart
+
+// then go down to the extra button
+// and replace the onClick
+
+onClick={() => handleRemoveFromCart(p.product._id)}
