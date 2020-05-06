@@ -1,0 +1,71 @@
+Padding and Margins
+
+Margin =  outside of the element
+
+Padding = inside the element
+
+
+-They have the same numbering system
+
+.{p|m}-{size}
+
+--Adding 4rems at each side
+
+<div class="bg-blue-800 w-32 h-32 m-4">Text</div>
+<div class="bg-blue-500 w-32 h-32 m-4">Text</div>
+
+Margin in the outise
+
+l = left
+r = right
+t = top
+b = bottom
+
+Only for the bottom
+
+<div class="bg-blue-800 w-32 h-32 mb-4">Text</div>
+
+Margin top
+
+<div class="bg-blue-800 w-32 h-32 mt-4">Text</div>
+
+
+Padding; in the inside
+
+Padding of 4
+
+<div class="bg-blue-800 w-32 h-32 p-4">Text</div>
+<div class="bg-blue-500 w-32 h-32 p-4">Text</div>
+
+Combinating Margina and Padding:
+
+<div class="bg-blue-800 w-32 h-32 mb-4 pt-4">Text Text Text Text Text Text Text Text Text Text Text </div>
+<div class="bg-blue-500 w-32 h-32 p-4">Text</div>
+
+
+Shotcut when repeating margin and padding
+
+<div class="bg-blue-800 w-32 h-32 mb-4 pt-4 pl-2 pr-2">Text Text Text Text Text Text Text Text Text Text Text </div>
+<div class="bg-blue-500 w-32 h-32 p-4">Text</div>
+
+
+.{p|m{x|y}-{size}}
+
+
+<div class="bg-blue-800 w-32 h-32 mb-4 pt-4 px-2">Text Text Text Text Text Text Text Text Text Text Text </div>
+<div class="bg-blue-500 w-32 h-32 p-4">Text</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

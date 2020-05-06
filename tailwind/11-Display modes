@@ -1,0 +1,37 @@
+.{display}
+
+Display Modes
+
+block
+inline
+inline-block
+flex
+inline-flex
+table
+table-row
+table-cell
+hidden
+
+
+In css most things are actually block.
+
+This is gonna be in block (one on top of the other)
+
+<body>
+    <div>Hello <div class="bg-yellow-300 w-32 h-6">World!</div></div>
+</body>
+
+But if you add inline to the second div will be inline
+
+<body>
+  <div>Hello <div class="bg-yellow-300 w-32 h-6 inline">World!</div></div>
+</body>
+
+and use inline-block to respect the width of the container
+
+HIDING AN ELEMENT
+
+
+<body>
+     <div>Hello <div class="bg-yellow-300 w-32 h-6 hidden">World!</div></div>
+</body>

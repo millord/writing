@@ -1,0 +1,99 @@
+.font-{family}
+
+There are three mayor families you can use with tailwind
+
+sans = Helvetica or similar
+serif = Times New Roman or Similar
+mono = Monospace or similar
+
+Apply the mono family
+
+<p class="font-mono">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. Nullam auctor finibus pulvinar. Morbi porttitor placerat enim nec consequat.
+</p>
+
+Applying a font-family to the whole body
+
+
+<body class="font-mono">
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. Nullam auctor finibus pulvinar. Morbi porttitor placerat enim nec consequat.
+</p>
+</body>
+
+
+--Test Size --
+
+The base font-size is 16px
+
+base   === 1rem   16px
+
+xs == very small
+sm == small
+lg == large
+
+text-xl 
+
+text-sm
+
+text-6xl == very large
+
+
+-- Test alignment
+
+left
+center
+right
+justify
+
+.text-{align}
+
+Text extra small and right align
+
+<p class="text-xs text-right">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. Nullam auctor finibus pulvinar. Morbi porttitor placerat enim nec consequat.
+</p>
+
+--TEXT COLOR--
+
+.text-{color}-{shade}
+
+<p class="text-xs text-right text-blue-500">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. Nullam auctor finibus pulvinar. Morbi porttitor placerat enim nec consequat.
+</p>
+
+using bg:
+
+<p class="text-xs text-center bg-gray-900 text-gray-500">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. Nullam auctor finibus pulvinar. Morbi porttitor placerat enim nec consequat.
+</p>
+
+-adding padding and margin
+
+<p class="text-xs text-center m-3 p-5 bg-gray-900 text-gray-500">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. Nullam auctor finibus pulvinar. Morbi porttitor placerat enim nec consequat.
+</p>
+
+ADVISE:
+
+Use the color in the body of the html and dont use pure black instead use:
+
+
+<body class="font-sans text-gray-900"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

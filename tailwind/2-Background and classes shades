@@ -1,0 +1,20 @@
+The background-classes
+
+
+Formula:
+
+.bg-{color}-{shade}
+
+Give to the body a class of:
+
+<body class="bg-gray-500">
+
+<div class="bg-gray-200">Text</div>
+
+<div class="bg-white">Body</div>
+
+<div class="bg-blue-800">Footer</div>
+
+</body>
+
+

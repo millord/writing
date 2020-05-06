@@ -1,0 +1,105 @@
+
+.italic
+
+.not-italic
+
+<p class="italic">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. <span class="not-italic">Nullam auctor finibus pulvinar.</span> Morbi porttitor placerat enim nec consequat.
+</p>
+
+
+--FONT WEIGHT --
+
+.font-{weight}
+
+Weights     ===== Font Weight
+
+
+hairline ==================== 100
+thin     ==================== 200 
+light    ==================== 300
+normal   ==================== 400
+medium   ==================== 500
+semibold ==================== 600
+bold     ==================== 700
+extrabold==================== 800
+black    ==================== 900
+
+
+---LETTER SPACING--- 
+
+This is measure in em no rem
+
+
+em units is based on the parent element's font size, not the document.
+
+
+Spacings
+
+tighter ========= -0.05em
+tight   ========= -0.025em
+normal  =========  0
+wide    =========  0.025em
+wider   =========  0.05em
+widest  =========  0.01em
+
+
+tracking-wider
+
+
+<p class="italic tracking-wider">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. <span class="font-black">Nullam auctor finibus pulvinar.</span> Morbi porttitor placerat enim nec consequat.
+</p>
+
+Line Height
+
+Spacings
+
+none ========= 1
+tight   ========= 1.25
+snug  =========  1.37
+normal    =========  1.5
+relaxed   =========  1.6
+loose  =========  2
+
+Using relaxed
+
+<p class="italic tracking-tight leading-relaxed">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. <span class="font-black">Nullam auctor finibus pulvinar.</span> Morbi porttitor placerat enim nec consequat.
+</p>
+
+
+-- TEXT DECORATIONS --
+
+Works pretty similar to italics
+
+using line-through and underline
+
+
+<p class="italic tracking-tight leading-loose line-through">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. <span class="font-black underline">Nullam auctor finibus pulvinar.</span> Morbi porttitor placerat enim nec consequat.
+</p> 
+
+
+--TEST TRANSFORM --
+
+
+.uppercase
+.lowercase
+.capitalize
+.normal-case
+
+
+uppercase
+
+<p class="italic tracking-tight uppercase">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. <span class="font-black underline">Nullam auctor finibus pulvinar.</span> Morbi porttitor placerat enim nec consequat.
+</p>
+
+capitalize
+
+<p class="italic tracking-tight capitalize">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac nisl varius varius. <span class="font-black underline">Nullam auctor finibus pulvinar.</span> Morbi porttitor placerat enim nec consequat.
+</p>
+
+
