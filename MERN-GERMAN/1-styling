@@ -7,13 +7,10 @@ We are going to use the startup files that came with the tutorial.
 
 3-We need a Header in each of our pages
 
-How would you wrap the Layout into any component?
-
-Next.js makes it easy using a costume page (in the page folder) called _app.
 
 4-In the _app.js (inside pages) import Layout component.
 
-wrap the Component (named Component) with the Layout component.
+wrap the Component (named Component) with the Layout component from _App folder.
 
 --TEST-- 
 

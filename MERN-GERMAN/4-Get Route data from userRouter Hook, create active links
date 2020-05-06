@@ -21,8 +21,8 @@ Applying it conditionally:
 
 create a helper function:
 
-function isActive(router) {
-    return router === router.pathname
+function isActive(route) {
+    return route === router.pathname
   } 
 
 

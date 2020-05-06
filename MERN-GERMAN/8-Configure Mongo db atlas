@@ -1,4 +1,4 @@
-GO to mongo atlas a create  a connection.
+Go to mongo atlas a create  a connection.
 
 2-Go to the next.config.js in the root directory and add the mongodb connection string.
 

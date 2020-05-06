@@ -1,3 +1,5 @@
+FETCHING DATA ON THE SERVER WITH getInitialProps
+
 So we dont have to wait for the component to display. We can get the data in the server.
 
 -go to the /pages/index.js
@@ -15,9 +17,9 @@ Home.getInitialProps = () => {
 }
 
 
-Now we need to pass the props to the Home component. For that go to the custom _app.js component, and inside the function (above render):
+Now we need to pass the props to the Home component. For that go to the custom _app.js component, and inside the function (below render):
 
-const {Component, pageProps} = this.pageProps
+const {Component, pageProps} = this.props
   return (
     <Layout>
       <Component {...pageProps}/>
@@ -47,7 +49,7 @@ go into the index.js (Home component) and in the getProducts function:
 
 cut 
 
-const ulr = "url"
+const url = "url"
 const reponse = await ...continue.
 
 and place it inside the getInitialProps function.
@@ -58,8 +60,8 @@ Home.getInitialProps = async () => {
   return {products: response.data}
 }
 
-Now distrutucte product as the props in the Home. (we are in the same file)
+Now distrutucte products as the props in the Home. (we are in the same file)
 
--Comment out the useEffect function and test.
+-Remove  the useEffect function and test.
 
 
