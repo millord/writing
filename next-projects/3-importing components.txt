@@ -1,0 +1,13 @@
+
+
+1-In the root directory create the components directory
+
+-inside create create the includes folder with the headers.js
+
+cut  the navbar you created for Home and place it there
+
+===IMPORTANT == dont create the header.js inside pages because it will think is a route===
+
+2-Import the header from components in the /pages/index.js
+
+

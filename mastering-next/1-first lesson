@@ -1,0 +1,24 @@
+1-create a project with next
+
+npx create-next-app
+
+
+yarn dev
+
+
+-go into pages/index.js
+
+change the this big ot code:
+
+<h1 className="title">
+    Welcome to <a href="https://nextjs.org">Next.js!</a>
+</h1>
+
+
+to Welcome to Mastering next js to test the hot reloading
+
+2-Copy the all the code and inside the pages create a file
+called about.js copy there all the code and try to go
+to that route /about.
+
+

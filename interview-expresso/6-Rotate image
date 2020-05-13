@@ -1,0 +1,24 @@
+
+--WATCH THE VIDEO INTRO
+
+This problem deals witha  matrix which is a 2 dimentional array.
+
+Normally what you would do is:
+
+traversin or transforming the matrix
+
+reverse() === works on any array (it mutate the array)
+
+let rotate = function (matrix) {
+  matrix.reverse();
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < i; j++) {
+      let temp = matrix[i][j];
+      matrix[i][j] = matrix[j][i];
+      matrix[j][i] = temp;
+    }
+  }
+};
+
+
+Dont need to returns since its mutate the array

@@ -1,0 +1,33 @@
+// Adding more pages
+
+
+1-create a file in pages/contacts.js and about.js
+reuse for the Home component and modify accordingly
+
+-test going to routes routes /about contacts/
+
+2-create a folder into pages called users
+inside it create two files, index.js and profiles
+
+reuse the code and paste it in users/indexs.js and /users/profiles
+
+test it going to /users and /users/profiles
+
+
+3-Go into the index.js in pages
+
+-import Link fron 'next/link'
+
+and start creating a nav
+
+inside a nav tag
+
+ <Link href="/">
+      <a>Home</a>	
+ </Link>
+
+Do it for Contacts, About us, and  Users
+
+
+
+

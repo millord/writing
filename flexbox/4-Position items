@@ -1,0 +1,49 @@
+How to abjust the position of a single item alogn the main axis  
+(X) using the technique margin auto
+
+Moving the logout item all the way to the right hand side
+
+for that first give a classe to all three items
+
+home = class home
+search = class search
+logout = class logout
+
+to target the logout item
+
+.logout{
+  margin-left: auto;
+}
+
+it will push the logout item all the way to the left hand side
+
+Now, it I want both the search and logout item to go to the left
+just works with the .search class and both will go to the right side
+
+.search{
+  margin-left: auto;
+}
+
+as the search is before the logout in the markup it will push the logout as well to the right hand side.
+
+
+Now change the code to this:
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  justify-content: flex-end;
+}
+
+all the items are in the right side:
+
+move only the home to the left side.
+
+.home {
+  margin-right: auto
+}
+
+
+
+
+

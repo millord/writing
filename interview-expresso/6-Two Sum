@@ -1,0 +1,37 @@
+The first problem of letcode
+
+WATCH THE INTRO OF THE VIDEO
+
+let twoSum = function (nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    const want = target - num;
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[j] === want) return [i, j];
+    }
+  }
+};
+
+console.log(twoSum([2, 4, 5, 7], 6));
+
+output: [0,1]
+
+// other solution USING A HASH TABLE
+
+let twoSum = function (nums, target) {
+  const ht = {};
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    const want = target - num;
+    if (want in ht) {
+      const leftIndex = ht[want];
+      return [leftIndex, i];
+    } else {
+      ht[num] = i;
+    }
+  }
+};
+
+console.log(twoSum([1, 2, 3, 4], 6));
+
+output: [1,3]

@@ -1,0 +1,27 @@
+AXIS
+
+
+All flex box container always have a direction
+and by default is horizontal
+
+so, it goes from left to right
+
+Flipping the direction of a flexbox container
+
+
+is you add flex-direction: row
+
+nothing happends since is the default but,
+if you do:
+
+flex-direction:column
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+}
+
+change it back to row
+
+

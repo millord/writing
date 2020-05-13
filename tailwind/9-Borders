@@ -72,6 +72,8 @@ change the color:
 
 STYLES:
 
+formula: border-dotted
+
 solid
 dashed
 dotted

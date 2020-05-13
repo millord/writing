@@ -1,0 +1,84 @@
+The default is flux-direction row
+
+just add flex-direction: column;
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+}
+
+
+If you try to add justify-content: flex-end
+
+It wont do anything:
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+This is because the height of the container is not set explicitely
+is just as tall as the items inside. It has not extra space.
+
+
+for that you have to explicitely set the height to 100%:
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+IMPORTANT: If you set the height in the container to 100% you also have to do it in the html and body element of the file.
+
+
+If you change the flex-end to flext start. It will stack them at the top. If  you also add center, It will center them.
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+
+If you want to send the items to the right side add:
+
+
+align-items: flex-end
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-items: flex-end;
+}
+
+Place the items in the right bottom corner:
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: flex-end;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+They works like js events. You have to register the event before you can
+use it.
+
+// go inside the About.js
+
+// For event listeners
+
+routeChangeStart(url);
+routeChangeComplete(url);
+routeChangeHistoryChage(url);
+routeChangeError(url);
+// go into the componentDiMount
+
+// to register an event
+
+Router.event.on("routeChangeStart", this.handleRouteStart);
+Router.event.on("routeChangeComplete", this.routeChangeComplete);
+Router.event.on("routeChangeHistoryChage", this.routeChangeHistoryChage);
+
+// create the function above the componentDidMount
+
+// when you go to a route it will start changing
+handleRouteStart = (url) => {
+  console.log("App is changing to", url);
+};
+
+handleRouteChangeComplete = (url) => {
+  console.log("App changed the: ", url);
+};
+
+handleBeforeHistoyChanged = (url) => {
+  console.log("App changed history: ", url);
+};
+
+// if something fails
+
+routeChangeError(url);
+

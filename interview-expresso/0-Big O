@@ -1,0 +1,25 @@
+Big O
+
+Two types of Big O
+
+1-Time complexity
+
+
+a)Linear Time (doubling the input also double the time)
+O(n)
+
+B)Constant time(when the time and the space have not relation with the input )
+
+O(1)
+
+2-Space Complecity
+
+
+Every line we code has a time complecity
+
+and every variable we code has a space complexity
+
+
+BEST CASE
+
+We always take the worst case to evaluate an algorithm

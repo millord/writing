@@ -1,0 +1,43 @@
+
+Learn about the flex property that allows to set width of items
+according to the width of the entire container. Meaning they will
+become responsive.
+
+If we want all of the items to stretch across the entire container and grow and shrink with it. We just target the items with:
+
+and select all the direct children with >
+
+.container >  div{
+  flex:1;	
+}
+
+The will take an equal amount of space.
+
+Add a new item into the nav to see that it will take it
+
+<div>Profile</div>
+
+
+If we want the search item to be twice as big as the rest of the items:
+
+.container > .search {
+  flex: 2;
+}
+
+A more realistic approve would be that one item do all the flexing and the others stays at a fixed width.
+
+We can do that by removing this:
+
+.container > div {
+  flex: 1;
+  
+  /*flex-grow, flex-shrink, flex-basis */
+}
+
+and keeping this:
+
+
+.search {
+  flex: 2;
+}
+

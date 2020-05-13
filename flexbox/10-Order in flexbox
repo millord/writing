@@ -1,0 +1,54 @@
+Order: by default it has a value of 0
+and if you start giving values it will it place that item at end
+since all of the other will value 0.
+
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.item1 {
+  order: 3;
+}
+
+.item2 {
+  order: 2;
+}
+
+.item3 {
+  order: 0;
+}
+
+
+So, this will place the items backwards eventhough the order
+they were set up:
+
+
+<body>
+    <div class="container">
+    <div class="item1">1 Home</div>
+    <div class="item2">2 Search</div>
+    <div class="item3">3 Logout</div>
+  </div>
+</body>
+
+Using negative numbers:
+
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.item1 {
+  order: 2;
+}
+
+.item2 {
+  order: 1;
+}
+
+.item3 {
+  order: -1;
+}

@@ -1,0 +1,16 @@
+-Go to the jsonplaceholder site to use a fake api
+
+Copy the users route with user number 1
+
+1-npm i axios
+
+IN THE HOME (/pages/index.js) import axios 
+
+2-do the GET request
+
+// go inside the getInitialProps function
+
+const request = axios.get("url").then((response) => console.log(response.data));
+
+
+--- TEST IT-- check the console of the terminal no browser.

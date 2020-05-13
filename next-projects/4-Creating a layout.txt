@@ -1,0 +1,32 @@
+1-go into the components folder and create a folder called 
+mainLayout.js
+
+-Layout is a functional component returning some jsx with the 
+props.children.
+
+
+import React from 'react'
+import Header from '../includes/header'
+
+const MainLayout = (props) => (
+  <>
+  <Header/>
+  {props.children}
+  </>
+)
+
+export default MainLayout
+
+2-go into the index.js in pages and import the mainLayout into this component, and add it to the rest of the components Contacts, About and so on...
+
+The purpose is to add the header into the mainLayout and wrap all the components  with the mainLayout
+
+
+
+<MainLayout>
+
+Content here!
+
+</MainLayout>
+
+

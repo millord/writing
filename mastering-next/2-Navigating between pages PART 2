@@ -1,0 +1,85 @@
+Using not static data
+We will pull data using getInitialProps
+
+Is a lifecycle method from next.js. It allow us to fetch
+data before the component renders.
+
+
+ <li>
+ <Link as="/post/1" href="/post/[id]">
+ <a>About</a>
+  </Link>
+  </li>
+  <li>
+   <Link as="/post/1" href="/post/[id]">
+     <a>Contacts</a>
+   </Link>
+</li> 
+
+===TEST IT====
+
+
+
+Final stuff:
+
+Putting a specific page behind a router. (Private route)
+
+1-Go to the header and delete the links for post and change the contact link for /login
+
+in pages delete the post folder
+
+and create a new file in pages called login.js
+
+-there a functional component called Login to redirect to the dashboard.
+
+import { useRouter } from "next/router";
+
+const Login = () => {
+  const router = useRouter();
+
+  const onLogin = (e) => {
+    e.preventDefault();
+
+    router.push("/dashboard");
+  };
+
+  return (
+    <>
+      <input placeholder="User Name" />
+      <input placeholder="Password" type="password" />
+      <input onClick={onLogin} placeholder="User Name" type="button" />
+    </>
+  );
+};
+
+export default Login;
+
+/// GO TO MENU AND CLICK ON THE NEW LINK
+
+and test it
+
+4-Go into the pages and create the dashbord.js
+
+-create a functoinal component called Dashboard
+
+const Dashboard = ({ name, bio, blog }) => (
+  <>
+    <h1>{name}</h1>
+    <p>{`Bio: ${bio}`}</p>
+    <p>{`Blog: ${blog}`}</p>
+  </>
+);
+
+
+Dashboard.getInitialProps = async () => {
+  const res = await fetch('https://api.github.com/users/millord')
+  const user = await res.json()
+
+  return user
+}
+
+
+export default Dashboard;
+
+-THEN GO TO THE LOGIN LINK AND TRY TO ENTER AND YOU WILL GET YOUR USER INFO
+

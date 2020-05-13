@@ -1,0 +1,21 @@
+Using async and await.
+
+
+1- Go to the function getInitialProps and make it async
+
+-create a try/catch inside and:
+
+let userData;
+
+try {
+  const response = await axios.get(url);
+  userData = response.data;
+  console.log(userData);
+} catch (error) {
+  console.log(error);
+}
+
+
+and in the return -- BELOW THE try/catch
+
+also return userData

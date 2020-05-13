@@ -1,0 +1,46 @@
+The context
+
+Is a parameter that is going to get pass to the getInitialProps
+function with very important data like:
+
+req
+pathname
+asPath
+
+// to make it work just pass it as parameter
+// to getInitialProps(context)
+
+// and above the return (that is inside getInitialProps) do at:
+
+console.log(context);
+
+// go to home
+// check the terminal
+
+// go to getInitialProps and add getInitialProps({pathname, query, asPath, req, res})
+
+// Now console the pathname, query and the asPath
+
+
+// test it with all of them
+
+
+// USING A FUNTIONAL COMPONENT WITH
+// getInitialProps
+
+// go to user/profile
+// change it to a functional component
+
+// and at the bottom below the render and
+// about the export default Profile place this
+
+Profile.getInitialProps = async ({ req }) => {
+  return {
+    value: "1,2,3,4",
+  };
+};
+
+
+// do a console.log above the return.
+
+console.log(req)

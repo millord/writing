@@ -1,0 +1,304 @@
+First example with three boxes:
+
+Everything on top o each other
+
+<div class="">
+     <div class="bg-yellow-600 w-16 h-16">1</div>
+     <div class="bg-teal-700 w-16 h-16">2</div>
+     <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+Now add the class flex:
+
+Next to each other
+
+<div class="flex">
+     <div class="bg-yellow-600 w-16 h-16">1</div>
+     <div class="bg-teal-700 w-16 h-16">2</div>
+     <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+
+FLEXBOX DIRECTION
+
+.justify-{alignment}
+
+Alignments
+
+start
+center
+end
+between
+around
+
+All the elements move to center:
+
+ <div class="flex justify-center">
+   <div class="bg-yellow-600 w-16 h-16">1</div>
+   <div class="bg-teal-700 w-16 h-16">2</div>
+   <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+All elements go to the end (right side of the page):
+
+
+ <div class="flex justify-end">
+  <div class="bg-yellow-600 w-16 h-16">1</div>
+  <div class="bg-teal-700 w-16 h-16">2</div>
+  <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+
+IMPORTANT == between and around properties
+
+between: adds padding in between
+
+<div class="flex justify-between">
+  <div class="bg-yellow-600 w-16 h-16">1</div>
+  <div class="bg-teal-700 w-16 h-16">2</div>
+  <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+around: Its very similar but adding padding at the beginning and end also
+<div class="flex justify-between">
+  <div class="bg-yellow-600 w-16 h-16">1</div>
+  <div class="bg-teal-700 w-16 h-16">2</div>
+  <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+
+(VERTICAL)
+
+
+Alignments:
+
+stretch
+start
+center
+end
+baseline
+
+We only worked with horizontally, but we can do vertical
+
+but if you do:
+
+<div class="flex justify-around items-center">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+Nothing happends
+
+To see whats wrong give also a class of bg-blue-500 so you can see the
+background.
+
+<div class="bg-blue-500 flex justify-around items-center">
+  <div class="bg-yellow-600 w-16 h-16">1</div>
+  <div class="bg-teal-700 w-16 h-16">2</div>
+  <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+The issue is that this container is as tall as the three boxes.
+So what you need to do is give a height of screen
+
+<div class="bg-blue-500 h-screen flex justify-around items-center">
+  <div class="bg-yellow-600 w-16 h-16">1</div>
+  <div class="bg-teal-700 w-16 h-16">2</div>
+  <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+
+IMPORTANT== BY default of the containers take the entire width, but they dont
+take the entire height.
+
+items-end
+
+They get to the bottom
+ 
+<div class="bg-blue-500 h-screen flex justify-around items-end">
+  <div class="bg-yellow-600 w-16 h-16">1</div>
+  <div class="bg-teal-700 w-16 h-16">2</div>
+  <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+
+And we also have end and baseline
+
+We are going to do the examples with some text
+Take a look first of what we have
+
+<div class="flex">
+    <div class="text-2xl">&bull;</div>
+    <p class="text-5xl ">Hello there.</p>
+</div>
+
+The bullet should be all the way to the top.
+
+items-end
+
+<div class="flex items-end">
+   <div class="text-2xl">&bull;</div>
+   <p class="text-5xl ">Hello there.</p>
+</div>
+
+And the bullet go to the bottom.
+
+If you do items-center
+
+<div class="flex items-center">
+   <div class="text-2xl">&bull;</div>
+   <p class="text-5xl ">Hello there.</p>
+</div>
+
+
+The bullet is in the middle
+
+
+-We also have start and stretch
+
+<div class="flex items-start">
+   <div class="text-2xl">&bull;</div>
+   <p class="text-5xl ">Hello there.</p>
+</div>
+
+
+<div class="flex items-strech">
+   <div class="text-2xl">&bull;</div>
+   <p class="text-5xl ">Hello there.</p>
+</div>
+
+
+
+==THEY SEEM TO DO THE SAME, BUT THEY DONT ===
+
+ADD bg-blue-500 to the bullet
+
+<div class="flex items-strech">
+   <div class="text-2xl bg-blue-500">&bull;</div>
+   <p class="text-5xl ">Hello there.</p>
+</div>
+
+change it to start
+
+FLEXBOX DIRECTION AGAIN
+
+row
+row-reverse
+col
+col-reverse
+
+
+Let's go to the first example:
+
+<div class="h-screen flex">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+
+Reversing the row with:
+
+row-reverse
+
+<div class="h-screen flex flex-row-reverse">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div>
+
+col direction
+
+<div class="h-screen flex flex-col">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div
+
+col-reverse
+<div class="h-screen flex flex-col-reverse">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div
+
+try now justify-center
+
+
+<div class="h-screen flex flex-col justify-center">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div
+
+For aligment for left to right do items-center
+
+
+<div class="h-screen flex flex-col items-center">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div
+
+And to have it perfectly center
+
+
+<div class="h-screen flex flex-col justify-center items-center">
+    <div class="bg-yellow-600 w-16 h-16">1</div>
+    <div class="bg-teal-700 w-16 h-16">2</div>
+    <div class="bg-red-700 w-16 h-16">3</div>
+</div
+
+
+=====FLEXBOX WRAP === 
+
+no-wrap
+wrap
+wrap-reverse
+
+What will happend if we have a bunch of items:
+
+
+           <div class="bg-yellow-600 w-16 h-16">1</div>
+            <div class="bg-teal-700 w-16 h-16">2</div>
+            <div class="bg-red-700 w-16 h-16">3</div>
+            <div class="bg-yellow-600 w-16 h-16">1</div>
+            <div class="bg-teal-700 w-16 h-16">2</div>
+            <div class="bg-red-700 w-16 h-16">3</div>
+            <div class="bg-yellow-600 w-16 h-16">1</div>
+            <div class="bg-teal-700 w-16 h-16">2</div>
+            <div class="bg-red-700 w-16 h-16">3</div>
+            <div class="bg-yellow-600 w-16 h-16">1</div>
+            <div class="bg-teal-700 w-16 h-16">2</div>
+            <div class="bg-red-700 w-16 h-16">3</div>
+            <div class="bg-yellow-600 w-16 h-16">1</div>
+            <div class="bg-teal-700 w-16 h-16">2</div>
+            <div class="bg-red-700 w-16 h-16">3</div>
+2
+3
+1
+2
+3
+            <div class="bg-yellow-600 w-16 h-16">1</div>
+            <div class="bg-teal-700 w-16 h-16">2</div>
+            <div class="bg-red-700 w-16 h-16">3</div>
+
+
+THEY ALL ARE ALIGN NEXT TO EACH OTHER, ITS NOT EVEN CONSERVING ALL WIDTHS
+
+Give it a class of flex-wrap
+
+<div class="h-screen flex flex-wrap">
+
+It looks excELLENT FOR CARDSSSSS WE YOU WERE LOOKING FOR BRO
+
+do algo wrap-reverse
+
+
+
+
+
+
+
+

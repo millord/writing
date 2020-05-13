@@ -1,0 +1,130 @@
+1-Go into the pages/index.js
+
+-inside the getInitialProps make the axios call to go to
+users not users/1 (we are getting all the users)
+
+-check in the console that you are getting all the users
+
+2-create a function above render:
+
+
+that is the route is going to go: /users/profile?userId=${user.id}
+
+renderUserList = (users) => (
+  users.map((user, i) => (
+    <li>
+      <Link href={`/users/profile?userId=${user.id}`}>
+  <a>{user.name}</a>
+      </Link>
+    </li>
+  ))
+)
+
+
+// then go inside the render in the MainLayout 
+
+<MainLayout>
+
+  <h1>Pick a user</h1>
+  <ul>
+    {this.renderUserList(this.props.userData)}
+  </ul>
+</MainLayout>
+
+2-go inside profile.js and remove everything and create a class based component.
+
+// add the MainLayout (at this point I should be using Tailwinds css)
+
+class Profile extends Component {
+  render(){
+    return(
+      <MainLayout>
+        
+      </MainLayout>
+    )
+  }
+}
+
+HOW DO WE GET THE QUERY VALUE?
+
+Using the getInitialProps from the context paramenter
+
+// inside the Profile.js 
+
+static async getInitialProps({query}){
+  console.log(query)
+  return{}
+}
+
+==TEST IT IN THE BROWER CONSOLE==
+
+
+// different way (ORGANIZED)
+
+// go inside pages/index.js
+
+// inside the renderUserList function
+
+// passing an object in the Link
+
+<Link
+  href={{
+    pathname: "/users/profile",
+    query: {
+      query: {
+        userId: user.id,
+      },
+    },
+  }}
+>
+  <a>{user.name}</a>
+</Link>;
+
+
+===TEST IT===
+
+
+// api request in the getInitialProps in the profile.js using axios
+
+// import axios
+
+// so, inside the getInitialProps
+
+static async getInitialProps({query}){
+  let user
+  try {
+    const response = await axios.get(jsonPlaceHolderurl/${query.userId})
+    user = response.data
+  } catch (error) {
+    console.error(error)
+  }
+  return {user}
+}
+
+ // and inside the render 
+
+console.log(this.props)
+
+
+// RENDERING THE USER
+
+// INSIDE The profile.js create a function above the render
+
+showUser = (user) => (
+  <div>
+    <div>Name:{user.name}</div>
+    <div>Phone:{user.phone}</div>
+    <div>Email:{user.email}</div>
+  </div>;
+);
+
+// go inside the <MainLayout>
+
+{
+  showUser(this.props.user);
+}
+
+// test it
+
+
+

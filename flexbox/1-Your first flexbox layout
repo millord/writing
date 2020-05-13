@@ -1,0 +1,37 @@
+1-Your first Flexbox layout
+
+
+Creating a navbar:
+
+<nav class="container">
+  <div>Home</div>
+  <div>Search</div>
+   <div>Logout</div>
+</nav>
+
+Concept of container:
+
+As long as they are direct children of the flex
+container they become flex
+
+Go into the index.css
+
+.container {
+  border: 5px solid #ffcc5c;
+}
+
+by default they are stack, to change them to flex add:
+
+display:flex
+
+.container {
+  border: 5px solid #ffcc5c;
+  display:flex;
+}
+
+
+And by default the flex box container is a block element.
+
+
+
+

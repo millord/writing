@@ -1,0 +1,32 @@
+1-import Router from '/next/router'
+
+
+// using the Router to go to another page
+
+// Go into the About page
+
+// in the return and below Message
+<span onClick={() => Router.push('/contact')}>
+ Click me now!!
+</span>
+
+// test it --
+
+
+the replace property - to redirect the user
+
+
+// go to the About component
+
+
+// call the componentDidMount
+
+componentDidMount(){
+  Router.replace('/contact')
+}
+
+// so, if you load the About component will stay in the
+// contacts, even if you click in the menu
+
+
+// test it

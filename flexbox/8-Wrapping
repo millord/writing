@@ -1,0 +1,22 @@
+How to wrap items in flexbox
+
+By default flex box does not allow wrapping,
+
+But if you change it to wrap, it will allow you.
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  width: 300px;
+}
+
+TRY TO SCHINK THE CONTAINER
+
+
+
+
+

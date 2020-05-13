@@ -1,0 +1,50 @@
+How to control the items along the Y axis:
+
+by default they will be at the X axis
+
+1-first set the height of the container : height:100%
+
+IMPORTANT
+
+remember for it to work, you have to set the height of the html and body to 100% in order to that to work.
+
+by default the items are align in stretch:
+
+align-items: stretch
+
+but if you do:
+
+align-items: flex-start ===  they will push all the way to the top
+
+align-items: flex-end === push them all the way to the bottom
+
+align-items: center === it will center
+
+
+--IMPORTANT --centering an element
+
+using:
+
+align-items: center;
+justify-content-center
+
+
+HOW TO ALIGN A SINGLE ITEM AT THE TIME == using align-self
+
+targeting thee logout item
+
+
+.logout {
+  align-self: flex-start;
+}
+
+That will push just that item to the top
+
+
+targetingt the .home down the page:
+
+
+.home {
+  align-self: flex-end;
+}
+

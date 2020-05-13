@@ -1,0 +1,87 @@
+1-create the Header.js, Home.js , About, Contacts.js files into pages
+
+
+Start with Home
+
+create a functional component return the <Header/> Component and below
+<h1>Welcome to Mastering Nex.js</h1>
+
+-Create the Header component
+
+create a functional component return a <header></header>
+
+Having inside an ul with three  li having inside the Link imported from next/link
+  and inside an a tag with the words Home, Contact, About
+
+ <li>
+  <Link href="/">
+   <a>Home</a>
+   </Link>
+</li>
+
+
+Create the About and Contact pages in the same way of Home.
+
+
+3-Navigate throught links (It will do it really fast)
+
+4-Dinamic Routing
+
+
+inside pages create a folder called post:
+
+inside it, create a new folder and use brackets to tell next that is a variable it will pass in:
+
+[id] == name of the folder
+
+and inside that folder add an index.js
+
+
+-inside the index.js copy the code from about and import 
+{useRouter} from 'next/router'
+
+
+and create a Post component
+
+
+const Post = () => {
+  const router = useRouter()
+  const {id} = router.query
+
+  return (
+    <>
+    <Header/>
+    <h1>Post: {id}</h1>
+    </>
+  )
+}
+
+
+export default Post
+
+
+IMPORTANT ===> SO now we have access to all the routes
+and we will grab the id from that router.
+So when you navegate to this page the next router will pull that id
+I will be able to access it.
+
+See the video on minutes 6:25 to see how he added the id to the links
+
+ <li>
+ <Link href="/contacts">
+ <a>Contacts</a>
+ </Link>
+ </li>
+ <li>
+ <Link as="/post/first-post" href="/post/[id]">
+ <a>About</a>
+ </Link>
+ </li>
+ <li>
+ <Link as="/post/first-second" href="/post/[id]">
+   <a>Contacts</a>
+   </Link>
+</li>
+
+
+TEST IT CLICKIN ON THE LINKS

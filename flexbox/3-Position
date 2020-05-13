@@ -1,0 +1,26 @@
+Justify content
+
+from left to right
+
+we are going to use a property called justify-content:
+
+as thats the one that controls the content alogn the main
+axis.
+
+flex-start, flex-end, center, space-around
+space-between, space-evenly
+
+by default takes flex-start
+
+flex-end == go to the end of the main axis
+
+justify-content: center === it will center the items
+
+space-around === it will give each item an equally amount of space
+
+Try:
+
+space-between and space-evenly and see the difference
+
+space-between ==== 
+

@@ -1,0 +1,63 @@
+Inside the Home (/pages/index.js). Which is a class based component
+
+
+getInitialProps is from Next.js not react.
+and it its called before the constructor is called
+
+How to use it?
+
+at the beginning(where the constructor should be):
+
+and start with the keyword static
+
+==IMPORTANT == must return and object
+
+static getInitialProps(){
+  console.log('initial props')
+  return {}
+}
+
+// and go check in the terminal
+
+
+== IMPORTANT == when using next.js your code runs first in the server and later in the browser.
+
+==WHERE TO USE THE getInitialProps? ==
+
+fetching data from a API (good case use)
+
+Do this first:
+
+static getInitialProps(){
+  console.log('initial props')
+  return {
+    user:{
+      name:'juan',
+      lastname: 'millord'
+    }
+  }
+}
+
+Now the user object is available in props
+
+-go below the render() and :
+
+console.log(this.props.user)
+
+TEST IT
+
+CHECK THE CONSOLE
+
+Now add it in the constructor:
+
+
+constructor(props){
+  super(props)
+  this.state = {
+    user: this.props.user
+  }
+}
+
+so you can access it using this.state
+
+

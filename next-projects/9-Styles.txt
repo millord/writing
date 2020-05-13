@@ -1,0 +1,5 @@
+REWATCH THE VIDEO AND THE NEXT
+
+9. Sass, less, styles and css imports
+
+10. Making the app look better

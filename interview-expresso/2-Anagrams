@@ -1,0 +1,20 @@
+let groupAnagrams = function (strs) {
+  const ht = {};
+  for (let str of strs) {
+    const sorted = str.split("").sort().join("");
+    if (ht[sorted]) ht[sorted].push(str);
+    else ht[sorted] = [str];
+  }
+  return Object.values(ht);
+};
+
+console.log(groupAnagrams("abba"));
+
+Check the video again for:
+
+Time complexity:
+
+
+
+Space complexity:
+

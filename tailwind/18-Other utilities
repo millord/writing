@@ -1,0 +1,149 @@
+
+SHADOWS
+
+
+.shadow-{size}
+
+Sizes
+
+
+md
+lg
+xl
+2xl
+
+
+inner
+outline
+outline
+none
+
+
+Starting with a box:
+
+
+ <body class="h-screen bg-gray-200 flex justify-center items-center p-6">
+        
+<div class="bg-blue-900 text-blue-200 w-40 h-40 flex justify-center items-center">
+Here is a cool box
+</div>
+        
+</body>
+
+Adding a box shadow to it:
+
+shadow-lg
+
+<div class="shadow-lg bg-blue-900 text-blue-200 w-40 h-40 flex justify-center items-center">
+
+
+OPACITY  == WHEN You want something to get a disable look.
+
+
+Percentages
+
+.opacity-{percent}
+
+100
+75
+50
+25
+0
+
+Change in the box opacity-50:
+
+
+
+<div class="opacity-50 bg-blue-900 text-blue-200 w-40 h-40 flex justify-center items-center">
+Here is a cool box
+</div>
+
+
+
+Change it to 25
+
+
+--TEST IT---
+
+CURSOR
+
+
+.cursor-{style}
+
+Styles
+
+default
+pointer
+wait
+text
+move
+not-allowed
+
+Add a class to the div of: 
+
+cursor-move
+
+Test it
+
+SELECT
+
+Styles
+
+none
+text
+all
+auto
+
+
+Unable select to the users:
+
+add the select-none class
+
+
+place it inside the body
+
+
+ <body class="h-screen bg-gray-200 flex justify-center items-center p-6">
+        
+<div class="select-none bg-blue-900 text-blue-200 w-40 h-40 flex justify-center items-center">
+     Here is a cool box
+</div>
+        
+</body>
+
+
+It wont let you select
+
+Now, select the entire line with a single click with select-all
+
+
+
+ <body class="h-screen bg-gray-200 flex justify-center items-center p-6">
+        
+<div class="select-all bg-blue-900 text-blue-200 w-40 h-40 flex justify-center items-center">
+     Here is a cool box
+</div>
+        
+</body>
+
+
+Last part -- 
+
+
+SCREEN READERS
+
+
+.sr-only
+
+.not-sr-only
+
+
+
+
+
+
+
+
+
+
+

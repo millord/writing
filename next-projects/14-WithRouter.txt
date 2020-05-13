@@ -1,0 +1,63 @@
+withRouter === for components that are not inside pages
+
+// Go inside the components/includes and
+// create the message component (for testing)
+
+// create a functional component named Message
+
+const Message = (props) => {
+  return (
+    <>
+      <div>Hello</div>
+      <div>I am the '....' page</div>
+    </>
+  );
+};
+
+export default Message;
+
+
+// go into the about.js and import the Message component
+
+// place it below the h1 in the return
+
+// Now are going to show the path in the return Message component
+
+// Not using the getInitialProps
+
+// import {withRouter} from 'next/router'
+
+// withRouter is a high order component to make it work
+
+// you need to wrap the Message component with it
+
+export default withRouter(Message);
+
+// now if you go (inside Message componet)
+
+<div>Im the {props.router.pathname} page</div>;
+
+// using push method from the withRouter
+// to redirect to a different page
+
+// IN THE Message component in ther return
+
+<div>
+  Click <span onClick={handler}>here</span> to read more
+</div>;
+
+const handler = () => {
+  props.router.push(
+    {
+      pathname: "/users/profile",
+      query: { userId: 1 },
+    },
+    "/users/profile/1"
+  );
+};
+
+
+===TEST IT--
+
+
+

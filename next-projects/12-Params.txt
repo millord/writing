@@ -1,0 +1,19 @@
+
+-Go to into the pages/index.js
+
+// inside the renderUserList function
+// In the Link
+// ADDIN THE the as property
+
+<Link
+  as={`/user/profile/${user.id}`}
+  href={{
+    pathname: "/users/profile",
+    query: {
+      query: {
+        userId: user.id,
+      },
+    },
+
+
+  

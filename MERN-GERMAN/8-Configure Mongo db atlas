@@ -1,5 +1,7 @@
 Go to mongo atlas a create  a connection.
 
+CONNECTING TO A SERVERLESS APP
+
 2-Go to the next.config.js in the root directory and add the mongodb connection string.
 
 3-go to the utils folder (dedicated to utils)
@@ -22,7 +24,7 @@ async function connectDb() {
     useUnifiedTopology: true,
   });
   console.log("DB Connected");
-  connection.isConnected = db.connection[0].readyState;
+  connection.isConnected = db.connections[0].readyState;
 }
 
 export default connectDb;

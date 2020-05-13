@@ -1,0 +1,133 @@
+.bg-blue-500
+
+You only need to add a break point to the class
+.sm:bg-blue-500
+
+
+Breakpoints  | Starts at  
+
+[ALL]  ======== 0px
+sm  ======== 640px
+md  ======== 768px
+lg  ======== 1024px
+xl  ======== 1280px
+
+.{breakpoint}:{...classes}
+
+Responsive Classes | 
+
+.{sm}:bg-*  ======= background color
+
+.{sm}:w-*   ======= width
+
+.{sm}:h-*  ======= height
+
+.{sm}:p-*  ======= background color
+
+.{sm}:m-*  ======= margin
+
+
+Inside the body tag:
+
+
+<body class="bg-blue-500">
+        
+</body>
+
+
+add this class
+
+At the medium breakpoint change it md:bg-red-500:
+
+<body class="bg-blue-500 md:bg-red-500">
+        
+</body>
+
+Si es mas grande que el breakpoint is going to apply that class bg-red-500"
+osea, mientras sea mas grande que el md va a aplicar bg-red-500 en lo contrario
+bg-blue-500
+
+Now small devices:
+
+<body class="bg-blue-500 sm:bg-red-500">
+        
+</body>
+
+Lo mismo, mientras no exeda el tamano sm estara blue, otherwise red
+
+With Padding now:
+
+
+<body class="bg-blue-500">
+<div class="p-4">Some text inside of this div
+</div>
+</body>
+
+Having a bigger padding when you get to bigger screens:
+
+<body class="bg-blue-500">
+<div class="p-4 sm:p-32">Some text inside of this div
+</div>
+</body>
+
+Test ITTT
+
+
+FONT FAMILY
+
+In your breakpoint to want to make the font bold.
+
+<body class="bg-blue-500">
+<div class="p-4 sm:font-bold">Some text inside of this div
+</div>
+</body>
+
+
+Italic
+
+<body class="bg-blue-500">
+<div class="p-4 sm:font-bold md:italic">Some text inside of this div
+</div>
+</body>
+
+When breaking that sm point add a border:
+
+<body class="bg-blue-500">
+<div class="p-4 sm:border">Some text inside of this div
+</div>
+</body>
+
+REPITO: Si no rompe el sm, se queda el text sin bordery con el padding,
+pero si sombre el sm cambia el border
+
+Working with a box
+
+<body class="bg-blue-500">
+
+<div class="w-32 h-32 bg-gray-200 border">A
+</div>
+<div class="w-32 h-32 bg-gray-200 border">B
+</div>
+
+</body>
+
+Most of the time want the box to stack in mobile and go next to each other when breaks the medium breakpoint.
+
+and you do it adding flex flex-col sm:flex-row
+
+<body class="bg-blue-500 flex flex-col sm:flex-row">
+
+<div class="w-32 h-32 bg-gray-200 border">A
+</div>
+<div class="w-32 h-32 bg-gray-200 border">B
+</div>
+
+</body>
+
+
+
+
+
+
+
+

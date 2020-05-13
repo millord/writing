@@ -1,0 +1,186 @@
+Start  with this code:
+
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  flex: 1;
+}
+
+.logout {
+  flex: 1;
+}
+
+
+Only containing two items:
+
+
+<body>
+   <div class="container">
+   <div class="home">Home</div>
+   <div class="logout">Logout</div>
+   </div>
+</body>
+
+
+
+1-Work with the flex-basis
+
+-flex basis is a way of setting the base width of the element so 
+they will stay at 200px not matter how much extra space there is
+in the container.
+
+Test it.
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  /*
+  flex-grow: 1;
+  flex-shrink: 1;
+  */
+  flex-basis: 200px;
+  
+}
+
+.logout {
+    /*
+  flex-grow: 1;
+  flex-shrink: 1;
+  */
+  flex-basis: 200px;
+}
+
+
+2-flex-grow:
+
+
+flex-grow  === grows with the width of the container. It fills 
+with the remaining space.
+
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  /*
+  flex-shrink: 1;
+  */
+  flex-grow: 1;
+
+  flex-basis: 200px;
+  
+}
+
+.logout {
+    /*
+  flex-shrink: 1;
+  */
+  flex-grow: 1;
+
+  flex-basis: 200px;
+}
+
+
+Setting flex-grow to 0:
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  /*
+  flex-shrink: 1;
+  */
+  flex-grow: 0;
+
+  flex-basis: 200px;
+  
+}
+
+.logout {
+    /*
+  flex-shrink: 1;
+  */
+  flex-grow: 0;
+
+  flex-basis: 200px;
+}
+
+
+As long as the two values are the same it will fit the space
+evenly:
+
+
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  /*
+  flex-shrink: 1;
+  */
+  flex-grow: 1;
+
+  flex-basis: 200px;
+  
+}
+
+.logout {
+    /*
+  flex-shrink: 1;
+  */
+  flex-grow: 1;
+
+  flex-basis: 200px;
+}
+
+
+--- Try increasing the value of the logout from 1 - 5
+
+
+3-flex-shrink
+
+by giving a higher value to .logout and give the value
+of 0 to .home the behavior is:
+
+when you get to the maximum width the .logout will do all the shrinking while the home stays at 200px.
+
+Play around changing the value of home to flex-shink:5
+
+Change it to the desire behavior:
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+  
+}
+
+.logout {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+}
+
+
+
+
+
+

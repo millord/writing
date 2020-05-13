@@ -32,7 +32,7 @@ This is measure in em no rem
 
 
 em units is based on the parent element's font size, not the document.
-
+formula: tracking-{size}
 
 Spacings
 
@@ -44,7 +44,7 @@ wider   =========  0.05em
 widest  =========  0.01em
 
 
-tracking-wider
+
 
 
 <p class="italic tracking-wider">
@@ -54,6 +54,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit orci ac
 Line Height
 
 Spacings
+
+formula: leading-relaxed
 
 none ========= 1
 tight   ========= 1.25

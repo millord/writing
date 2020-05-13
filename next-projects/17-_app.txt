@@ -1,0 +1,33 @@
+1-Go to the next.js docs and search for app and copy the contents
+
+-inside the pages create _app.js
+
+-and copy the content
+
+--test it-- it should in the same way --
+
+
+// you get access from the __app.js to all the data in the whole app
+
+so, go inside the render of the __app.js and :
+
+console.log(pageProps)
+
+
+--test it-- you should be able to see the data in the console.log
+
+
+==IMPORTANT== _app.js is the first component that is render.
+
+now, go inside the render again and create an object:
+
+newCar = {
+ brand: 'ford',
+ color: 'red'
+}
+
+- and pass it down to the component (SO ALL COMPONENTS WILL HAVE THAT DATA)
+
+<Component {...pageProps}/>
+
+--Go into the about componet and try to access it.
