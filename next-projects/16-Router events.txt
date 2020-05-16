@@ -13,9 +13,9 @@ routeChangeError(url);
 
 // to register an event
 
-Router.event.on("routeChangeStart", this.handleRouteStart);
-Router.event.on("routeChangeComplete", this.routeChangeComplete);
-Router.event.on("routeChangeHistoryChage", this.routeChangeHistoryChage);
+Router.events.on("routeChangeStart", this.handleRouteStart);
+Router.events.on("routeChangeComplete", this.routeChangeComplete);
+Router.events.on("routeChangeHistoryChage", this.routeChangeHistoryChage);
 
 // create the function above the componentDidMount
 

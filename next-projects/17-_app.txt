@@ -28,6 +28,6 @@ newCar = {
 
 - and pass it down to the component (SO ALL COMPONENTS WILL HAVE THAT DATA)
 
-<Component {...pageProps}/>
+<Component {...pageProps} {...person} />;
 
 --Go into the about componet and try to access it.

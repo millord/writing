@@ -1,0 +1,52 @@
+1-Initialize a project
+npm init --y
+
+2-npm i tailwindcss postcss-cli autoprefixer
+
+3-npx tailwind init
+
+4-touch postcss.config.js
+
+inside that file
+
+module.exports = {
+plugins: [
+   require('tailwindcss'),
+   require('autoprefixer'),
+   
+  ]
+}
+
+5-in the root create the css/tailwind.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+6-write and script to actually process our css
+
+-go to the package.json
+
+create a script:
+
+"build": "postcss css/tailwind.css -o public/build/tailwind.css
+
+7-In the terminal run:
+
+npm run build
+
+
+8-create an index.js into the public
+
+-create the html markup and import the tailwind.css as an stylesheet in the head of the document.
+
+10- in the body:
+
+<h1 class="text-4xl font-bold text-center text-blue-500">Hello World!</h1>
+
+--Test it --
+
+Done!!
+
+

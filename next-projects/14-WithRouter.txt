@@ -23,7 +23,7 @@ export default Message;
 
 // Now are going to show the path in the return Message component
 
-// Not using the getInitialProps
+// Not need to use the getInitialProps () since we are getting it in about
 
 // import {withRouter} from 'next/router'
 

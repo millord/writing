@@ -25,4 +25,4 @@ to make?
 
 --NOTE
 when we talk about bigO and scalability of code when simply mean that when we
-grow bigger and bigger with out input, how much the alogithm slow down?
+grow bigger and bigger with our input, how much the alogithm slow down?

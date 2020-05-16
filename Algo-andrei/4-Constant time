@@ -9,7 +9,7 @@ function logFirstTwoBoxes(boxes){
     console.log(boxes[1])
 }
 
-The time of operations is fixed, so is content time. It does not matter how many imputs.
+The time of operations is fixed, so is constant time. It does not matter how many imputs.
 
 How would you calculate the Big O this?
 // CALCULATING THE BIG OG
